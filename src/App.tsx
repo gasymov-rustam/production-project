@@ -1,5 +1,6 @@
 import { Suspense } from "react";
 import { Link, Route, Routes } from "react-router-dom";
+import { classNames } from "./helpers";
 
 import { AboutPageAsync, MainPageAsync } from "./pages";
 import "./styles/index.scss";
@@ -9,7 +10,12 @@ const App = () => {
   const { theme, toggleTheme } = useTheme();
 
   return (
-    <div className={`app ${theme}`}>
+    <div
+      className={classNames({
+        regularClassName: "app",
+        additional: [theme],
+      })}
+    >
       <button onClick={toggleTheme}>TOGGLE</button>
 
       <Link to={"/"}>Главная</Link>
