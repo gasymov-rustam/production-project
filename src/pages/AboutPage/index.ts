@@ -1,2 +1,1 @@
-export * from "./AboutPage";
-export * from "./AboutPage.async";
+export { AboutPageAsync as AboutPage } from "./AboutPage.async";
