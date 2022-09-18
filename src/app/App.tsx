@@ -3,7 +3,7 @@ import { Link, Route, Routes } from "react-router-dom";
 import { AboutPage, MainPage } from "../pages";
 import { classNames } from "../shared";
 
-import { useTheme } from "./providers";
+import { AppRouter, useTheme } from "./providers";
 import "./styles/index.scss";
 
 export const App = () => {
@@ -21,12 +21,7 @@ export const App = () => {
       <Link to={"/"}>Главная</Link>
       <Link to={"/about"}>О сайте</Link>
 
-      <Suspense fallback={<div>Loading...</div>}>
-        <Routes>
-          <Route path={"/about"} element={<AboutPage />} />
-          <Route path={"/"} element={<MainPage />} />
-        </Routes>
-      </Suspense>
+      <AppRouter />
     </div>
   );
 };
