@@ -8,6 +8,20 @@ const buildLoaders = ({ isDev }: BuildOptions): RuleSetRule[] => {
     use: ["@svgr/webpack"],
   };
 
+  const babelLoader = {
+    test: /\.(js|jsx|tsx)$/,
+    exclude: /node-modules/,
+    use: {
+      loader: "babel-loader",
+      options: {
+        presets: ["@babel/preset-env"],
+        plugins: [
+          ["i18next-extract", { nsSeparator: "~", locales: ["en", "ru"], keyAsDefaultValue: true }],
+        ],
+      },
+    },
+  };
+
   const typescriptLoader = {
     test: /\.tsx?$/,
     use: "ts-loader",
@@ -40,7 +54,7 @@ const buildLoaders = ({ isDev }: BuildOptions): RuleSetRule[] => {
     ],
   };
 
-  return [fileLoader, svgLoader, typescriptLoader, cssLoader];
+  return [fileLoader, svgLoader, babelLoader, typescriptLoader, cssLoader];
 };
 
 export const moduleBuildLoaders = (options: BuildOptions): ModuleOptions => {
