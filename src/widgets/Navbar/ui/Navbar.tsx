@@ -1,6 +1,5 @@
 import { FC } from "react";
 import { AppLink, AppLinkTheme, classNames } from "../../../shared";
-import { ThemeSwitcher } from "../../ThemeSwitcher";
 import cls from "./Navbar.module.scss";
 
 interface NavbarProps {
@@ -12,8 +11,6 @@ export const Navbar: FC<NavbarProps> = (prop) => {
 
   return (
     <div className={classNames({ cls: cls.Navbar, additional: [className] })}>
-      <ThemeSwitcher />
-
       <div className={cls.links}>
         <AppLink theme={AppLinkTheme.SECONDARY} to={"/"} className={cls.mainLink}>
           Main

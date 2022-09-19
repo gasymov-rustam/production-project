@@ -2,7 +2,7 @@ import { Suspense } from "react";
 import { Link, Route, Routes } from "react-router-dom";
 import { AboutPage, MainPage } from "../pages";
 import { classNames } from "../shared";
-import { Navbar } from "../widgets";
+import { Navbar, Sidebar } from "../widgets";
 
 import { AppRouter, useTheme } from "./providers";
 import "./styles/index.scss";
@@ -18,7 +18,11 @@ export const App = () => {
       })}
     >
       <Navbar />
-      <AppRouter />
+
+      <div className="content-page">
+        <Sidebar />
+        <AppRouter />
+      </div>
     </div>
   );
 };
