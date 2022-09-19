@@ -1,1 +1,1 @@
-export { DarkIcon, LightIcon } from "./icons";
+export { DarkIcon, LightIcon } from './icons';

@@ -1,22 +1,22 @@
-import MiniCssExtractPlugin from "mini-css-extract-plugin";
-import type { ModuleOptions, RuleSetRule } from "webpack";
-import type { BuildOptions } from "./types";
+import MiniCssExtractPlugin from 'mini-css-extract-plugin';
+import type { ModuleOptions, RuleSetRule } from 'webpack';
+import type { BuildOptions } from './types';
 
 const buildLoaders = ({ isDev }: BuildOptions): RuleSetRule[] => {
   const svgLoader = {
     test: /\.svg$/,
-    use: ["@svgr/webpack"],
+    use: ['@svgr/webpack'],
   };
 
   const babelLoader = {
     test: /\.(js|jsx|tsx)$/,
     exclude: /node-modules/,
     use: {
-      loader: "babel-loader",
+      loader: 'babel-loader',
       options: {
-        presets: ["@babel/preset-env"],
+        presets: ['@babel/preset-env'],
         plugins: [
-          ["i18next-extract", { nsSeparator: "~", locales: ["en", "ru"], keyAsDefaultValue: true }],
+          ['i18next-extract', { nsSeparator: '~', locales: ['en', 'ru'], keyAsDefaultValue: true }],
         ],
       },
     },
@@ -24,24 +24,24 @@ const buildLoaders = ({ isDev }: BuildOptions): RuleSetRule[] => {
 
   const typescriptLoader = {
     test: /\.tsx?$/,
-    use: "ts-loader",
+    use: 'ts-loader',
     exclude: /node_modules/,
   };
 
   const cssLoader = {
     test: /\.s[ac]ss$/i,
     use: [
-      isDev ? "style-loader" : MiniCssExtractPlugin.loader,
+      isDev ? 'style-loader' : MiniCssExtractPlugin.loader,
       {
-        loader: "css-loader",
+        loader: 'css-loader',
         options: {
           modules: {
-            auto: (resPath: string) => Boolean(resPath.includes(".module.")),
-            localIdentName: isDev ? "[path][name]--[local]" : "[hash:base64:8]",
+            auto: (resPath: string) => Boolean(resPath.includes('.module.')),
+            localIdentName: isDev ? '[path][name]--[local]' : '[hash:base64:8]',
           },
         },
       },
-      "sass-loader",
+      'sass-loader',
     ],
   };
 
@@ -49,7 +49,7 @@ const buildLoaders = ({ isDev }: BuildOptions): RuleSetRule[] => {
     test: /\.(png|jpe?g|gif|woff2|woff)$/i,
     use: [
       {
-        loader: "file-loader",
+        loader: 'file-loader',
       },
     ],
   };
@@ -57,8 +57,6 @@ const buildLoaders = ({ isDev }: BuildOptions): RuleSetRule[] => {
   return [fileLoader, svgLoader, babelLoader, typescriptLoader, cssLoader];
 };
 
-export const moduleBuildLoaders = (options: BuildOptions): ModuleOptions => {
-  return {
-    rules: buildLoaders(options),
-  };
-};
+export const moduleBuildLoaders = (options: BuildOptions): ModuleOptions => ({
+  rules: buildLoaders(options),
+});
