@@ -1,2 +1,2 @@
-export { ThemeProvider, useTheme } from "./providers";
+export { ThemeProvider, useTheme, Theme, AppRouter } from "./providers";
 export { App } from "./App";

@@ -8,7 +8,7 @@ import { AppRouter, useTheme } from "./providers";
 import "./styles/index.scss";
 
 export const App = () => {
-  const { theme, toggleTheme } = useTheme();
+  const { theme } = useTheme();
 
   return (
     <div
@@ -19,7 +19,6 @@ export const App = () => {
     >
       <Navbar />
       <AppRouter />
-      <button onClick={toggleTheme}>TOGGLE</button>
     </div>
   );
 };
