@@ -1,5 +1,6 @@
 {
-    "TEXT" : "text",
+    "TEXT": "text",
     "TRANSLATION": "translation",
-    "LANG": "english"
+    "LANG": "english",
+    "NOT_FOUND_PAGE": "not found page"
 }
