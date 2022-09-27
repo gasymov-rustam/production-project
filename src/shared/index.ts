@@ -7,5 +7,5 @@ export {
   ThemeDecorator,
   RouterDecorator,
 } from './config';
-export { AppLink, AppLinkTheme, Button, ThemeButton, Loader } from './ui';
-export { DarkIcon, LightIcon } from './assets';
+export { AppLink, AppLinkTheme, Button, ButtonTheme, ButtonSize, Loader } from './ui';
+export { DarkIcon, LightIcon, AboutIcon, MainIcon } from './assets';

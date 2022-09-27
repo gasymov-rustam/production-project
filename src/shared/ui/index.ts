@@ -1,3 +1,3 @@
 export { AppLink, AppLinkTheme } from './AppLink';
-export { Button, ThemeButton } from './Button';
+export { Button, ButtonTheme, ButtonSize } from './Button';
 export { Loader } from './Loader';
