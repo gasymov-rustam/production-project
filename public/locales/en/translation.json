@@ -1,6 +1,8 @@
 {
-    "TEXT": "text",
-    "TRANSLATION": "translation",
-    "LANG": "english",
-    "NOT_FOUND_PAGE": "not found page"
+  "TEXT": "text",
+  "TRANSLATION": "translation",
+  "LANG": "english",
+  "NOT_FOUND_PAGE": "not found page",
+  "AN UNEXPECTED ERROR HAS OCCURRED": "An unexpected error has occurred",
+  "RELOAD PAGE": "Reload Page"
 }

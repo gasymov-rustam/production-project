@@ -14,10 +14,10 @@ export const App = () => {
         additional: [theme],
       })}
     >
-      <Suspense fallback="">
+      <Suspense fallback=''>
         <Navbar />
 
-        <div className="content-page">
+        <div className='content-page'>
           <Sidebar />
           <AppRouter />
         </div>
