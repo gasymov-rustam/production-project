@@ -32,7 +32,7 @@ jobs:
         run: npm run test
         if: always()
       - name: build storybook
-        run: npm run storybook:build
+        run: npm run sb:build
         if: always()
       - name: sb:build
         run: npm run test:ui:ci
