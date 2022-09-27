@@ -23,15 +23,17 @@ export const buildPlugins = ({ paths, isDev }: BuildOptions): WebpackPluginInsta
     new DefinePlugin({
       __IS_DEV__: JSON.stringify(isDev),
     }),
-    new BundleAnalyzerPlugin({
-      openAnalyzer: false,
-      analyzerPort: 3002,
-    }),
   ];
 
   if (isDev) {
     plugins.push(new HotModuleReplacementPlugin());
     plugins.push(new ReactRefreshWebpackPlugin());
+    plugins.push(
+      new BundleAnalyzerPlugin({
+        openAnalyzer: false,
+        analyzerPort: 3002,
+      })
+    );
   }
 
   return plugins;
