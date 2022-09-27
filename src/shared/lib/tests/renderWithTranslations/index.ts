@@ -1,1 +1,1 @@
-export { renderWithTranslations } from './renderWithTranslations';
+export { renderWithTranslation } from './renderWithTranslations';

@@ -32,7 +32,7 @@ export const Sidebar: FC<SidebarProps> = (props) => {
         <LangSwitcher className={cls.lang} />
       </div>
       <Button type='button' data-testid='sidebar-toggle' onClick={onToggle}>
-        {t('TOGGLE')}
+        {t('SIDE_BAR')}
       </Button>
     </div>
   );
