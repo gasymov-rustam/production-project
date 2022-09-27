@@ -30,9 +30,10 @@
     "allowSyntheticDefaultImports": true,
     "baseUrl": ".",
     "paths": {
-      "*": ["./src/*"]  
+      "*": [
+        "./src/*"
+      ]
     }
-
   },
   "ts-node": {
     "compilerOptions": {
