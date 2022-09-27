@@ -4,5 +4,6 @@
     "LANG": "русский",
     "NOT_FOUND_PAGE": "Страница не найдена",
     "AN UNEXPECTED ERROR HAS OCCURRED": "Произошла непредвиденная ошибка",
-    "RELOAD PAGE": "Перезагрузить страницу"
+    "RELOAD PAGE": "Перезагрузить страницу",
+    "TOGGLE": "изменить язык"
 }
