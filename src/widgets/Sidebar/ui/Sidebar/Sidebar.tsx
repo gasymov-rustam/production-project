@@ -52,12 +52,12 @@ export const Sidebar: FC<SidebarProps> = (props) => {
       <div className={cls.items}>
         <AppLink theme={AppLinkTheme.SECONDARY} to={RoutePath.main} className={cls.item}>
           <MainIcon className={cls.icon} />
-          <span className={cls.link}>{t('Главная')}</span>
+          <span className={cls.link}>{t('MAIN')}</span>
         </AppLink>
 
         <AppLink theme={AppLinkTheme.SECONDARY} to={RoutePath.about} className={cls.item}>
           <AboutIcon className={cls.icon} />
-          <span className={cls.link}>{t('О сайте')}</span>
+          <span className={cls.link}>{t('ABOUT')}</span>
         </AppLink>
       </div>
 

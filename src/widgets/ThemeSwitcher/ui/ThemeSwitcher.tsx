@@ -1,7 +1,6 @@
 import { FC } from 'react';
 import { Theme, useTheme } from '../../../app';
 import { classNames, LightIcon, DarkIcon, Button, ButtonTheme } from '../../../shared';
-// import cls from './ThemeSwitcher.module.scss';
 
 interface ThemeSwitcherProps {
   className?: string;

@@ -3,11 +3,17 @@
   "ABOUT PAGE": "ABOUT PAGE",
   "AN UNEXPECTED ERROR HAS OCCURRED": "AN UNEXPECTED ERROR HAS OCCURRED",
   "LANG": "LANG",
+  "Lorem ipsum dolor sit amet, consectetur adipisicing elit": {
+    " Aliquid \n          commodi consequatur eligendi impedit incidunt necessitatibus \n          possimus quis saepe sunt totam": {
+      "": ""
+    }
+  },
   "MAIN": "MAIN",
   "MAIN PAGE": "MAIN PAGE",
   "NOT_FOUND_PAGE": "NOT_FOUND_PAGE",
   "RELOAD PAGE": "RELOAD PAGE",
   "SIDE_BAR": "SIDE_BAR",
+  "SIGN IN": "SIGN IN",
   "TOGGLE": "TOGGLE",
   "Главная": "Главная",
   "О сайте": "О сайте"
