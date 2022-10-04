@@ -7,12 +7,7 @@ export const App = () => {
   const { theme } = useTheme();
 
   return (
-    <div
-      className={classNames({
-        cls: 'app',
-        additional: [theme],
-      })}
-    >
+    <div className={classNames({ cls: 'app' })}>
       <Suspense fallback=''>
         <Navbar />
 
