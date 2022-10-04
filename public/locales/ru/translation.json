@@ -1,13 +1,15 @@
 {
-    "TEXT": "текст",
-    "TRANSLATION": "перевод",
-    "LANG": "русский",
-    "NOT_FOUND_PAGE": "Страница не найдена",
-    "AN UNEXPECTED ERROR HAS OCCURRED": "Произошла непредвиденная ошибка",
-    "RELOAD PAGE": "Перезагрузить страницу",
-    "SIDE_BAR": "Боковое меню",
-    "ABOUT": "о сайте",
-    "MAIN": "главная",
-    "SHORT_LANG": "ru",
-    "SIGN IN": "Войти"
+  "TEXT": "текст",
+  "TRANSLATION": "перевод",
+  "LANG": "русский",
+  "NOT_FOUND_PAGE": "Страница не найдена",
+  "AN UNEXPECTED ERROR HAS OCCURRED": "Произошла непредвиденная ошибка",
+  "RELOAD PAGE": "Перезагрузить страницу",
+  "SIDE_BAR": "Боковое меню",
+  "ABOUT": "о сайте",
+  "MAIN": "главная",
+  "SHORT_LANG": "ru",
+  "SIGN IN": "Войти",
+  "DECREMENT": "Декремент",
+  "INCREMENT": "Инкремент"
 }

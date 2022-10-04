@@ -9,5 +9,7 @@
   "MAIN": "main",
   "ABOUT": "about",
   "SHORT_LANG": "en",
-  "SIGN IN": "Sign in"
+  "SIGN IN": "Sign in",
+  "DECREMENT": "Decrement",
+  "INCREMENT": "Increment"
 }

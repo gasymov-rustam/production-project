@@ -18,6 +18,9 @@ const config: Config.InitialOptions = {
     '\\.s?css$': 'identity-obj-proxy',
     '\\.svg': path.resolve(__dirname, 'jestEmptyComponent.tsx'),
   },
+  globals: {
+    __IS_DEV__: true,
+  },
 };
 
 export default config;
