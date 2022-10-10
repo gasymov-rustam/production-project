@@ -1,12 +1,16 @@
 {
+  "": "",
   "ABOUT": "ABOUT",
   "ABOUT PAGE": "",
   "AN UNEXPECTED ERROR HAS OCCURRED": "AN UNEXPECTED ERROR HAS OCCURRED",
+  "AUTHORIZATION": "",
+  "Authorization": "",
   "DECREMENT": "DECREMENT",
   "ENTER": "ENTER",
   "ENTER YOUR PASSWORD": "ENTER YOUR PASSWORD",
   "ENTER YOUR USERNAME": "ENTER YOUR USERNAME",
   "INCREMENT": "INCREMENT",
+  "INVALID NAME OR PASSWORD!": "",
   "Increment": "Increment",
   "LANG": "",
   "Lorem ipsum dolor sit amet, consectetur adipisicing elit": {
@@ -20,6 +24,7 @@
   "RELOAD PAGE": "RELOAD PAGE",
   "SIDE_BAR": "SIDE_BAR",
   "SIGN IN": "SIGN IN",
+  "SIGN OUT": "",
   "TOGGLE": "",
   "Главная": "",
   "О сайте": ""

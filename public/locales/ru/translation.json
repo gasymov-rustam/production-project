@@ -1,6 +1,6 @@
 {
   "TEXT": "текст",
-  "TRANSLATION": "перевод",
+  "TRANSLATION": "AUTHORIZATION",
   "LANG": "русский",
   "NOT_FOUND_PAGE": "Страница не найдена",
   "AN UNEXPECTED ERROR HAS OCCURRED": "Произошла непредвиденная ошибка",
@@ -10,9 +10,12 @@
   "MAIN": "главная",
   "SHORT_LANG": "ru",
   "SIGN IN": "Войти",
+  "SIGN OUT": "Выйти",
   "DECREMENT": "Декремент",
   "INCREMENT": "Инкремент",
   "ENTER": "Вход",
   "ENTER YOUR PASSWORD": "Введите Ваш пароль",
-  "ENTER YOUR USERNAME": "Введите Ваш логин"
+  "ENTER YOUR USERNAME": "Введите Ваш логин",
+  "INVALID NAME OR PASSWORD!": "Некорректный имейл или пароль!",
+  "AUTHORIZATION": "Авторизация"
 }

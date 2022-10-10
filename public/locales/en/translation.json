@@ -10,9 +10,12 @@
   "ABOUT": "about",
   "SHORT_LANG": "en",
   "SIGN IN": "Sign in",
+  "SIGN OUT": "Sign out",
   "DECREMENT": "Decrement",
   "INCREMENT": "Increment",
   "ENTER": "Enter",
   "ENTER YOUR USERNAME": "Enter your username",
-  "ENTER YOUR PASSWORD": "Enter your password"
+  "ENTER YOUR PASSWORD": "Enter your password",
+  "AUTHORIZATION": "Authorization",
+  "INVALID NAME OR PASSWORD!": "Invalid name or password"
 }
