@@ -16,5 +16,6 @@ export {
   Loader,
   Modal,
   Portal,
+  Input,
 } from './ui';
 export { DarkIcon, LightIcon, AboutIcon, MainIcon } from './assets';

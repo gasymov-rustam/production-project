@@ -11,5 +11,8 @@
   "SHORT_LANG": "ru",
   "SIGN IN": "Войти",
   "DECREMENT": "Декремент",
-  "INCREMENT": "Инкремент"
+  "INCREMENT": "Инкремент",
+  "ENTER": "Вход",
+  "ENTER YOUR PASSWORD": "Введите Ваш пароль",
+  "ENTER YOUR USERNAME": "Введите Ваш логин"
 }

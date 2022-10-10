@@ -1,21 +1,17 @@
 import { Suspense } from 'react';
 import { classNames } from '../shared';
 import { Navbar, Sidebar } from '../widgets';
-import { AppRouter, useTheme } from './providers';
+import { AppRouter } from './providers';
 
-export const App = () => {
-  const { theme } = useTheme();
+export const App = () => (
+  <div className={classNames({ cls: 'app' })}>
+    <Suspense fallback=''>
+      <Navbar />
 
-  return (
-    <div className={classNames({ cls: 'app' })}>
-      <Suspense fallback=''>
-        <Navbar />
-
-        <div className='content-page'>
-          <Sidebar />
-          <AppRouter />
-        </div>
-      </Suspense>
-    </div>
-  );
-};
+      <div className='content-page'>
+        <Sidebar />
+        <AppRouter />
+      </div>
+    </Suspense>
+  </div>
+);
