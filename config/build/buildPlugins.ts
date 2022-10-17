@@ -10,7 +10,7 @@ import ReactRefreshWebpackPlugin from '@pmmmwh/react-refresh-webpack-plugin';
 import { BundleAnalyzerPlugin } from 'webpack-bundle-analyzer';
 import type { BuildOptions } from './types';
 
-export const buildPlugins = ({ paths, isDev }: BuildOptions): WebpackPluginInstance[] => {
+export const buildPlugins = ({ paths, isDev, apiUrl }: BuildOptions): WebpackPluginInstance[] => {
   const plugins = [
     new HTMLWebpackPlugin({
       template: paths.html,
@@ -22,6 +22,7 @@ export const buildPlugins = ({ paths, isDev }: BuildOptions): WebpackPluginInsta
     }),
     new DefinePlugin({
       __IS_DEV__: JSON.stringify(isDev),
+      __API__: JSON.stringify(apiUrl),
     }),
   ];
 
