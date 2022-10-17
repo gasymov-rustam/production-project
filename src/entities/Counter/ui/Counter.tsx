@@ -1,12 +1,12 @@
 import { useTranslation } from 'react-i18next';
-import { useDispatch, useSelector } from 'react-redux';
-import { Button } from '../../../shared';
+import { useSelector } from 'react-redux';
+import { Button, useAppDispatch } from '../../../shared';
 import { countersActions, getCounterValue } from '../models';
 
 export const Counter = () => {
   const counterValue = useSelector(getCounterValue);
   const { t } = useTranslation();
-  const dispatch = useDispatch();
+  const dispatch = useAppDispatch();
 
   const increment = () => dispatch(countersActions.increment());
   const decrement = () => dispatch(countersActions.decrement());

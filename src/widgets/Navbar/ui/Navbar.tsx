@@ -1,9 +1,9 @@
 import { FC, useCallback, useState } from 'react';
 import { useTranslation } from 'react-i18next';
-import { useDispatch, useSelector } from 'react-redux';
+import { useSelector } from 'react-redux';
 import { getUserAuthData, userActions } from '../../../entities';
 import { LoginModal } from '../../../features';
-import { Button, ButtonTheme, classNames } from '../../../shared';
+import { Button, ButtonTheme, classNames, useAppDispatch } from '../../../shared';
 import cls from './Navbar.module.scss';
 
 interface NavbarProps {
@@ -14,7 +14,7 @@ export const Navbar: FC<NavbarProps> = ({ className }) => {
   const { t } = useTranslation();
   const [isAuthModal, setIsAuthModal] = useState(false);
   const userData = useSelector(getUserAuthData);
-  const dispatch = useDispatch();
+  const dispatch = useAppDispatch();
 
   const onCloseModal = useCallback(() => {
     setIsAuthModal(false);
