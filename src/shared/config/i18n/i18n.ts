@@ -16,6 +16,10 @@ i18n
       escapeValue: false, // not needed for react as it escapes by default
     },
 
+    // react: {
+    //   useSuspense: false,
+    // },
+
     backend: {
       loadPath: '/locales/{{lng}}/{{ns}}.json',
     },

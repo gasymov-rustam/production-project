@@ -1,19 +1,41 @@
 import { memo, useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useDispatch, useSelector } from 'react-redux';
-import { Button, classNames, Input, Text, TextTheme } from '../../../../shared';
-import { getLoginState, loginActions, loginByUserName } from '../../model';
+import {
+  Button,
+  classNames,
+  DynamicModuleLoader,
+  Input,
+  Text,
+  TextTheme,
+} from '../../../../shared';
+import {
+  getLoginError,
+  getLoginIsLoading,
+  getLoginPassword,
+  getLoginUsername,
+  loginActions,
+  loginByUserName,
+  loginReducer,
+} from '../../model';
+import type { ReducersList } from '../../../../shared';
 
 import cls from './LoginForm.module.scss';
 
-interface LoginFormProps {
+const initialReducers: ReducersList = {
+  loginForm: loginReducer,
+};
+export interface LoginFormProps {
   className?: string;
 }
 
-export const LoginForm = memo(({ className }: LoginFormProps) => {
-  const { userName, password, isLoading, error } = useSelector(getLoginState);
-  const { t } = useTranslation();
+const LoginForm = memo(({ className }: LoginFormProps) => {
+  const userName = useSelector(getLoginUsername);
+  const password = useSelector(getLoginPassword);
+  const isLoading = useSelector(getLoginIsLoading);
+  const error = useSelector(getLoginError);
   const dispatch = useDispatch();
+  const { t } = useTranslation();
 
   const onChangeUserName = useCallback(
     (value: string) => {
@@ -34,30 +56,34 @@ export const LoginForm = memo(({ className }: LoginFormProps) => {
   }, [dispatch, password, userName]);
 
   return (
-    <div className={classNames({ cls: cls.LoginForm, additional: [className] })}>
-      <Text title={t('AUTHORIZATION')} />
+    <DynamicModuleLoader reducers={initialReducers}>
+      <div className={classNames({ cls: cls.LoginForm, additional: [className] })}>
+        <Text title={t('AUTHORIZATION')} />
 
-      {error && <Text text={t('INVALID NAME OR PASSWORD!')} theme={TextTheme.ERROR} />}
+        {error && <Text text={t('INVALID NAME OR PASSWORD!')} theme={TextTheme.ERROR} />}
 
-      <Input
-        autofocus
-        placeholder={t('ENTER YOUR USERNAME')}
-        type='text'
-        value={userName}
-        className={cls.input}
-        onChange={onChangeUserName}
-      />
-      <Input
-        placeholder={t('ENTER YOUR PASSWORD')}
-        type='text'
-        value={password}
-        className={cls.input}
-        onChange={onChangePassword}
-      />
+        <Input
+          autofocus
+          placeholder={t('ENTER YOUR USERNAME')}
+          type='text'
+          value={userName}
+          className={cls.input}
+          onChange={onChangeUserName}
+        />
+        <Input
+          placeholder={t('ENTER YOUR PASSWORD')}
+          type='text'
+          value={password}
+          className={cls.input}
+          onChange={onChangePassword}
+        />
 
-      <Button disabled={isLoading} className={cls.loginBtn} onClick={onLoginClick}>
-        {t('ENTER')}
-      </Button>
-    </div>
+        <Button disabled={isLoading} className={cls.loginBtn} onClick={onLoginClick}>
+          {t('ENTER')}
+        </Button>
+      </div>
+    </DynamicModuleLoader>
   );
 });
+
+export default LoginForm;

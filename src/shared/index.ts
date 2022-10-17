@@ -1,4 +1,5 @@
-export { classNames } from './lib';
+export { classNames, SuspenseLoader, DynamicModuleLoader } from './lib';
+export type { ReducersList } from './lib';
 export {
   AppRoutes,
   RoutePath,
@@ -7,7 +8,6 @@ export {
   ThemeDecorator,
   RouterDecorator,
   StoreDecorator,
-  TranslationDecorator,
 } from './config';
 export {
   Text,
