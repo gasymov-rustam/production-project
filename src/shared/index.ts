@@ -1,10 +1,4 @@
-export {
-  classNames,
-  SuspenseLoader,
-  DynamicModuleLoader,
-  TestAsyncThunk,
-  useAppDispatch,
-} from './lib';
+export { classNames, SuspenseLoader, DynamicModuleLoader, useAppDispatch } from './lib';
 export type { ReducersList } from './lib';
 export {
   AppRoutes,
