@@ -8,6 +8,8 @@ export {
   ThemeDecorator,
   RouterDecorator,
   StoreDecorator,
+  Country,
+  Currency,
 } from './config';
 
 export {

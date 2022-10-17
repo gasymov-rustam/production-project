@@ -5,7 +5,7 @@ import {
   Reducer,
   ReducersMapObject,
 } from '@reduxjs/toolkit';
-import type { CounterSchema, UserSchema } from '../../../../entities';
+import type { CounterSchema, ProfileSchema, UserSchema } from '../../../../entities';
 import type { LoginSchema } from '../../../../features';
 
 export interface StateSchema {
@@ -13,6 +13,7 @@ export interface StateSchema {
   user: UserSchema;
 
   /** Async Reducers */
+  profile?: ProfileSchema;
   loginForm?: LoginSchema;
 }
 
