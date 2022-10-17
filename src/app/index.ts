@@ -11,4 +11,4 @@ export {
 
 export { App } from './App';
 
-export type { StateSchema, StateSchemaKey, ReduxStoreManager } from './providers';
+export type { StateSchema, StateSchemaKey, ReduxStoreManager, AppDispatch } from './providers';
