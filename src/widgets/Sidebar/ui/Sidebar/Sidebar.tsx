@@ -1,5 +1,4 @@
 import { FC, useMemo, useState } from 'react';
-import { useTranslation } from 'react-i18next';
 import { Button, ButtonSize, ButtonTheme, classNames } from '../../../../shared';
 import { LangSwitcher } from '../../../LangSwitcher';
 import { ThemeSwitcher } from '../../../ThemeSwitcher';
