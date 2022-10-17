@@ -9,6 +9,7 @@ export {
   RouterDecorator,
   StoreDecorator,
 } from './config';
+
 export {
   Text,
   TextTheme,
@@ -22,5 +23,6 @@ export {
   Portal,
   Input,
 } from './ui';
-export { DarkIcon, LightIcon, AboutIcon, MainIcon } from './assets';
+export { DarkIcon, LightIcon, AboutIcon, MainIcon, ProfileIcon } from './assets';
+
 export * from './constants';

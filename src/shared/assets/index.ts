@@ -1,1 +1,1 @@
-export { DarkIcon, LightIcon, AboutIcon, MainIcon } from './icons';
+export { DarkIcon, LightIcon, AboutIcon, MainIcon, ProfileIcon } from './icons';
