@@ -1,16 +1,16 @@
 import { ComponentMeta, ComponentStory } from '@storybook/react';
+import LoginForm from './LoginForm';
 import { StoreDecorator } from '../../../../shared';
-import { LoginFormAsync } from './LoginForm.async';
 
 export default {
   title: 'features/LoginForm',
-  component: LoginFormAsync,
+  component: LoginForm,
   argTypes: {
     backgroundColor: { control: 'color' },
   },
-} as ComponentMeta<typeof LoginFormAsync>;
+} as ComponentMeta<typeof LoginForm>;
 
-const Template: ComponentStory<typeof LoginFormAsync> = (args) => <LoginFormAsync {...args} />;
+const Template: ComponentStory<typeof LoginForm> = (args) => <LoginForm {...args} />;
 
 export const Primary = Template.bind({});
 Primary.args = {};
