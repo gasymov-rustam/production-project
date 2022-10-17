@@ -1,11 +1,9 @@
-import { FC } from 'react';
+import { memo } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Button } from '../../../shared';
 import cln from './PageError.module.scss';
 
-interface PageErrorProps {}
-
-export const PageError: FC<PageErrorProps> = () => {
+export const PageError = memo(() => {
   const { t } = useTranslation();
 
   const reloadPage = () => window.location.reload();
@@ -16,4 +14,4 @@ export const PageError: FC<PageErrorProps> = () => {
       <Button onClick={reloadPage}>{t('RELOAD PAGE')}</Button>
     </div>
   );
-};
+});

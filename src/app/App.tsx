@@ -1,10 +1,10 @@
-import { Suspense, useEffect } from 'react';
+import { memo, Suspense, useEffect } from 'react';
 import { userActions } from '../entities';
 import { classNames, useAppDispatch } from '../shared';
 import { Navbar, Sidebar } from '../widgets';
 import { AppRouter } from './providers';
 
-export const App = () => {
+export const App = memo(() => {
   const dispatch = useAppDispatch();
 
   useEffect(() => {
@@ -23,4 +23,4 @@ export const App = () => {
       </Suspense>
     </div>
   );
-};
+});

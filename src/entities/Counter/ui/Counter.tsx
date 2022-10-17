@@ -1,9 +1,10 @@
+import { memo } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
 import { Button, useAppDispatch } from '../../../shared';
 import { countersActions, getCounterValue } from '../models';
 
-export const Counter = () => {
+export const Counter = memo(() => {
   const counterValue = useSelector(getCounterValue);
   const { t } = useTranslation();
   const dispatch = useAppDispatch();
@@ -22,4 +23,4 @@ export const Counter = () => {
       </Button>
     </div>
   );
-};
+});
