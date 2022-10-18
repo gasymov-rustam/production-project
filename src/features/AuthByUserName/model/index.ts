@@ -5,6 +5,6 @@ export {
   getLoginError,
   getLoginIsLoading,
   getLoginPassword,
-  getLoginUsername,
+  getLoginUserName,
 } from './selectors';
 export type { LoginSchema } from './types';

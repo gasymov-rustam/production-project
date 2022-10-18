@@ -14,7 +14,7 @@ import {
   getLoginError,
   getLoginIsLoading,
   getLoginPassword,
-  getLoginUsername,
+  getLoginUserName,
   loginActions,
   loginByUserName,
   loginReducer,
@@ -32,7 +32,7 @@ export interface LoginFormProps {
 }
 
 const LoginForm = memo(({ className = '', onSuccess }: LoginFormProps) => {
-  const userName = useSelector(getLoginUsername);
+  const userName = useSelector(getLoginUserName);
   const password = useSelector(getLoginPassword);
   const isLoading = useSelector(getLoginIsLoading);
   const error = useSelector(getLoginError);
