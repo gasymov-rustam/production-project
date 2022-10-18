@@ -15,9 +15,11 @@ interface TextProps {
   theme?: TextTheme;
 }
 
-export const Text = memo(({ className, title, text, theme = TextTheme.PRIMARY }: TextProps) => (
-  <div className={classNames({ cls: cls.Text, additional: [className, cls[theme]] })}>
-    {title && <div className={cls.title}>{title}</div>}
-    {text && <div className={cls.text}>{text}</div>}
-  </div>
-));
+export const Text = memo(
+  ({ className = '', title, text, theme = TextTheme.PRIMARY }: TextProps) => (
+    <div className={classNames({ cls: cls.Text, additional: [className, cls[theme]] })}>
+      {title && <div className={cls.title}>{title}</div>}
+      {text && <div className={cls.text}>{text}</div>}
+    </div>
+  )
+);

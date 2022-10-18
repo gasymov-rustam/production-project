@@ -31,7 +31,7 @@ export interface LoginFormProps {
   onSuccess: () => void;
 }
 
-const LoginForm = memo(({ className, onSuccess }: LoginFormProps) => {
+const LoginForm = memo(({ className = '', onSuccess }: LoginFormProps) => {
   const userName = useSelector(getLoginUsername);
   const password = useSelector(getLoginPassword);
   const isLoading = useSelector(getLoginIsLoading);

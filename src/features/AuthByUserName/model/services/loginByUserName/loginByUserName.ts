@@ -1,5 +1,4 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
-import axios from 'axios';
 import { ThunkConfig } from '../../../../../app/providers';
 import { User, userActions } from '../../../../../entities';
 import { USER_LOCAL_STORAGE_KEY } from '../../../../../shared';
@@ -35,8 +34,10 @@ export const loginByUserName = createAsyncThunk<User, LoginByUserProps, ThunkCon
 
       return response.data;
     } catch (error) {
-      // eslint-disable-next-line no-console
-      console.error(error.message);
+      if (error instanceof Error) {
+        // eslint-disable-next-line no-console
+        console.error(error?.message);
+      }
       /* switch (error.status) {
         case ErrorsRespond.AUTH_ERROR: {
           return thunkApi.rejectWithValue('INVALID NAME OR PASSWORD!');

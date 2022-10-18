@@ -1,3 +1,4 @@
+import { memo } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
 import { Button, ButtonTheme, classNames, Input, Text } from '../../../../shared';
@@ -8,7 +9,7 @@ interface ProfileCardProps {
   className?: string;
 }
 
-export const ProfileCard = ({ className }: ProfileCardProps) => {
+export const ProfileCard = memo(({ className = '' }: ProfileCardProps) => {
   const { t } = useTranslation('profile');
   const data = useSelector(getProfileData);
   /*  const isLoading = useSelector(getProfileIsLoading);
@@ -28,4 +29,4 @@ export const ProfileCard = ({ className }: ProfileCardProps) => {
       </div>
     </div>
   );
-};
+});

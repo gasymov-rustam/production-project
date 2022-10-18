@@ -8,7 +8,7 @@ interface LoginModalProps {
   onClose: () => void;
 }
 
-export const LoginModal = memo(({ className, isOpen, onClose }: LoginModalProps) => (
+export const LoginModal = memo(({ className = '', isOpen, onClose }: LoginModalProps) => (
   <Modal className={classNames({ additional: [className] })} isOpen={isOpen} lazy onClose={onClose}>
     <SuspenseLoader>
       <LoginFormAsync onSuccess={onClose} />

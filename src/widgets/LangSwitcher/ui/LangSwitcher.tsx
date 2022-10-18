@@ -10,7 +10,7 @@ interface LangSwitcherProps {
 
 export const LangSwitcher = memo((props: LangSwitcherProps) => {
   const { t, i18n } = useTranslation();
-  const { className, short } = props;
+  const { className = '', short } = props;
 
   const toggle = () => {
     i18n.changeLanguage(i18n.language === 'ru' ? 'en' : 'ru');

@@ -10,7 +10,7 @@ interface ProfilePageProps {
   className?: string;
 }
 
-const ProfilePage = memo(({ className }: ProfilePageProps) => {
+const ProfilePage = memo(({ className = '' }: ProfilePageProps) => {
   const dispatch = useAppDispatch();
 
   useEffect(() => {

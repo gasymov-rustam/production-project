@@ -6,7 +6,7 @@ interface LoaderProps {
   className?: string;
 }
 
-export const Loader = memo(({ className }: LoaderProps) => (
+export const Loader = memo(({ className = '' }: LoaderProps) => (
   <div className={classNames({ cls: 'lds-ellipsis', additional: [className] })}>
     <div />
     <div />

@@ -22,7 +22,7 @@ interface InputProps extends HTMLInputProps {
 
 export const Input = memo((props: InputProps) => {
   const {
-    className,
+    className = '',
     value,
     onChange,
     type = 'text',

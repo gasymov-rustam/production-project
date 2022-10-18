@@ -1,4 +1,4 @@
-type Mods = Record<string, boolean | string>;
+export type Mods = Record<string, boolean | string | undefined>;
 
 interface IClassNames {
   cls?: string;
@@ -6,10 +6,11 @@ interface IClassNames {
   additional?: string[];
 }
 
-export const classNames = ({ cls = '', mods = {}, additional = [] }: IClassNames): string => [
-  cls,
-  ...additional.filter(Boolean),
-  ...Object.entries(mods)
-    .filter(([_, value]) => Boolean(value))
-    .map(([classNames]) => classNames),
-].join(' ');
+export const classNames = ({ cls = '', mods = {}, additional = [] }: IClassNames): string =>
+  [
+    cls,
+    ...additional.filter(Boolean),
+    ...Object.entries(mods)
+      .filter(([_, value]) => Boolean(value))
+      .map(([classNames]) => classNames),
+  ].join(' ');

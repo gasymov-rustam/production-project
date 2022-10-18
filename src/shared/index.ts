@@ -1,5 +1,5 @@
 export { classNames, SuspenseLoader, DynamicModuleLoader, useAppDispatch } from './lib';
-export type { ReducersList } from './lib';
+export type { ReducersList, Mods } from './lib';
 export {
   AppRoutes,
   RoutePath,
