@@ -2,9 +2,13 @@
   "": "",
   "ABOUT": "ABOUT",
   "ABOUT PAGE": "",
+  "AN ERROR OCCURED WHILE LOADING THE PROFILE": "AN ERROR OCCURED WHILE LOADING THE PROFILE",
+  "AN ERROR OCCURRED WHILE LOADING THE PROFILE": "AN ERROR OCCURRED WHILE LOADING THE PROFILE",
   "AN UNEXPECTED ERROR HAS OCCURRED": "AN UNEXPECTED ERROR HAS OCCURRED",
   "AUTHORIZATION": "",
+  "AVATAR LINK": "AVATAR LINK",
   "Authorization": "",
+  "CANCEL": "CANCEL",
   "DECREMENT": "DECREMENT",
   "EDIT": "EDIT",
   "ENTER": "ENTER",
@@ -14,6 +18,7 @@
   "INVALID NAME OR PASSWORD!": "",
   "Increment": "Increment",
   "LANG": "",
+  "LINK AVATAR": "LINK AVATAR",
   "Lorem ipsum dolor sit amet, consectetur adipisicing elit": {
     " Aliquid \n          commodi consequatur eligendi impedit incidunt necessitatibus \n          possimus quis saepe sunt totam": {
       "": ""
@@ -22,15 +27,25 @@
   "MAIN": "MAIN",
   "MAIN PAGE": "",
   "NOT_FOUND_PAGE": "NOT_FOUND_PAGE",
+  "OCCURREDE": "OCCURREDE",
   "PROFILE": "PROFILE",
   "PROFILE PAGE": "PROFILE PAGE",
   "RELOAD PAGE": "RELOAD PAGE",
+  "SAVE": "SAVE",
+  "SET COUNTRY": "",
+  "SET CURRENCY": "SET CURRENCY",
+  "SET CURRENCy": "",
   "SIDE_BAR": "SIDE_BAR",
   "SIGN IN": "SIGN IN",
   "SIGN OUT": "",
   "TOGGLE": "",
+  "TRY REFRESH PAGE": "TRY REFRESH PAGE",
+  "YOUR AGE": "YOUR AGE",
+  "YOUR CITY": "YOUR CITY",
   "YOUR FIRST NAME": "YOUR FIRST NAME",
   "YOUR LAST NAME": "YOUR LAST NAME",
+  "YOUR USER NAME": "YOUR USER NAME",
   "Главная": "",
-  "О сайте": ""
+  "О сайте": "",
+  "Укажите валюту": ""
 }

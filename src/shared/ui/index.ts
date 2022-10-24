@@ -1,7 +1,9 @@
 export { AppLink, AppLinkTheme } from './AppLink';
-export { Text, TextTheme } from './Text';
-export { Button, ButtonTheme, ButtonSize } from './Button';
+export { Avatar } from './Avatar';
+export { Button, ButtonSize, ButtonTheme } from './Button';
+export { Input } from './Input';
 export { Loader } from './Loader';
 export { Modal } from './Modal';
 export { Portal } from './Portal';
-export { Input } from './Input';
+export { Select } from './Select';
+export { Text, TextAlign, TextTheme } from './Text';

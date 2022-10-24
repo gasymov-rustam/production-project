@@ -1,7 +1,15 @@
 {
-  "PROFILE PAGE": "profile page",
+  "PROFILE PAGE": "Profile page",
   "PROFILE": "Profile",
   "EDIT": "Edit",
   "YOUR FIRST NAME": "Your first name",
-  "YOUR LAST NAME": "Your Last name"
+  "YOUR LAST NAME": "Your Last name",
+  "YOUR USER NAME": "Your User name",
+  "AVATAR LINK": "Link for avatar",
+  "YOUR CITY": "Your city",
+  "YOUR AGE": "Your age",
+  "AN ERROR OCCURRED WHILE LOADING THE PROFILE": "An error occurred while loading the profile",
+  "TRY REFRESH PAGE": "Try refreshing the page",
+  "CANCEL": "Cancel",
+  "SAVE": "Save"
 }

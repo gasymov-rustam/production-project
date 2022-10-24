@@ -7,6 +7,7 @@ export interface SidebarItemType {
   text: string;
   namespace: string;
   Icon: VFC<SVGProps<SVGAElement>>;
+  authOnly?: boolean;
 }
 
 export const SidebarItemsList: SidebarItemType[] = [
@@ -27,5 +28,6 @@ export const SidebarItemsList: SidebarItemType[] = [
     Icon: ProfileIcon,
     namespace: 'profile',
     text: 'PROFILE PAGE',
+    authOnly: true,
   },
 ];

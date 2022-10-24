@@ -1,14 +1,14 @@
 {
-  "TEXT": "text",
+  "TEXT": "Text",
   "TRANSLATION": "translation",
   "LANG": "english",
-  "NOT_FOUND_PAGE": "not found page",
+  "NOT_FOUND_PAGE": "Not found page",
   "AN UNEXPECTED ERROR HAS OCCURRED": "An unexpected error has occurred",
   "RELOAD PAGE": "Reload Page",
   "SIDE_BAR": "sidebar",
-  "MAIN": "main",
-  "ABOUT": "about",
-  "PROFILE": "profile",
+  "MAIN": "Main",
+  "ABOUT": "About",
+  "PROFILE": "Profile",
   "SHORT_LANG": "en",
   "SIGN IN": "Sign in",
   "SIGN OUT": "Sign out",
@@ -18,5 +18,7 @@
   "ENTER YOUR USERNAME": "Enter your username",
   "ENTER YOUR PASSWORD": "Enter your password",
   "AUTHORIZATION": "Authorization",
-  "INVALID NAME OR PASSWORD!": "Invalid name or password"
+  "INVALID NAME OR PASSWORD!": "Invalid name or password",
+  "SET CURRENCY": "Set Currency",
+  "SET COUNTRY": "Set Country"
 }

@@ -8,16 +8,29 @@ export enum TextTheme {
   ERROR = 'error',
 }
 
+export enum TextAlign {
+  RIGHT = 'right',
+  LEFT = 'left',
+  CENTER = 'center',
+}
+
 interface TextProps {
   className?: string;
   title?: string;
   text?: string;
   theme?: TextTheme;
+  align?: TextAlign;
 }
 
 export const Text = memo(
-  ({ className = '', title, text, theme = TextTheme.PRIMARY }: TextProps) => (
-    <div className={classNames({ cls: cls.Text, additional: [className, cls[theme]] })}>
+  ({
+    className = '',
+    title,
+    text,
+    theme = TextTheme.PRIMARY,
+    align = TextAlign.CENTER,
+  }: TextProps) => (
+    <div className={classNames({ cls: cls.Text, additional: [className, cls[theme], cls[align]] })}>
       {title && <div className={cls.title}>{title}</div>}
       {text && <div className={cls.text}>{text}</div>}
     </div>

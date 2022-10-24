@@ -1,30 +1,29 @@
-export { classNames, SuspenseLoader, DynamicModuleLoader, useAppDispatch } from './lib';
-export type { ReducersList, Mods } from './lib';
+export { AboutIcon, DarkIcon, LightIcon, MainIcon, ProfileIcon } from './assets';
 export {
   AppRoutes,
-  RoutePath,
   routeConfig,
-  StyleDecorator,
-  ThemeDecorator,
+  RoutePath,
   RouterDecorator,
   StoreDecorator,
-  Country,
-  Currency,
+  StyleDecorator,
+  ThemeDecorator,
 } from './config';
-
+export * from './constants';
+export { classNames, DynamicModuleLoader, SuspenseLoader, useAppDispatch } from './lib';
+export type { Mods, ReducersList } from './lib';
 export {
-  Text,
-  TextTheme,
   AppLink,
   AppLinkTheme,
+  Avatar,
   Button,
-  ButtonTheme,
   ButtonSize,
+  ButtonTheme,
+  Input,
   Loader,
   Modal,
   Portal,
-  Input,
+  Select,
+  Text,
+  TextAlign,
+  TextTheme,
 } from './ui';
-export { DarkIcon, LightIcon, AboutIcon, MainIcon, ProfileIcon } from './assets';
-
-export * from './constants';

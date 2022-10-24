@@ -1,14 +1,14 @@
 {
-  "TEXT": "текст",
+  "TEXT": "Текст",
   "TRANSLATION": "AUTHORIZATION",
   "LANG": "русский",
   "NOT_FOUND_PAGE": "Страница не найдена",
   "AN UNEXPECTED ERROR HAS OCCURRED": "Произошла непредвиденная ошибка",
   "RELOAD PAGE": "Перезагрузить страницу",
   "SIDE_BAR": "Боковое меню",
-  "ABOUT": "о сайте",
-  "MAIN": "главная",
-  "PROFILE": "профиль",
+  "ABOUT": "О сайте",
+  "MAIN": "Главная",
+  "PROFILE": "Профиль",
   "SHORT_LANG": "ru",
   "SIGN IN": "Войти",
   "SIGN OUT": "Выйти",
@@ -18,5 +18,7 @@
   "ENTER YOUR PASSWORD": "Введите Ваш пароль",
   "ENTER YOUR USERNAME": "Введите Ваш логин",
   "INVALID NAME OR PASSWORD!": "Некорректный имейл или пароль!",
-  "AUTHORIZATION": "Авторизация"
+  "AUTHORIZATION": "Авторизация",
+  "SET CURRENCY": "Укажите валюту",
+  "SET COUNTRY": "Укажите страну"
 }

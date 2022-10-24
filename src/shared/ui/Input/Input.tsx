@@ -7,17 +7,21 @@ import {
   useRef,
   useState,
 } from 'react';
-import { classNames } from '../../lib';
+import { classNames, Mods } from '../../lib';
 
 import cls from './Input.module.scss';
 
-type HTMLInputProps = Omit<InputHTMLAttributes<HTMLInputElement>, 'value' | 'onChange'>;
+type HTMLInputProps = Omit<
+  InputHTMLAttributes<HTMLInputElement>,
+  'value' | 'onChange' | 'readonly'
+>;
 
 interface InputProps extends HTMLInputProps {
   className?: string;
-  value?: string;
+  value?: string | number;
   onChange?: (str: string) => void;
   autofocus?: boolean;
+  readonly?: boolean;
 }
 
 export const Input = memo((props: InputProps) => {
@@ -28,6 +32,7 @@ export const Input = memo((props: InputProps) => {
     type = 'text',
     placeholder,
     autofocus,
+    readonly = false,
     ...otherProps
   } = props;
   const [caretPosition, setCaretPosition] = useState(0);
@@ -52,6 +57,10 @@ export const Input = memo((props: InputProps) => {
     setCaretPosition(target?.selectionStart ?? 0);
   };
 
+  const mods: Mods = {
+    [cls.readonly]: readonly,
+  };
+
   useEffect(() => {
     if (autofocus) {
       setIsFocused(true);
@@ -68,7 +77,8 @@ export const Input = memo((props: InputProps) => {
           ref={inputRef}
           type={type}
           value={value}
-          className={cls.input}
+          readOnly={readonly}
+          className={classNames({ cls: cls.input, mods })}
           {...otherProps}
           onBlur={onBlur}
           onFocus={onFocus}
@@ -76,7 +86,9 @@ export const Input = memo((props: InputProps) => {
           onChange={onChangeHandler}
         />
 
-        {isFocused && <span className={cls.caret} style={{ left: caretPosition * 9 }} />}
+        {isFocused && !readonly && (
+          <span className={cls.caret} style={{ left: caretPosition * 9 }} />
+        )}
       </div>
     </div>
   );
