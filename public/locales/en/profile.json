@@ -11,5 +11,11 @@
   "AN ERROR OCCURRED WHILE LOADING THE PROFILE": "An error occurred while loading the profile",
   "TRY REFRESH PAGE": "Try refreshing the page",
   "CANCEL": "Cancel",
-  "SAVE": "Save"
+  "SAVE": "Save",
+  "INCORRECT_USER_DATA": "Incorrect user data",
+  "INCORRECT_AGE": "Incorrect user age",
+  "INCORRECT_COUNTRY": "Incorrect user country",
+  "INCORRECT_CITY": "Incorrect user city",
+  "NO_DATA": "Incorrect data",
+  "SERVER_ERROR": "Server response with error, try again"
 }
