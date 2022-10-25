@@ -1,3 +1,4 @@
+import ReactRefreshWebpackPlugin from '@pmmmwh/react-refresh-webpack-plugin';
 import HTMLWebpackPlugin from 'html-webpack-plugin';
 import MiniCssExtractPlugin from 'mini-css-extract-plugin';
 import {
@@ -6,11 +7,15 @@ import {
   ProgressPlugin,
   WebpackPluginInstance,
 } from 'webpack';
-import ReactRefreshWebpackPlugin from '@pmmmwh/react-refresh-webpack-plugin';
 import { BundleAnalyzerPlugin } from 'webpack-bundle-analyzer';
 import type { BuildOptions } from './types';
 
-export const buildPlugins = ({ paths, isDev, apiUrl }: BuildOptions): WebpackPluginInstance[] => {
+export const buildPlugins = ({
+  paths,
+  isDev,
+  apiUrl,
+  project,
+}: BuildOptions): WebpackPluginInstance[] => {
   const plugins = [
     new HTMLWebpackPlugin({
       template: paths.html,
@@ -23,6 +28,7 @@ export const buildPlugins = ({ paths, isDev, apiUrl }: BuildOptions): WebpackPlu
     new DefinePlugin({
       __IS_DEV__: JSON.stringify(isDev),
       __API__: JSON.stringify(apiUrl),
+      __PROJECT__: JSON.stringify(project),
     }),
   ];
 

@@ -91,6 +91,7 @@ const ProfilePage = memo(({ className = '' }: ProfilePageProps) => {
     },
     [dispatch]
   );
+
   const onChangeAvatar = useCallback(
     (value?: string) => {
       dispatch(profileActions.updateProfile({ city: value ?? '' }));
@@ -113,7 +114,9 @@ const ProfilePage = memo(({ className = '' }: ProfilePageProps) => {
   );
 
   useEffect(() => {
-    dispatch(fetchProfileData());
+    if (__PROJECT__ !== 'storybook') {
+      dispatch(fetchProfileData());
+    }
   }, [dispatch]);
 
   return (
