@@ -1,1 +1,2 @@
-export {buildCssLoader} from './buildCssLoader'
+export { buildBabelLoader } from './buildBabelLoader';
+export { buildCssLoader } from './buildCssLoader';
