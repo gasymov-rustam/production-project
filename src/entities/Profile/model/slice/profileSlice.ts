@@ -23,7 +23,7 @@ export const profileSlice = createSlice({
       state.validateError = undefined;
     },
     updateProfile: (state, { payload }: PayloadAction<Profile>) => {
-      state.form = { ...state.data, ...payload };
+      state.form = { ...state.form, ...payload };
     },
   },
   extraReducers: (builder) => {
