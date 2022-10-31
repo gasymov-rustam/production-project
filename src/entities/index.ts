@@ -12,3 +12,14 @@ export { Currency, CurrencySelect } from './Currency';
 export type { Profile, ProfileSchema } from './Profile';
 export { getUserAuthData, getUserInited, userActions, userReducer } from './User';
 export type { User, UserSchema } from './User';
+export type { Article, ArticleDetailsSchema } from './Article';
+export {
+  ArticleDetails,
+  articleDetailsActions,
+  articleDetailsReducer,
+  articleDetailsName,
+  fetchArticleById,
+  getArticleDetailsData,
+  getArticleDetailsError,
+  getArticleDetailsIsLoading,
+} from './Article';

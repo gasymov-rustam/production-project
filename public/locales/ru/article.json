@@ -1,4 +1,6 @@
 {
   "ARTICLES PAGE": "Страница статей",
-  "ARTICLE DETAILS PAGE": "Детальнее о статье"
+  "ARTICLE DETAILS PAGE": "Детальнее о статье",
+  "ARTICLE DETAILS NOT FOUND": "Статья не найдена",
+  "AN ERROR OCCURRED WHILE LOADING THE PROFILE": "Произошла ошибка при загрузке статьи"
 }

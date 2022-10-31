@@ -1,4 +1,6 @@
 {
   "ARTICLES PAGE": "Articles page",
-  "ARTICLE DETAILS PAGE": "Article Detail Page"
+  "ARTICLE DETAILS PAGE": "Article Details Page",
+  "ARTICLE DETAILS NOT FOUND": "Article Details Page has not been found",
+  "AN ERROR OCCURRED WHILE LOADING THE ARTICLE": "An error occurred while loading the article"
 }

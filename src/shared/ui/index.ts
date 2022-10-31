@@ -7,3 +7,4 @@ export { Modal } from './Modal';
 export { Portal } from './Portal';
 export { Select } from './Select';
 export { Text, TextAlign, TextTheme } from './Text';
+export { Skeleton } from './Skeleton';

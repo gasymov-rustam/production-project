@@ -39,4 +39,5 @@ export {
   Text,
   TextAlign,
   TextTheme,
+  Skeleton,
 } from './ui';

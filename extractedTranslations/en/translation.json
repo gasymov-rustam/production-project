@@ -5,6 +5,7 @@
   "AN ERROR OCCURED WHILE LOADING THE PROFILE": "AN ERROR OCCURED WHILE LOADING THE PROFILE",
   "AN ERROR OCCURRED WHILE LOADING THE PROFILE": "AN ERROR OCCURRED WHILE LOADING THE PROFILE",
   "AN UNEXPECTED ERROR HAS OCCURRED": "AN UNEXPECTED ERROR HAS OCCURRED",
+  "ARTICLE DETAILS NOT FOUND": "",
   "ARTICLE DETAILS PAGE": "",
   "ARTICLES PAGE": "",
   "AUTHORIZATION": "",
@@ -57,5 +58,8 @@
   "О сайте": "",
   "Попробуйте обновить страницу": "Попробуйте обновить страницу",
   "Произошла ошибка при загрузке профиля": "Произошла ошибка при загрузке профиля",
+  "Произошла ошибка при загрузке статьи": {
+    "": ""
+  },
   "Укажите валюту": ""
 }

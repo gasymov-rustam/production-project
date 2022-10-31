@@ -7,7 +7,13 @@ import {
 } from '@reduxjs/toolkit';
 import { AxiosInstance } from 'axios';
 import { NavigateOptions, To } from 'react-router-dom';
-import type { CounterSchema, ProfileSchema, UserSchema } from '../../../../entities';
+import type {
+  articleDetailsName,
+  ArticleDetailsSchema,
+  CounterSchema,
+  ProfileSchema,
+  UserSchema,
+} from '../../../../entities';
 import type { LoginSchema } from '../../../../features';
 
 export interface StateSchema {
@@ -17,6 +23,7 @@ export interface StateSchema {
   /** Async Reducers */
   profile?: ProfileSchema;
   loginForm?: LoginSchema;
+  [articleDetailsName]?: ArticleDetailsSchema;
 }
 
 export type StateSchemaKey = keyof StateSchema;
