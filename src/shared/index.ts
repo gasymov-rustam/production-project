@@ -1,6 +1,7 @@
 export { AboutIcon, avatarImg, DarkIcon, LightIcon, MainIcon, ProfileIcon } from './assets';
 export {
   AppRoutes,
+  AppRouterProps,
   routeConfig,
   RoutePath,
   RouterDecorator,

@@ -1,11 +1,13 @@
 import { memo, Suspense, useEffect } from 'react';
-import { userActions } from '../entities';
+import { useSelector } from 'react-redux';
+import { getUserInited, userActions } from '../entities';
 import { classNames, useAppDispatch } from '../shared';
 import { Navbar, Sidebar } from '../widgets';
 import { AppRouter } from './providers';
 
 export const App = memo(() => {
   const dispatch = useAppDispatch();
+  const inited = useSelector(getUserInited);
 
   useEffect(() => {
     dispatch(userActions.initAuthData());
@@ -18,7 +20,7 @@ export const App = memo(() => {
 
         <div className='content-page'>
           <Sidebar />
-          <AppRouter />
+          {inited && <AppRouter />}
         </div>
       </Suspense>
     </div>

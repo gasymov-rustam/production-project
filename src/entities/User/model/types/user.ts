@@ -5,4 +5,5 @@ export interface User {
 
 export interface UserSchema {
   authUser?: User;
+  _inited: boolean;
 }
