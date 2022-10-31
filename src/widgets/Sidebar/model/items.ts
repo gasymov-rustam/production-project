@@ -1,5 +1,5 @@
 import { SVGProps, VFC } from 'react';
-import { AboutIcon, MainIcon, ProfileIcon } from '../../../shared/assets';
+import { AboutIcon, ArticleIcon, MainIcon, ProfileIcon } from '../../../shared/assets';
 import { RoutePath } from '../../../shared/config';
 
 export interface SidebarItemType {
@@ -28,6 +28,13 @@ export const SidebarItemsList: SidebarItemType[] = [
     Icon: ProfileIcon,
     namespace: 'profile',
     text: 'PROFILE PAGE',
+    authOnly: true,
+  },
+  {
+    path: RoutePath.articles,
+    Icon: ArticleIcon,
+    namespace: 'article',
+    text: 'ARTICLES PAGE',
     authOnly: true,
   },
 ];

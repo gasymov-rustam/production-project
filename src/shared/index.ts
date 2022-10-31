@@ -1,4 +1,16 @@
-export { AboutIcon, avatarImg, DarkIcon, LightIcon, MainIcon, ProfileIcon } from './assets';
+export {
+  AboutIcon,
+  avatarImg,
+  DarkIcon,
+  LightIcon,
+  MainIcon,
+  ProfileIcon,
+  ArticleIcon,
+  CalendarIcon,
+  CopyIcon,
+  DoneIcon,
+  EyeIcon,
+} from './assets';
 export {
   AppRoutes,
   AppRouterProps,
