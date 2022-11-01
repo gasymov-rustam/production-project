@@ -1,20 +1,16 @@
-import {
-  AnyAction,
-  CombinedState,
-  EnhancedStore,
-  Reducer,
-  ReducersMapObject,
-} from '@reduxjs/toolkit';
+import { AnyAction, CombinedState, EnhancedStore, Reducer, ReducersMapObject } from '@reduxjs/toolkit';
 import { AxiosInstance } from 'axios';
 import { NavigateOptions, To } from 'react-router-dom';
+
 import type {
-  articleDetailsName,
   ArticleDetailsSchema,
   CounterSchema,
   ProfileSchema,
   UserSchema,
+  articleDetailsName,
 } from '../../../../entities';
 import type { LoginSchema } from '../../../../features';
+import { ArticleDetailsCommentsSchema } from '../../../../pages/ArticleDetailsPage';
 
 export interface StateSchema {
   counter: CounterSchema;
@@ -23,6 +19,7 @@ export interface StateSchema {
   /** Async Reducers */
   profile?: ProfileSchema;
   loginForm?: LoginSchema;
+  articleDetailsComments?: ArticleDetailsCommentsSchema;
   [articleDetailsName]?: ArticleDetailsSchema;
 }
 

@@ -1,4 +1,5 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
+
 import { ThunkConfig } from '../../../../../app/providers';
 import { User, userActions } from '../../../../../entities';
 import { USER_LOCAL_STORAGE_KEY } from '../../../../../shared';
@@ -49,5 +50,5 @@ export const loginByUserName = createAsyncThunk<User, LoginByUserProps, ThunkCon
       // return thunkApi.rejectWithValue(i18n.t('INVALID NAME OR PASSWORD!')); */
       return rejectWithValue('error');
     }
-  }
+  },
 );
