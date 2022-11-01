@@ -1,9 +1,12 @@
-import { useTranslation } from 'react-i18next';
 import { memo } from 'react';
+import { useTranslation } from 'react-i18next';
 import { useParams } from 'react-router-dom';
-import cls from './ArticleDetailsPage.module.scss';
-import { classNames } from '../../../../shared';
+
 import { ArticleDetails } from '../../../../entities';
+import { CommentList } from '../../../../entities/Comment';
+import { Text, classNames } from '../../../../shared';
+
+import cls from './ArticleDetailsPage.module.scss';
 
 interface ArticleDetailsPageProps {
   className?: string;
@@ -26,6 +29,30 @@ const ArticleDetailsPage = (props: ArticleDetailsPageProps) => {
     <div className={classNames({ cls: cls.ArticlesPage, additional: [className] })}>
       {t('ARTICLE DETAILS PAGE')}
       <ArticleDetails id={id} />
+
+      <Text title={t('COMMENTS')} className={cls.commentTitle} />
+      <CommentList
+        comments={[
+          {
+            id: '1',
+            text: 'Comment 1',
+            user: {
+              id: '1',
+              userName: 'aaaaa',
+              avatar: `https://xakep.ru/wp-content/uploads/2018/05/171485/KuroiSH-hacker.jpg`,
+            },
+          },
+          {
+            id: '2',
+            text: 'Comment 2',
+            user: {
+              id: '1',
+              userName: 'ggggggg',
+              avatar: `https://xakep.ru/wp-content/uploads/2018/05/171485/KuroiSH-hacker.jpg`,
+            },
+          },
+        ]}
+      />
     </div>
   );
 };

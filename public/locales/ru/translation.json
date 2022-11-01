@@ -20,5 +20,6 @@
   "INVALID NAME OR PASSWORD!": "Некорректный имейл или пароль!",
   "AUTHORIZATION": "Авторизация",
   "SET CURRENCY": "Укажите валюту",
-  "SET COUNTRY": "Укажите страну"
+  "SET COUNTRY": "Укажите страну",
+  "COMMENTS EMPTY": "Комментарии отсутствуют"
 }

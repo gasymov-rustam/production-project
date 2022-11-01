@@ -20,5 +20,6 @@
   "AUTHORIZATION": "Authorization",
   "INVALID NAME OR PASSWORD!": "Invalid name or password",
   "SET CURRENCY": "Set Currency",
-  "SET COUNTRY": "Set Country"
+  "SET COUNTRY": "Set Country",
+  "COMMENTS EMPTY": "Comments is nod defined"
 }
