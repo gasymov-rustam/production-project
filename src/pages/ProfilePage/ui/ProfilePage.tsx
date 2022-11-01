@@ -1,8 +1,11 @@
-import { memo, useCallback, useEffect, useMemo } from 'react';
+import { memo, useCallback, useMemo } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
+
 import { Country, Currency } from '../../../entities';
 import {
+  ProfileCard,
+  ValidateProfileError,
   fetchProfileData,
   getProfileError,
   getProfileForm,
@@ -10,18 +13,18 @@ import {
   getProfileReadonly,
   getProfileValidateErrors,
   profileActions,
-  ProfileCard,
   profileReducer,
-  ValidateProfileError,
 } from '../../../entities/Profile';
 import {
-  classNames,
   DynamicModuleLoader,
   ReducersList,
   Text,
   TextTheme,
+  classNames,
   useAppDispatch,
+  useInitialEffect,
 } from '../../../shared';
+
 import { ProfilePageHeader } from './ProfilePageHeader';
 
 const reducers: ReducersList = {
@@ -50,21 +53,21 @@ const ProfilePage = memo(({ className = '' }: ProfilePageProps) => {
       [ValidateProfileError.INCORRECT_USER_DATA]: t(ValidateProfileError.INCORRECT_USER_DATA),
       [ValidateProfileError.NO_DATA]: t(ValidateProfileError.NO_DATA),
     }),
-    [t]
+    [t],
   );
 
   const onChangeFirstName = useCallback(
     (value?: string) => {
       dispatch(profileActions.updateProfile({ first: value ?? '' }));
     },
-    [dispatch]
+    [dispatch],
   );
 
   const onChangeLastName = useCallback(
     (value?: string) => {
       dispatch(profileActions.updateProfile({ lastname: value ?? '' }));
     },
-    [dispatch]
+    [dispatch],
   );
 
   const onChangeAge = useCallback(
@@ -75,49 +78,45 @@ const ProfilePage = memo(({ className = '' }: ProfilePageProps) => {
         dispatch(profileActions.updateProfile({ age: Number(value ?? 0) }));
       }
     },
-    [dispatch]
+    [dispatch],
   );
 
   const onChangeCity = useCallback(
     (value?: string) => {
       dispatch(profileActions.updateProfile({ city: value ?? '' }));
     },
-    [dispatch]
+    [dispatch],
   );
 
   const onChangeUserName = useCallback(
     (value?: string) => {
       dispatch(profileActions.updateProfile({ city: value ?? '' }));
     },
-    [dispatch]
+    [dispatch],
   );
 
   const onChangeAvatar = useCallback(
     (value?: string) => {
       dispatch(profileActions.updateProfile({ city: value ?? '' }));
     },
-    [dispatch]
+    [dispatch],
   );
 
   const onChangeCurrency = useCallback(
     (currency: Currency) => {
       dispatch(profileActions.updateProfile({ currency }));
     },
-    [dispatch]
+    [dispatch],
   );
 
   const onChangeCountry = useCallback(
     (country: Country) => {
       dispatch(profileActions.updateProfile({ country }));
     },
-    [dispatch]
+    [dispatch],
   );
 
-  useEffect(() => {
-    if (__PROJECT__ !== 'storybook') {
-      dispatch(fetchProfileData());
-    }
-  }, [dispatch]);
+  useInitialEffect(() => dispatch(fetchProfileData()));
 
   return (
     <DynamicModuleLoader reducers={reducers} removeAfterUnmount>
@@ -125,9 +124,7 @@ const ProfilePage = memo(({ className = '' }: ProfilePageProps) => {
         <ProfilePageHeader />
 
         {!!validateErrors?.length &&
-          validateErrors.map((err) => (
-            <Text key={err} theme={TextTheme.ERROR} text={validateErrorTranslates[err]} />
-          ))}
+          validateErrors.map((err) => <Text key={err} theme={TextTheme.ERROR} text={validateErrorTranslates[err]} />)}
 
         <ProfileCard
           data={formData}

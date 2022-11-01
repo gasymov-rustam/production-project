@@ -1,10 +1,10 @@
-import { memo, useCallback, useEffect } from 'react';
+import { memo, useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
+
 import {
   Avatar,
   CalendarIcon,
-  classNames,
   DynamicModuleLoader,
   EyeIcon,
   Icon,
@@ -13,7 +13,9 @@ import {
   Text,
   TextAlign,
   TextSize,
+  classNames,
   useAppDispatch,
+  useInitialEffect,
 } from '../../../../shared';
 import {
   ArticleBlock,
@@ -28,6 +30,7 @@ import { ArticleBlockType } from '../../model/types/article';
 import { ArticleCodeBlockComponent } from '../ArticleCodeBlockComponent';
 import { ArticleImageBlockComponent } from '../ArticleImageBlockComponent';
 import { ArticleTextBlockComponent } from '../ArticleTextBlockComponent';
+
 import cls from './ArticleDetails.module.scss';
 
 const initialReducers: ReducersList = {
@@ -63,38 +66,27 @@ export const ArticleDetails = memo((props: ArticleDetailsProps) => {
     }
   }, []);
 
-  useEffect(() => {
-    if (__PROJECT__ !== 'storybook') {
-      dispatch(fetchArticleById(id));
-    }
-  }, [dispatch, id]);
+  useInitialEffect(() => dispatch(fetchArticleById(id)));
 
   let content;
 
   if (isLoading) {
     content = (
       <>
-        <Skeleton className={cls.avatar} width={200} height={200} border='50%' />
+        <Skeleton className={cls.avatar} width={200} height={200} border="50%" />
         <Skeleton className={cls.title} width={300} height={32} />
         <Skeleton className={cls.skeleton} width={600} height={24} />
-        <Skeleton className={cls.skeleton} width='100%' height={200} />
-        <Skeleton className={cls.skeleton} width='100%' height={200} />
+        <Skeleton className={cls.skeleton} width="100%" height={200} />
+        <Skeleton className={cls.skeleton} width="100%" height={200} />
       </>
     );
   } else if (error) {
-    content = (
-      <Text className={cls.error} title={t('AN ERROR OCCURRED WHILE LOADING THE PROFILE')} />
-    );
+    content = <Text className={cls.error} title={t('AN ERROR OCCURRED WHILE LOADING THE PROFILE')} />;
   } else
     content = (
       <>
         <div className={cls.avatarWrapper}>
-          <Avatar
-            size={200}
-            src={String(article?.img)}
-            className={cls.avatar}
-            alt={String(article?.title)}
-          />
+          <Avatar size={200} src={String(article?.img)} className={cls.avatar} alt={String(article?.title)} />
         </div>
 
         <Text
@@ -122,9 +114,7 @@ export const ArticleDetails = memo((props: ArticleDetailsProps) => {
 
   return (
     <DynamicModuleLoader reducers={initialReducers}>
-      <div className={classNames({ cls: cls.ArticleDetails, additional: [className] })}>
-        {content}
-      </div>
+      <div className={classNames({ cls: cls.ArticleDetails, additional: [className] })}>{content}</div>
     </DynamicModuleLoader>
   );
 });

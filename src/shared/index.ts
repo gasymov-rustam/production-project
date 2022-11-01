@@ -22,7 +22,7 @@ export {
   ThemeDecorator,
 } from './config';
 export * from './constants';
-export { classNames, DynamicModuleLoader, SuspenseLoader, useAppDispatch } from './lib';
+export { classNames, DynamicModuleLoader, SuspenseLoader, useAppDispatch, useInitialEffect } from './lib';
 export type { Mods, ReducersList } from './lib';
 export {
   AppLink,
