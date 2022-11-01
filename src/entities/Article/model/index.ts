@@ -1,4 +1,10 @@
-export type { Article } from './types/article';
+export type {
+  Article,
+  ArticleBlock,
+  ArticleCodeBlock,
+  ArticleImageBlock,
+  ArticleTextBlock,
+} from './types/article';
 export type { ArticleDetailsSchema } from './types/articleDetailsSchema';
 export {
   getArticleDetailsData,

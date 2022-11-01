@@ -39,5 +39,8 @@ export {
   Text,
   TextAlign,
   TextTheme,
+  TextSize,
   Skeleton,
+  Icon,
+  Code,
 } from './ui';

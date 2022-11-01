@@ -1,15 +1,22 @@
-import { memo, useEffect } from 'react';
+import { memo, useCallback, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
 import {
+  Avatar,
+  CalendarIcon,
   classNames,
   DynamicModuleLoader,
+  EyeIcon,
+  Icon,
   ReducersList,
   Skeleton,
   Text,
+  TextAlign,
+  TextSize,
   useAppDispatch,
 } from '../../../../shared';
 import {
+  ArticleBlock,
   articleDetailsName,
   articleDetailsReducer,
   fetchArticleById,
@@ -17,6 +24,10 @@ import {
   getArticleDetailsError,
   getArticleDetailsIsLoading,
 } from '../../model';
+import { ArticleBlockType } from '../../model/types/article';
+import { ArticleCodeBlockComponent } from '../ArticleCodeBlockComponent';
+import { ArticleImageBlockComponent } from '../ArticleImageBlockComponent';
+import { ArticleTextBlockComponent } from '../ArticleTextBlockComponent';
 import cls from './ArticleDetails.module.scss';
 
 const initialReducers: ReducersList = {
@@ -36,8 +47,26 @@ export const ArticleDetails = memo((props: ArticleDetailsProps) => {
   const article = useSelector(getArticleDetailsData);
   const error = useSelector(getArticleDetailsError);
 
+  const renderBlock = useCallback((block: ArticleBlock) => {
+    switch (block.type) {
+      case ArticleBlockType.CODE:
+        return <ArticleCodeBlockComponent key={block.id} className={cls.block} block={block} />;
+
+      case ArticleBlockType.IMAGE:
+        return <ArticleImageBlockComponent key={block.id} className={cls.block} block={block} />;
+
+      case ArticleBlockType.TEXT:
+        return <ArticleTextBlockComponent key={block.id} className={cls.block} block={block} />;
+
+      default:
+        return null;
+    }
+  }, []);
+
   useEffect(() => {
-    dispatch(fetchArticleById(id));
+    if (__PROJECT__ !== 'storybook') {
+      dispatch(fetchArticleById(id));
+    }
   }, [dispatch, id]);
 
   let content;
@@ -56,7 +85,40 @@ export const ArticleDetails = memo((props: ArticleDetailsProps) => {
     content = (
       <Text className={cls.error} title={t('AN ERROR OCCURRED WHILE LOADING THE PROFILE')} />
     );
-  } else content = <div> {t('ARTICLE DETAILS PAGE')}</div>;
+  } else
+    content = (
+      <>
+        <div className={cls.avatarWrapper}>
+          <Avatar
+            size={200}
+            src={String(article?.img)}
+            className={cls.avatar}
+            alt={String(article?.title)}
+          />
+        </div>
+
+        <Text
+          size={TextSize.L}
+          align={TextAlign.LEFT}
+          title={article?.title}
+          text={article?.subtitle}
+          className={cls.title}
+        />
+
+        <div className={cls.articleInfo}>
+          <Icon Svg={EyeIcon} className={cls.icon} />
+          <Text align={TextAlign.LEFT} text={String(article?.views)} />
+        </div>
+
+        <div className={cls.articleInfo}>
+          <Icon Svg={CalendarIcon} className={cls.icon} />
+
+          <Text align={TextAlign.LEFT} text={String(article?.createdAt)} />
+        </div>
+
+        {article?.blocks.map(renderBlock)}
+      </>
+    );
 
   return (
     <DynamicModuleLoader reducers={initialReducers}>
