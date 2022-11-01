@@ -20,7 +20,9 @@ export const CommentList = memo((props: CommentListProps) => {
   return (
     <div className={classNames({ additional: [className] })}>
       {comments?.length ? (
-        comments.map((comment) => <CommentCard key={comment.id} comment={comment} className={cls.comment} />)
+        comments.map((comment) => (
+          <CommentCard key={comment.id} isLoading={isLoading} comment={comment} className={cls.comment} />
+        ))
       ) : (
         <Text text={t('COMMENTS EMPTY')} />
       )}
