@@ -1,9 +1,11 @@
 import { FC, useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
-import { getProfileReadonly, profileActions } from '../../../../entities/Profile';
+
+import { getUserAuthData } from '../../../../entities';
+import { getProfileData, getProfileReadonly, profileActions } from '../../../../entities/Profile';
 import { updateProfileData } from '../../../../entities/Profile/model/services/updateProfileData/updateProfileData';
-import { Button, ButtonTheme, classNames, Text, useAppDispatch } from '../../../../shared';
+import { Button, ButtonTheme, Text, classNames, useAppDispatch } from '../../../../shared';
 
 import cls from './ProfilePageHeader.module.scss';
 
@@ -15,6 +17,12 @@ export const ProfilePageHeader: FC<ProfilePageHeaderProps> = ({ className = '' }
   const { t } = useTranslation();
   const dispatch = useAppDispatch();
   const readonly = useSelector(getProfileReadonly);
+  const authData = useSelector(getUserAuthData);
+  const profileData = useSelector(getProfileData);
+  // const isCurrenUser = profileData.
+
+  // console.log(2222, authData);
+  // console.log(333333, profileData);
 
   const onEdit = useCallback(() => {
     dispatch(profileActions.setReadonly(false));

@@ -1,12 +1,6 @@
 import { RouteProps } from 'react-router-dom';
-import {
-  AboutPage,
-  ArticleDetailsPage,
-  ArticlesPage,
-  MainPage,
-  NotFoundPage,
-  ProfilePage,
-} from '../../../pages';
+
+import { AboutPage, ArticleDetailsPage, ArticlesPage, MainPage, NotFoundPage, ProfilePage } from '../../../pages';
 
 export type AppRouterProps = RouteProps & {
   authOnly?: boolean;
@@ -25,7 +19,7 @@ export enum AppRoutes {
 export const RoutePath: Record<AppRoutes, string> = {
   [AppRoutes.MAIN]: '/',
   [AppRoutes.ABOUT]: '/about',
-  [AppRoutes.PROFILE]: '/profile',
+  [AppRoutes.PROFILE]: '/profile/', // + :id
   [AppRoutes.ARTICLES]: '/articles',
   [AppRoutes.ARTICLE_DETAILS]: '/articles/', // + :id
   // last
@@ -42,7 +36,7 @@ export const routeConfig: Record<AppRoutes, AppRouterProps> = {
     element: <AboutPage />,
   },
   [AppRoutes.PROFILE]: {
-    path: RoutePath.profile,
+    path: `${RoutePath.profile}:id`,
     element: <ProfilePage />,
     authOnly: true,
   },

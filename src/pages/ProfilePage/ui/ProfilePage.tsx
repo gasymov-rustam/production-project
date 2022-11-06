@@ -1,6 +1,7 @@
 import { memo, useCallback, useMemo } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
+import { useParams } from 'react-router-dom';
 
 import { Country, Currency } from '../../../entities';
 import {
@@ -38,6 +39,7 @@ interface ProfilePageProps {
 const ProfilePage = memo(({ className = '' }: ProfilePageProps) => {
   const dispatch = useAppDispatch();
   const { t } = useTranslation('profile');
+  const { id } = useParams<{ id: string }>();
   const formData = useSelector(getProfileForm);
   const isLoading = useSelector(getProfileIsLoading);
   const error = useSelector(getProfileError);
@@ -116,7 +118,7 @@ const ProfilePage = memo(({ className = '' }: ProfilePageProps) => {
     [dispatch],
   );
 
-  useInitialEffect(() => dispatch(fetchProfileData()));
+  useInitialEffect(() => id && dispatch(fetchProfileData(id)));
 
   return (
     <DynamicModuleLoader reducers={reducers} removeAfterUnmount>
