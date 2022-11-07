@@ -11,6 +11,7 @@ export {
   updateProfileData,
   validateProfileData,
   ValidateProfileError,
+  getValidUser,
 } from './model';
 export type { Profile, ProfileSchema } from './model';
 export { ProfileCard } from './ui';

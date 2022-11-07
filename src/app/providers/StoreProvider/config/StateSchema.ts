@@ -10,6 +10,7 @@ import type {
   articleDetailsName,
 } from '../../../../entities';
 import type { LoginSchema } from '../../../../features';
+import { AddCommentFormSchema, addCommentFormName } from '../../../../features/AddCommentForm';
 import { ArticleDetailsCommentsSchema } from '../../../../pages/ArticleDetailsPage';
 
 export interface StateSchema {
@@ -21,6 +22,7 @@ export interface StateSchema {
   loginForm?: LoginSchema;
   articleDetailsComments?: ArticleDetailsCommentsSchema;
   [articleDetailsName]?: ArticleDetailsSchema;
+  [addCommentFormName]?: AddCommentFormSchema;
 }
 
 export type StateSchemaKey = keyof StateSchema;

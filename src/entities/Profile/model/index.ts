@@ -5,6 +5,7 @@ export {
   getProfileIsLoading,
   getProfileReadonly,
   getProfileValidateErrors,
+  getValidUser,
 } from './selectors';
 export { fetchProfileData, updateProfileData, validateProfileData } from './services';
 export { profileActions, profileReducer } from './slice';
