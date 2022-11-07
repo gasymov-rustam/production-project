@@ -1,9 +1,11 @@
 import { memo } from 'react';
 import { useTranslation } from 'react-i18next';
-import { Avatar, classNames, Input, Loader, Mods, Text, TextTheme } from '../../../../shared';
+
+import { Avatar, Input, Loader, Mods, Text, TextTheme, classNames } from '../../../../shared';
 import { Country, CountrySelect } from '../../../Country';
 import { Currency, CurrencySelect } from '../../../Currency';
 import { Profile } from '../../model';
+
 import cls from './ProfileCard.module.scss';
 
 interface ProfileCardProps {
@@ -69,7 +71,7 @@ export const ProfileCard = memo((props: ProfileCardProps) => {
       <div className={cls.data}>
         {data?.avatar && (
           <div className={cls.avatarWrapper}>
-            <Avatar src={data?.avatar} alt='' />
+            <Avatar src={data?.avatar} alt="" />
           </div>
         )}
 
@@ -115,18 +117,8 @@ export const ProfileCard = memo((props: ProfileCardProps) => {
           className={cls.input}
           onChange={onChangeAvatar}
         />
-        <CurrencySelect
-          className={cls.input}
-          value={data?.currency}
-          onChange={onChangeCurrency}
-          readonly={readonly}
-        />
-        <CountrySelect
-          className={cls.input}
-          value={data?.country}
-          onChange={onChangeCountry}
-          readonly={readonly}
-        />
+        <CurrencySelect className={cls.input} value={data?.currency} onChange={onChangeCurrency} readonly={readonly} />
+        <CountrySelect className={cls.input} value={data?.country} onChange={onChangeCountry} readonly={readonly} />
       </div>
     </div>
   );

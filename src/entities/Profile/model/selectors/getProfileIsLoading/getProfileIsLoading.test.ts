@@ -1,4 +1,5 @@
 import { StateSchema } from '../../../../../app';
+
 import { getProfileIsLoading } from './getProfileIsLoading';
 
 describe('getProfileIsLoading.test', () => {

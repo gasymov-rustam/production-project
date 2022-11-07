@@ -1,4 +1,5 @@
 import { StateSchema } from '../../../../../app';
+
 import { getLoginUserName } from './getLoginUserName';
 
 describe('getLoginUserName.test', () => {

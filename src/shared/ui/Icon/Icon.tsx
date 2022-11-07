@@ -1,5 +1,7 @@
-import { memo, VFC, SVGProps } from 'react';
+import { SVGProps, VFC, memo } from 'react';
+
 import { classNames } from '../../lib';
+
 import cls from './Icon.module.scss';
 
 interface IconProps {

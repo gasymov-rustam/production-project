@@ -1,6 +1,7 @@
 import { Country } from '../../../../Country';
 import { Currency } from '../../../../Currency';
 import { ValidateProfileError } from '../../types/profile';
+
 import { validateProfileData } from './validateProfileData';
 
 const data = {

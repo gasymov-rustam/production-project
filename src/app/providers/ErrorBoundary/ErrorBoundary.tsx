@@ -1,4 +1,5 @@
 import { Component, ErrorInfo, ReactNode, Suspense } from 'react';
+
 import { PageError } from '../../../widgets';
 
 interface ErrorBoundaryProps {
@@ -32,7 +33,7 @@ export class ErrorBoundary extends Component<ErrorBoundaryProps, ErrorBoundarySt
 
     if (hasError) {
       return (
-        <Suspense fallback=''>
+        <Suspense fallback="">
           <PageError />
         </Suspense>
       );

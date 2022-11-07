@@ -1,5 +1,6 @@
 import { memo } from 'react';
-import { classNames, Modal, SuspenseLoader } from '../../../../shared';
+
+import { Modal, SuspenseLoader, classNames } from '../../../../shared';
 import { LoginFormAsync } from '../LoginForm';
 
 interface LoginModalProps {

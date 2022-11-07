@@ -1,5 +1,7 @@
 import { ChangeEvent, memo, useMemo } from 'react';
-import { classNames, Mods } from '../../lib';
+
+import { Mods, classNames } from '../../lib';
+
 import cls from './Select.module.scss';
 
 export interface SelectOption {
@@ -30,7 +32,7 @@ export const Select = memo((props: SelectProps) => {
           {opt.content}
         </option>
       )),
-    [options]
+    [options],
   );
 
   const mods: Mods = {};

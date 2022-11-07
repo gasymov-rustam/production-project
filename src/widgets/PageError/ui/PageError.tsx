@@ -1,6 +1,8 @@
 import { memo } from 'react';
 import { useTranslation } from 'react-i18next';
+
 import { Button } from '../../../shared';
+
 import cln from './PageError.module.scss';
 
 export const PageError = memo(() => {

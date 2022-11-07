@@ -1,4 +1,5 @@
 import { StateSchema } from '../../../../../app';
+
 import { getProfileError } from './getProfileError';
 
 describe('getProfileError.test', () => {

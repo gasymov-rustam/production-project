@@ -1,6 +1,7 @@
-import { createElement, Fragment, ReactNode } from 'react';
+import { Fragment, ReactNode, createElement } from 'react';
 import { useSelector } from 'react-redux';
 import { Navigate, useLocation } from 'react-router-dom';
+
 import { getUserAuthData } from '../../../../entities';
 import { RoutePath } from '../../../../shared';
 

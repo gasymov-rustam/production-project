@@ -1,5 +1,1 @@
-export {
-  getArticleDetailsData,
-  getArticleDetailsError,
-  getArticleDetailsIsLoading,
-} from './articleDetails';
+export { getArticleDetailsData, getArticleDetailsError, getArticleDetailsIsLoading } from './articleDetails';

@@ -11,13 +11,7 @@ import {
   classNames,
   useAppDispatch,
 } from '../../../../shared';
-import {
-  addCommentFormActions,
-  addCommentFormName,
-  addCommentFormReducer,
-  getAddCommentFormError,
-  getAddCommentFormText,
-} from '../../model';
+import { addCommentFormActions, addCommentFormName, addCommentFormReducer, getAddCommentFormText } from '../../model';
 
 import cls from './AddCommentForm.module.scss';
 

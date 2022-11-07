@@ -1,5 +1,7 @@
 import { memo } from 'react';
+
 import { classNames } from '../../../lib';
+
 import './Loader.scss';
 
 interface LoaderProps {

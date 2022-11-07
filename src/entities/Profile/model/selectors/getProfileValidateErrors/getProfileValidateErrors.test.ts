@@ -1,5 +1,6 @@
 import { StateSchema } from '../../../../../app';
 import { ValidateProfileError } from '../../types/profile';
+
 import { getProfileValidateErrors } from './getProfileValidateErrors';
 
 describe('getProfileValidateErrors.test', () => {

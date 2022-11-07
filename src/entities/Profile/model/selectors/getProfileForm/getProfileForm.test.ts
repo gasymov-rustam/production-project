@@ -1,6 +1,7 @@
 import { StateSchema } from '../../../../../app';
 import { Country } from '../../../../Country';
 import { Currency } from '../../../../Currency';
+
 import { getProfileForm } from './getProfileForm';
 
 describe('getProfileForm.test', () => {

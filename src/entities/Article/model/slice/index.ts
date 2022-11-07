@@ -1,5 +1,1 @@
-export {
-  articleDetailsActions,
-  articleDetailsName,
-  articleDetailsReducer,
-} from './articleDetailsSlice';
+export { articleDetailsActions, articleDetailsName, articleDetailsReducer } from './articleDetailsSlice';

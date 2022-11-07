@@ -1,63 +1,106 @@
 .Big {
+    .views {
+        margin-left: auto;
+    }
+
+    .header {
+        display: flex;
+        align-items: start;
+    }
+
+    .username {
+        margin-left: 8px;
+    }
+
+    .date {
+        margin-left: auto;
+    }
+
+    .title {
+        margin-top: 8px;
+    }
+
+    .img {
+        width: 100%;
+        max-height: 250px;
+        object-fit: cover;
+        margin: 16px 0;
+    }
+
+    .footer {
+        display: flex;
+        align-items: center;
+        margin-top: 16px;
+    }
+
+    .textBlock {
+        max-height: 200px;
+        overflow-y: hidden;
+        display: box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 5;
+        overflow: hidden;
+    }
 }
 
 .Small {
-  width: 230px;
-  transition: 0.2;
-  cursor: pointer;
-
-  &:hover {
-    opacity: 0.8;
-    transform: scale(1.01);
+    width: 230px;
+    transition: 0.2;
+    cursor: pointer;
 
     .date {
-      display: block;
+        position: absolute;
+        top: 0;
+        right: 0;
+        display: none;
     }
-  }
 
-  .imageWrapper {
-    width: 200px;
-    height: 200px;
-    position: relative;
-  }
+    &:hover {
+        opacity: 0.8;
+        transform: scale(1.01);
 
-  .img {
-    width: 200px;
-    height: 200px;
-  }
+        .date {
+            display: block;
+        }
+    }
 
-  .date {
-    position: absolute;
-    top: 0;
-    right: 0;
-    display: none;
-  }
+    .imageWrapper {
+        width: 200px;
+        height: 200px;
+        position: relative;
+    }
 
-  .infoWrapper {
-    display: flex;
-    align-items: center;
-  }
+    .img {
+        width: 200px;
+        height: 200px;
+        object-fit: cover;
+    }
 
-  .types p {
-    width: 115px;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-  }
+    .infoWrapper {
+        display: flex;
+        align-items: center;
+    }
 
-  .views {
-    margin-left: auto;
-    margin-right: 8px;
-  }
+    .types p {
+        width: 115px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
 
-  .title {
-    margin-top: 8px;
-  }
+    .views {
+        margin-left: auto;
+        margin-right: 8px;
+    }
 
-  .title p {
-    width: 200px;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-  }
+    .title {
+        margin-top: 8px;
+    }
+
+    .title p {
+        width: 200px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
 }

@@ -6,5 +6,5 @@ export const ProfilePageAsync = lazy(
       // @ts-ignore
       // ТАК В РЕАЛЬНЫХ ПРОЕКТАХ НЕ ДЕЛАТЬ!!!!! ДЕЛАЕМ ДЛЯ КУРСА!
       setTimeout(() => resolve(import('./ProfilePage')), 1500);
-    })
+    }),
 );

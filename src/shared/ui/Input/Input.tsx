@@ -1,20 +1,10 @@
-import {
-  ChangeEvent,
-  InputHTMLAttributes,
-  memo,
-  SyntheticEvent,
-  useEffect,
-  useRef,
-  useState,
-} from 'react';
-import { classNames, Mods } from '../../lib';
+import { ChangeEvent, InputHTMLAttributes, SyntheticEvent, memo, useEffect, useRef, useState } from 'react';
+
+import { Mods, classNames } from '../../lib';
 
 import cls from './Input.module.scss';
 
-type HTMLInputProps = Omit<
-  InputHTMLAttributes<HTMLInputElement>,
-  'value' | 'onChange' | 'readonly'
->;
+type HTMLInputProps = Omit<InputHTMLAttributes<HTMLInputElement>, 'value' | 'onChange' | 'readonly'>;
 
 interface InputProps extends HTMLInputProps {
   className?: string;
@@ -86,9 +76,7 @@ export const Input = memo((props: InputProps) => {
           onChange={onChangeHandler}
         />
 
-        {isFocused && !readonly && (
-          <span className={cls.caret} style={{ left: caretPosition * 9 }} />
-        )}
+        {isFocused && !readonly && <span className={cls.caret} style={{ left: caretPosition * 9 }} />}
       </div>
     </div>
   );

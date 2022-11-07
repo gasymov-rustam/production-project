@@ -1,9 +1,11 @@
 import { memo, useCallback, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
+
 import { getUserAuthData, userActions } from '../../../entities';
 import { LoginModal } from '../../../features';
 import { Button, ButtonTheme, classNames, useAppDispatch } from '../../../shared';
+
 import cls from './Navbar.module.scss';
 
 interface NavbarProps {

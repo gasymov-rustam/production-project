@@ -1,6 +1,7 @@
 import { memo, useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
-import { classNames, Select } from '../../../../shared';
+
+import { Select, classNames } from '../../../../shared';
 import { Currency } from '../../model';
 
 interface CurrencySelectProps {
@@ -17,26 +18,24 @@ const options = [
   { value: Currency.UAH, content: Currency.UAH },
 ];
 
-export const CurrencySelect = memo(
-  ({ className = '', value, onChange, readonly }: CurrencySelectProps) => {
-    const { t } = useTranslation();
+export const CurrencySelect = memo(({ className = '', value, onChange, readonly }: CurrencySelectProps) => {
+  const { t } = useTranslation();
 
-    const onChangeHandler = useCallback(
-      (value: string) => {
-        onChange?.(value as Currency);
-      },
-      [onChange]
-    );
+  const onChangeHandler = useCallback(
+    (value: string) => {
+      onChange?.(value as Currency);
+    },
+    [onChange],
+  );
 
-    return (
-      <Select
-        className={classNames({ additional: [className] })}
-        label={t('SET CURRENCY')}
-        options={options}
-        value={value}
-        onChange={onChangeHandler}
-        readonly={readonly}
-      />
-    );
-  }
-);
+  return (
+    <Select
+      className={classNames({ additional: [className] })}
+      label={t('SET CURRENCY')}
+      options={options}
+      value={value}
+      onChange={onChangeHandler}
+      readonly={readonly}
+    />
+  );
+});

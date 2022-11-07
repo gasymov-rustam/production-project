@@ -1,7 +1,9 @@
 import { memo } from 'react';
-import cls from './ArticleTextBlockComponent.module.scss';
-import { classNames, Text, TextAlign } from '../../../../shared';
+
+import { Text, TextAlign, classNames } from '../../../../shared';
 import { ArticleTextBlock } from '../../model';
+
+import cls from './ArticleTextBlockComponent.module.scss';
 
 interface ArticleTextBlockComponentProps {
   className?: string;

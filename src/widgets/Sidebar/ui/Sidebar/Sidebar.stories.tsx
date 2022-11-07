@@ -1,4 +1,5 @@
 import { ComponentMeta, ComponentStory } from '@storybook/react';
+
 import { Theme } from '../../../../app';
 import { StoreDecorator, ThemeDecorator } from '../../../../shared';
 

@@ -1,15 +1,9 @@
 import { memo, useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
-import {
-  Button,
-  classNames,
-  DynamicModuleLoader,
-  Input,
-  Text,
-  TextTheme,
-  useAppDispatch,
-} from '../../../../shared';
+
+import { Button, DynamicModuleLoader, Input, Text, TextTheme, classNames, useAppDispatch } from '../../../../shared';
+import type { ReducersList } from '../../../../shared';
 import {
   getLoginError,
   getLoginIsLoading,
@@ -19,7 +13,6 @@ import {
   loginByUserName,
   loginReducer,
 } from '../../model';
-import type { ReducersList } from '../../../../shared';
 
 import cls from './LoginForm.module.scss';
 
@@ -43,14 +36,14 @@ const LoginForm = memo(({ className = '', onSuccess }: LoginFormProps) => {
     (value: string) => {
       dispatch(loginActions.setUserName(value));
     },
-    [dispatch]
+    [dispatch],
   );
 
   const onChangePassword = useCallback(
     (value: string) => {
       dispatch(loginActions.setPassword(value));
     },
-    [dispatch]
+    [dispatch],
   );
 
   const onLoginClick = useCallback(async () => {
@@ -71,14 +64,14 @@ const LoginForm = memo(({ className = '', onSuccess }: LoginFormProps) => {
         <Input
           autofocus
           placeholder={t('ENTER YOUR USERNAME')}
-          type='text'
+          type="text"
           value={userName}
           className={cls.input}
           onChange={onChangeUserName}
         />
         <Input
           placeholder={t('ENTER YOUR PASSWORD')}
-          type='text'
+          type="text"
           value={password}
           className={cls.input}
           onChange={onChangePassword}

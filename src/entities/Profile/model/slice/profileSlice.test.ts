@@ -2,6 +2,7 @@ import { Country } from '../../../Country';
 import { Currency } from '../../../Currency';
 import { updateProfileData } from '../services';
 import { ProfileSchema, ValidateProfileError } from '../types/profile';
+
 import { profileActions, profileReducer } from './profileSlice';
 
 const data = {
@@ -42,8 +43,8 @@ describe('profileSlice.test', () => {
         state as ProfileSchema,
         profileActions.updateProfile({
           username: '123456',
-        })
-      )
+        }),
+      ),
     ).toEqual({
       form: { username: '123456' },
     });

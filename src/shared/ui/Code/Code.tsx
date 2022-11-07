@@ -1,4 +1,5 @@
 import { memo, useCallback } from 'react';
+
 import { CopyIcon } from '../../assets';
 import { classNames } from '../../lib';
 import { Button, ButtonTheme } from '../Button';

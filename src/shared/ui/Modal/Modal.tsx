@@ -1,7 +1,8 @@
-import { FC, useRef, useState, MouseEvent, useCallback, useEffect, MutableRefObject } from 'react';
+import { FC, MouseEvent, MutableRefObject, useCallback, useEffect, useRef, useState } from 'react';
+
 import { classNames } from '../../lib';
-import { Portal } from '../Portal';
 import type { Mods } from '../../lib';
+import { Portal } from '../Portal';
 
 import cls from './Modal.module.scss';
 
@@ -40,7 +41,7 @@ export const Modal: FC<ModalProps> = ({ className = '', children, isOpen, onClos
         closeHandler();
       }
     },
-    [closeHandler]
+    [closeHandler],
   );
 
   const onContentClick = (e: MouseEvent) => {

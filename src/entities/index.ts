@@ -1,11 +1,4 @@
-export {
-  Counter,
-  countersActions,
-  counterSlice,
-  countersReducer,
-  getCounter,
-  getCounterValue,
-} from './Counter';
+export { Counter, countersActions, counterSlice, countersReducer, getCounter, getCounterValue } from './Counter';
 export type { CounterSchema } from './Counter';
 export { Country, CountrySelect } from './Country';
 export { Currency, CurrencySelect } from './Currency';

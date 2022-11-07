@@ -1,8 +1,9 @@
-import { ComponentStory, ComponentMeta } from '@storybook/react';
+import { ComponentMeta, ComponentStory } from '@storybook/react';
+
+import { Theme } from '../../../app';
+import { ThemeDecorator } from '../../../shared';
 
 import { PageError } from './PageError';
-import { ThemeDecorator } from '../../../shared';
-import { Theme } from '../../../app';
 
 export default {
   title: 'widget/ErrorPage',

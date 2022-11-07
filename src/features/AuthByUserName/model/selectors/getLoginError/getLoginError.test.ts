@@ -1,4 +1,5 @@
 import { StateSchema } from '../../../../../app';
+
 import { getLoginError } from './getLoginError';
 
 describe('getLoginError.test', () => {

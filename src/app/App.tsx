@@ -1,8 +1,10 @@
-import { memo, Suspense, useEffect } from 'react';
+import { Suspense, memo, useEffect } from 'react';
 import { useSelector } from 'react-redux';
+
 import { getUserInited, userActions } from '../entities';
 import { classNames, useAppDispatch } from '../shared';
 import { Navbar, Sidebar } from '../widgets';
+
 import { AppRouter } from './providers';
 
 export const App = memo(() => {
@@ -15,10 +17,10 @@ export const App = memo(() => {
 
   return (
     <div className={classNames({ cls: 'app' })}>
-      <Suspense fallback=''>
+      <Suspense fallback="">
         <Navbar />
 
-        <div className='content-page'>
+        <div className="content-page">
           <Sidebar />
           {inited && <AppRouter />}
         </div>

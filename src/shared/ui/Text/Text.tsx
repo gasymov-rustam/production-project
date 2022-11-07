@@ -1,4 +1,5 @@
 import { memo } from 'react';
+
 import { classNames } from '../../lib';
 
 import cls from './Text.module.scss';
@@ -47,5 +48,5 @@ export const Text = memo(
       {title && <div className={cls.title}>{title}</div>}
       {text && <div className={cls.text}>{text}</div>}
     </div>
-  )
+  ),
 );
