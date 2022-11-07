@@ -43,4 +43,5 @@ export {
   Skeleton,
   Icon,
   Code,
+  Card,
 } from './ui';

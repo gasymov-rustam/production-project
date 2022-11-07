@@ -10,3 +10,4 @@ export { Text, TextAlign, TextTheme, TextSize } from './Text';
 export { Skeleton } from './Skeleton';
 export { Icon } from './Icon';
 export { Code } from './Code';
+export { Card } from './Card';

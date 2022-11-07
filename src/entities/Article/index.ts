@@ -7,5 +7,6 @@ export {
   getArticleDetailsData,
   getArticleDetailsError,
   getArticleDetailsIsLoading,
+  ArticleView,
 } from './model';
-export { ArticleDetails } from './ui';
+export { ArticleDetails, ArticleList } from './ui';
