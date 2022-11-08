@@ -11,3 +11,4 @@ export { Skeleton } from './Skeleton';
 export { Icon } from './Icon';
 export { Code } from './Code';
 export { Card } from './Card';
+export { PageWrapper } from './PageWrapper';

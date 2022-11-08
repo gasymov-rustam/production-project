@@ -18,6 +18,7 @@ import {
 } from '../../../entities/Profile';
 import {
   DynamicModuleLoader,
+  PageWrapper,
   ReducersList,
   Text,
   TextTheme,
@@ -122,7 +123,7 @@ const ProfilePage = memo(({ className = '' }: ProfilePageProps) => {
 
   return (
     <DynamicModuleLoader reducers={reducers} removeAfterUnmount>
-      <div className={classNames({ additional: [className] })}>
+      <PageWrapper className={classNames({ additional: [className] })}>
         <ProfilePageHeader />
 
         {!!validateErrors?.length &&
@@ -142,7 +143,7 @@ const ProfilePage = memo(({ className = '' }: ProfilePageProps) => {
           onChangeCurrency={onChangeCurrency}
           onChangeCountry={onChangeCountry}
         />
-      </div>
+      </PageWrapper>
     </DynamicModuleLoader>
   );
 });

@@ -2,7 +2,14 @@ import { memo, useCallback } from 'react';
 import { useSelector } from 'react-redux';
 
 import { ArticleList, ArticleView, ArticleViewSelector } from '../../../../entities/Article';
-import { DynamicModuleLoader, ReducersList, classNames, useAppDispatch, useInitialEffect } from '../../../../shared';
+import {
+  DynamicModuleLoader,
+  PageWrapper,
+  ReducersList,
+  classNames,
+  useAppDispatch,
+  useInitialEffect,
+} from '../../../../shared';
 import {
   articlesPageActions,
   articlesPageReducer,
@@ -44,17 +51,17 @@ const ArticlesPage = (props: ArticlesPageProps) => {
   );
 
   useInitialEffect(() => {
-    dispatch(fetchArticlesList());
     dispatch(articlesPageActions.initialState());
+    dispatch(fetchArticlesList({ page: 1 }));
   });
 
   return (
     <DynamicModuleLoader reducers={reducers}>
-      <div className={classNames({ cls: cls.ArticlesPage, additional: [className] })}>
+      <PageWrapper className={classNames({ cls: cls.ArticlesPage, additional: [className] })}>
         <ArticleViewSelector view={view} onViewClick={onChangeView} />
 
         <ArticleList articles={articles} isLoading={isLoading} view={view} />
-      </div>
+      </PageWrapper>
     </DynamicModuleLoader>
   );
 };

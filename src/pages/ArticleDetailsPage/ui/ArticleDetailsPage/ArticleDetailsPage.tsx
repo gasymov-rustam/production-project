@@ -10,6 +10,7 @@ import {
   Button,
   ButtonTheme,
   DynamicModuleLoader,
+  PageWrapper,
   ReducersList,
   RoutePath,
   Text,
@@ -59,15 +60,15 @@ const ArticleDetailsPage = (props: ArticleDetailsPageProps) => {
 
   if (!id) {
     return (
-      <div className={classNames({ cls: cls.ArticlesPage, additional: [className] })}>
+      <PageWrapper className={classNames({ cls: cls.ArticlesPage, additional: [className] })}>
         {t('ARTICLE DETAILS NOT FOUND')}
-      </div>
+      </PageWrapper>
     );
   }
 
   return (
     <DynamicModuleLoader reducers={reducers}>
-      <div className={classNames({ cls: cls.ArticlesPage, additional: [className] })}>
+      <PageWrapper className={classNames({ cls: cls.ArticlesPage, additional: [className] })}>
         <Button theme={ButtonTheme.OUTLINE} onClick={onBackToList}>
           {t('BACK')}
         </Button>
@@ -78,7 +79,7 @@ const ArticleDetailsPage = (props: ArticleDetailsPageProps) => {
         <AddCommentForm onSendComment={onSendComment} />
 
         <CommentList isLoading={commentsIsLoading} comments={comments} />
-      </div>
+      </PageWrapper>
     </DynamicModuleLoader>
   );
 };

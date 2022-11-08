@@ -32,23 +32,23 @@ export const Navbar = memo(({ className = '' }: NavbarProps) => {
 
   if (userData) {
     return (
-      <div className={classNames({ cls: cls.Navbar, additional: [className] })}>
+      <header className={classNames({ cls: cls.Navbar, additional: [className] })}>
         <Button theme={ButtonTheme.CLEAR_INVERTED} className={cls.links} onClick={onLogOut}>
           {t('SIGN OUT')}
         </Button>
 
         <LoginModal isOpen={isAuthModal} onClose={onCloseModal} />
-      </div>
+      </header>
     );
   }
 
   return (
-    <div className={classNames({ cls: cls.Navbar, additional: [className] })}>
+    <header className={classNames({ cls: cls.Navbar, additional: [className] })}>
       <Button theme={ButtonTheme.CLEAR_INVERTED} className={cls.links} onClick={onShowModal}>
         {t('SIGN IN')}
       </Button>
 
       {isAuthModal && <LoginModal isOpen={isAuthModal} onClose={onCloseModal} />}
-    </div>
+    </header>
   );
 });

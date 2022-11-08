@@ -8,4 +8,7 @@ export {
   getArticlesPageIsLoading,
   getArticlesPageView,
   fetchArticlesList,
+  getArticlesPageLimit,
+  getArticlesPageNum,
+  getArticlesPageHasMore,
 } from './model';
