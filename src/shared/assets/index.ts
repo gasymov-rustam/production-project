@@ -9,5 +9,7 @@ export {
   CopyIcon,
   DoneIcon,
   EyeIcon,
+  ListIcon,
+  TiledIcon,
 } from './icons';
 export { avatarImg } from './tests';

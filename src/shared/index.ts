@@ -1,4 +1,6 @@
 export {
+  ListIcon,
+  TiledIcon,
   AboutIcon,
   avatarImg,
   DarkIcon,

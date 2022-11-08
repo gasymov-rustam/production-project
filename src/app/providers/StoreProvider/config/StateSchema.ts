@@ -12,6 +12,7 @@ import type {
 import type { LoginSchema } from '../../../../features';
 import { AddCommentFormSchema, addCommentFormName } from '../../../../features/AddCommentForm';
 import { ArticleDetailsCommentsSchema } from '../../../../pages/ArticleDetailsPage';
+import { ArticlesPageSchema } from '../../../../pages/ArticlesPage';
 
 export interface StateSchema {
   counter: CounterSchema;
@@ -21,6 +22,7 @@ export interface StateSchema {
   profile?: ProfileSchema;
   loginForm?: LoginSchema;
   articleDetailsComments?: ArticleDetailsCommentsSchema;
+  articlesPage?: ArticlesPageSchema;
   [articleDetailsName]?: ArticleDetailsSchema;
   [addCommentFormName]?: AddCommentFormSchema;
 }

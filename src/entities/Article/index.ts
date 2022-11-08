@@ -9,4 +9,4 @@ export {
   getArticleDetailsIsLoading,
   ArticleView,
 } from './model';
-export { ArticleDetails, ArticleList } from './ui';
+export { ArticleDetails, ArticleList, ArticleViewSelector } from './ui';
