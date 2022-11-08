@@ -14,6 +14,7 @@ import {
   articlesPageActions,
   articlesPageReducer,
   fetchArticlesList,
+  fetchNextArticlesPage,
   getArticles,
   getArticlesPageError,
   getArticlesPageIsLoading,
@@ -50,6 +51,10 @@ const ArticlesPage = (props: ArticlesPageProps) => {
     [dispatch],
   );
 
+  const onLoadNextPart = useCallback(() => {
+    dispatch(fetchNextArticlesPage());
+  }, [dispatch]);
+
   useInitialEffect(() => {
     dispatch(articlesPageActions.initialState());
     dispatch(fetchArticlesList({ page: 1 }));
@@ -57,7 +62,10 @@ const ArticlesPage = (props: ArticlesPageProps) => {
 
   return (
     <DynamicModuleLoader reducers={reducers}>
-      <PageWrapper className={classNames({ cls: cls.ArticlesPage, additional: [className] })}>
+      <PageWrapper
+        onScrollEnd={onLoadNextPart}
+        className={classNames({ cls: cls.ArticlesPage, additional: [className] })}
+      >
         <ArticleViewSelector view={view} onViewClick={onChangeView} />
 
         <ArticleList articles={articles} isLoading={isLoading} view={view} />

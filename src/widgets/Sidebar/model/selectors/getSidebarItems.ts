@@ -5,7 +5,6 @@ import { AboutIcon, ArticleIcon, MainIcon, ProfileIcon, RoutePath } from '../../
 import type { SidebarItemType } from '../types/sidebar';
 
 export const getSidebarItems = createSelector(getUserAuthData, (userData) => {
-  console.log(userData);
   const sidebarItems: SidebarItemType[] = [
     {
       path: RoutePath.main,

@@ -8,4 +8,4 @@ export {
   getArticlesPageNum,
   getArticlesPageHasMore,
 } from './selectors/articlesPageSelectors';
-export { fetchArticlesList } from './services';
+export { fetchArticlesList, fetchNextArticlesPage } from './services';

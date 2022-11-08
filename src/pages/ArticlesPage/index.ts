@@ -11,4 +11,5 @@ export {
   getArticlesPageLimit,
   getArticlesPageNum,
   getArticlesPageHasMore,
+  fetchNextArticlesPage,
 } from './model';

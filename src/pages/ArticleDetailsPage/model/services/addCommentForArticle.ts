@@ -12,7 +12,7 @@ export const addCommentForArticle = createAsyncThunk<Comment, string, ThunkConfi
 
     const userData = getUserAuthData(getState());
     const article = getArticleDetailsData(getState());
-    console.log(44444, userData, article);
+    
     if (!userData || !text || !article) {
       return rejectWithValue('no data');
     }
