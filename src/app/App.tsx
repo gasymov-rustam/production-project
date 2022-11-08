@@ -17,10 +17,10 @@ export const App = memo(() => {
 
   return (
     <div className={classNames({ cls: 'app' })}>
-      <Suspense fallback="">
+      <Suspense fallback=''>
         <Navbar />
 
-        <div className="content-page">
+        <div className='content-page'>
           <Sidebar />
           {inited && <AppRouter />}
         </div>
