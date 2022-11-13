@@ -27,7 +27,7 @@ const reducers: ReducersList = {
 const AddCommentForm = memo((props: AddCommentFormProps) => {
   const { className = '', onSendComment } = props;
   const { t } = useTranslation('article');
-  const text = useSelector(getAddCommentFormText) ?? '';
+  const text = useSelector(getAddCommentFormText);
   // const error = useSelector(getAddCommentFormError);
   const dispatch = useAppDispatch();
 

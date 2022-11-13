@@ -5,12 +5,14 @@ import { NavigateOptions, To } from 'react-router-dom';
 import type { ArticleDetailsSchema, CounterSchema, ProfileSchema, UserSchema } from '../../../../entities';
 import type { LoginSchema } from '../../../../features';
 import { AddCommentFormSchema } from '../../../../features/AddCommentForm';
+import { ScrollRestorationSchema } from '../../../../features/ScrollRestoration';
 import { ArticleDetailsCommentsSchema } from '../../../../pages/ArticleDetailsPage';
 import { ArticlesPageSchema } from '../../../../pages/ArticlesPage';
 
 export interface StateSchema {
   counter: CounterSchema;
   user: UserSchema;
+  scrollRestoration: ScrollRestorationSchema;
 
   /** Async Reducers */
   profile?: ProfileSchema;

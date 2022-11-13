@@ -18,7 +18,6 @@ import {
 } from '../../../entities/Profile';
 import {
   DynamicModuleLoader,
-  PageWrapper,
   ReducersList,
   Text,
   TextTheme,
@@ -26,6 +25,7 @@ import {
   useAppDispatch,
   useInitialEffect,
 } from '../../../shared';
+import { PageWrapper } from '../../../widgets';
 
 import { ProfilePageHeader } from './ProfilePageHeader';
 

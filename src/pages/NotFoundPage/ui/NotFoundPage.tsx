@@ -1,7 +1,8 @@
 import { memo } from 'react';
 import { useTranslation } from 'react-i18next';
 
-import { PageWrapper, classNames } from '../../../shared';
+import { classNames } from '../../../shared';
+import { PageWrapper } from '../../../widgets';
 
 import cls from './NotFoundPage.module.scss';
 

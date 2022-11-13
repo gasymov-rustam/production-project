@@ -2,18 +2,11 @@ import { memo, useCallback } from 'react';
 import { useSelector } from 'react-redux';
 
 import { ArticleList, ArticleView, ArticleViewSelector } from '../../../../entities/Article';
-import {
-  DynamicModuleLoader,
-  PageWrapper,
-  ReducersList,
-  classNames,
-  useAppDispatch,
-  useInitialEffect,
-} from '../../../../shared';
+import { DynamicModuleLoader, ReducersList, classNames, useAppDispatch, useInitialEffect } from '../../../../shared';
+import { PageWrapper } from '../../../../widgets';
 import {
   articlesPageActions,
   articlesPageReducer,
-  fetchArticlesList,
   fetchNextArticlesPage,
   getArticles,
   getArticlesPageError,

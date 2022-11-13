@@ -10,7 +10,6 @@ import {
   Button,
   ButtonTheme,
   DynamicModuleLoader,
-  PageWrapper,
   ReducersList,
   RoutePath,
   Text,
@@ -18,6 +17,7 @@ import {
   useAppDispatch,
   useInitialEffect,
 } from '../../../../shared';
+import { PageWrapper } from '../../../../widgets';
 import {
   ArticleDetailsCommentsReducer,
   addCommentForArticle,

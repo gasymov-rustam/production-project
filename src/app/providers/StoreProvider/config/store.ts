@@ -1,7 +1,7 @@
 import { CombinedState, Reducer, ReducersMapObject, configureStore } from '@reduxjs/toolkit';
-import { NavigateOptions, To } from 'react-router-dom';
 
 import { countersReducer, userReducer } from '../../../../entities';
+import { scrollRestorationReducer } from '../../../../features/ScrollRestoration';
 import { $api } from '../../../../shared/api';
 
 import type { StateSchema, ThunkExtraArg } from './StateSchema';
@@ -12,6 +12,7 @@ export const createReduxStore = (initialState?: StateSchema, asyncReducers?: Red
     ...asyncReducers,
     counter: countersReducer,
     user: userReducer,
+    scrollRestoration: scrollRestorationReducer,
   };
 
   const reducerManager = createReducerManager(rootReducers);

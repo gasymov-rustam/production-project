@@ -46,5 +46,4 @@ export {
   Icon,
   Code,
   Card,
-  PageWrapper,
 } from './ui';
