@@ -7,11 +7,7 @@ import { $api } from '../../../../shared/api';
 import type { StateSchema, ThunkExtraArg } from './StateSchema';
 import { createReducerManager } from './reducerManager';
 
-export const createReduxStore = (
-  initialState?: StateSchema,
-  asyncReducers?: ReducersMapObject<StateSchema>,
-  navigate?: (to: To, options?: NavigateOptions) => void,
-) => {
+export const createReduxStore = (initialState?: StateSchema, asyncReducers?: ReducersMapObject<StateSchema>) => {
   const rootReducers: ReducersMapObject<StateSchema> = {
     ...asyncReducers,
     counter: countersReducer,
@@ -22,7 +18,6 @@ export const createReduxStore = (
 
   const extraArgument: ThunkExtraArg = {
     api: $api,
-    navigate,
   };
 
   const store = configureStore({
@@ -36,7 +31,6 @@ export const createReduxStore = (
         },
       }),
   });
-
   // @ts-ignore
   store.reducerManager = reducerManager;
 

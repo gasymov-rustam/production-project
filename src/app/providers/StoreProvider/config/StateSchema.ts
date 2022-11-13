@@ -2,15 +2,9 @@ import { AnyAction, CombinedState, EnhancedStore, Reducer, ReducersMapObject } f
 import { AxiosInstance } from 'axios';
 import { NavigateOptions, To } from 'react-router-dom';
 
-import type {
-  ArticleDetailsSchema,
-  CounterSchema,
-  ProfileSchema,
-  UserSchema,
-  articleDetailsName,
-} from '../../../../entities';
+import type { ArticleDetailsSchema, CounterSchema, ProfileSchema, UserSchema } from '../../../../entities';
 import type { LoginSchema } from '../../../../features';
-import { AddCommentFormSchema, addCommentFormName } from '../../../../features/AddCommentForm';
+import { AddCommentFormSchema } from '../../../../features/AddCommentForm';
 import { ArticleDetailsCommentsSchema } from '../../../../pages/ArticleDetailsPage';
 import { ArticlesPageSchema } from '../../../../pages/ArticlesPage';
 
@@ -23,8 +17,8 @@ export interface StateSchema {
   loginForm?: LoginSchema;
   articleDetailsComments?: ArticleDetailsCommentsSchema;
   articlesPage?: ArticlesPageSchema;
-  [articleDetailsName]?: ArticleDetailsSchema;
-  [addCommentFormName]?: AddCommentFormSchema;
+  articleDetails?: ArticleDetailsSchema;
+  addCommentForm?: AddCommentFormSchema;
 }
 
 export type StateSchemaKey = keyof StateSchema;

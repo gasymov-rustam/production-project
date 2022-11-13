@@ -20,6 +20,7 @@ import {
   getArticlesPageIsLoading,
   getArticlesPageView,
 } from '../../model';
+import { initArticlesPage } from '../../model/services';
 
 import cls from './ArticlesPage.module.scss';
 
@@ -56,12 +57,11 @@ const ArticlesPage = (props: ArticlesPageProps) => {
   }, [dispatch]);
 
   useInitialEffect(() => {
-    dispatch(articlesPageActions.initialState());
-    dispatch(fetchArticlesList({ page: 1 }));
+    dispatch(initArticlesPage());
   });
 
   return (
-    <DynamicModuleLoader reducers={reducers}>
+    <DynamicModuleLoader reducers={reducers} removeAfterUnmount={false}>
       <PageWrapper
         onScrollEnd={onLoadNextPart}
         className={classNames({ cls: cls.ArticlesPage, additional: [className] })}

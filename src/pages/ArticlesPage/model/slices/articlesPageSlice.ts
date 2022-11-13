@@ -19,6 +19,7 @@ const initialState = articlesAdapter.getInitialState<ArticlesPageSchema>({
   view: ArticleView.SMALL,
   hasMore: true,
   page: 1,
+  _inited: false,
 });
 
 export const getArticles = articlesAdapter.getSelectors<StateSchema>(
@@ -40,6 +41,7 @@ export const articlesPageSlice = createSlice({
       const view = window.localStorage.getItem(ARTICLES_VIEW_LOCAL_STORAGE_KEY) as ArticleView;
       state.view = view;
       state.limit = ArticleView.BIG === view ? 4 : 9;
+      state._inited = true;
     },
   },
   extraReducers: (builder) => {
