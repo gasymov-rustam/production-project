@@ -7,5 +7,13 @@
   "SEND": "Send",
   "ENTER YOUR COMMENT": "Enter your comment",
   "READ MORE": "Read more",
-  "BACK": "Back"
+  "BACK": "Back",
+  "SORT BY": "Sort by ",
+  "SEARCH": "Search",
+  "BY": "By",
+  "INCREASE": "Increase",
+  "DECREASE": "Decrease",
+  "BY CREATED": "date of creating",
+  "BY TITLE": "title",
+  "BY VIEWS": "views"
 }

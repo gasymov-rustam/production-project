@@ -14,6 +14,7 @@ import {
   getArticlesPageView,
 } from '../../model';
 import { initArticlesPage } from '../../model/services';
+import { ArticlesPageFilters } from '../ArticlesPageFilters';
 
 import cls from './ArticlesPage.module.scss';
 
@@ -38,13 +39,6 @@ const ArticlesPage = (props: ArticlesPageProps) => {
   const view = useSelector(getArticlesPageView);
   const error = useSelector(getArticlesPageError);
 
-  const onChangeView = useCallback(
-    (view: ArticleView) => {
-      dispatch(articlesPageActions.setView(view));
-    },
-    [dispatch],
-  );
-
   const onLoadNextPart = useCallback(() => {
     dispatch(fetchNextArticlesPage());
   }, [dispatch]);
@@ -59,9 +53,9 @@ const ArticlesPage = (props: ArticlesPageProps) => {
         onScrollEnd={onLoadNextPart}
         className={classNames({ cls: cls.ArticlesPage, additional: [className] })}
       >
-        <ArticleViewSelector view={view} onViewClick={onChangeView} />
+        <ArticlesPageFilters view={view} />
 
-        <ArticleList articles={articles} isLoading={isLoading} view={view} />
+        <ArticleList articles={articles} isLoading={isLoading} view={view} className={cls.list} />
       </PageWrapper>
     </DynamicModuleLoader>
   );

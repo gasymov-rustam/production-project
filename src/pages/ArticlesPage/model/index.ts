@@ -7,5 +7,8 @@ export {
   getArticlesPageLimit,
   getArticlesPageNum,
   getArticlesPageHasMore,
+  getArticlesPageOrder,
+  getArticlesPageSort,
+  getArticlesPageSearch,
 } from './selectors/articlesPageSelectors';
 export { fetchArticlesList, fetchNextArticlesPage } from './services';

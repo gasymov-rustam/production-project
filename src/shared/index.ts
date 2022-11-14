@@ -26,6 +26,7 @@ export {
 export * from './constants';
 export { classNames, DynamicModuleLoader, SuspenseLoader, useAppDispatch, useInitialEffect } from './lib';
 export type { Mods, ReducersList } from './lib';
+export type { SortOrder } from './types';
 export {
   AppLink,
   AppLinkTheme,
@@ -38,6 +39,7 @@ export {
   Modal,
   Portal,
   Select,
+  SelectOption,
   Text,
   TextAlign,
   TextTheme,

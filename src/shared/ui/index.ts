@@ -5,7 +5,7 @@ export { Input } from './Input';
 export { Loader } from './Loader';
 export { Modal } from './Modal';
 export { Portal } from './Portal';
-export { Select } from './Select';
+export { Select, SelectOption } from './Select';
 export { Text, TextAlign, TextTheme, TextSize } from './Text';
 export { Skeleton } from './Skeleton';
 export { Icon } from './Icon';

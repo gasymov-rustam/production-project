@@ -11,5 +11,8 @@ export {
   getArticlesPageLimit,
   getArticlesPageNum,
   getArticlesPageHasMore,
+  getArticlesPageOrder,
+  getArticlesPageSort,
+  getArticlesPageSearch,
   fetchNextArticlesPage,
 } from './model';
