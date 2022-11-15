@@ -4,9 +4,15 @@ import { useSelector } from 'react-redux';
 
 import { ArticleSortField, ArticleSortSelector, ArticleView, ArticleViewSelector } from '../../../../entities/Article';
 import { Card, Input, Select, SortOrder, classNames, useAppDispatch } from '../../../../shared';
-import { articlesPageActions, getArticlesPageOrder, getArticlesPageSort } from '../../model';
+import {
+  articlesPageActions,
+  fetchArticlesList,
+  getArticlesPageOrder,
+  getArticlesPageSearch,
+  getArticlesPageSort,
+} from '../../model';
 
-import cls from './ArticlePageFilters.module.scss';
+import cls from './ArticlesPageFilters.module.scss';
 
 interface ArticlePageFiltersProps {
   className?: string;
@@ -19,6 +25,11 @@ export const ArticlesPageFilters = memo((props: ArticlePageFiltersProps) => {
   const dispatch = useAppDispatch();
   const sort = useSelector(getArticlesPageSort);
   const order = useSelector(getArticlesPageOrder);
+  const search = useSelector(getArticlesPageSearch);
+
+  const fetchData = useCallback(() => {
+    dispatch(fetchArticlesList({ replace: true }));
+  }, [dispatch]);
 
   const onChangeView = useCallback(
     (view: ArticleView) => {
@@ -30,27 +41,38 @@ export const ArticlesPageFilters = memo((props: ArticlePageFiltersProps) => {
   const onChangeSort = useCallback(
     (newSort: ArticleSortField) => {
       dispatch(articlesPageActions.setSort(newSort));
+      dispatch(articlesPageActions.setPage(1));
+      fetchData();
     },
-    [dispatch],
+    [dispatch, fetchData],
   );
 
   const onChangeOrder = useCallback(
     (newOrder: SortOrder) => {
       dispatch(articlesPageActions.setOrder(newOrder));
+      dispatch(articlesPageActions.setPage(1));
+      fetchData();
     },
-    [dispatch],
+    [dispatch, fetchData],
+  );
+
+  const onChangeSearch = useCallback(
+    (search: string) => {
+      dispatch(articlesPageActions.setSearch(search));
+      fetchData();
+    },
+    [dispatch, fetchData],
   );
 
   return (
     <div className={classNames({ cls: cls.ArticlePageFilters, additional: [className] })}>
       <div className={cls.sortWrapper}>
-        <Select label={t('SORT BY')} />
         <ArticleSortSelector sort={sort} order={order} onChangeOrder={onChangeOrder} onChangeSort={onChangeSort} />
         <ArticleViewSelector view={view} onViewClick={onChangeView} />
       </div>
 
       <Card className={cls.search}>
-        <Input placeholder={t('SEARCH')} />
+        <Input placeholder={t('SEARCH')} value={search} onChange={onChangeSearch} />
       </Card>
     </div>
   );

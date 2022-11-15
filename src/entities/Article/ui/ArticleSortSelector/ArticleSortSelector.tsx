@@ -35,25 +35,25 @@ export const ArticleSortSelector = memo((props: ArticleSortSelectorProps) => {
     [t],
   );
 
-  /*   const changeSortHandler = useCallback(
-    (newSort: string) => {
-      onChangeSort(newSort as ArticleSortField);
-    },
-    [onChangeSort],
-  );
-
-  const changeOrderHandler = useCallback(
-    (newOrder: string) => {
-      onChangeOrder(newOrder as SortOrder);
-    },
-    [onChangeOrder],
-  ); */
-
   return (
     <div className={classNames({ cls: cls.ArticleSortSelector, additional: [className] })}>
       <Select<ArticleSortField> label={t('SORT BY')} options={sortFieldOptions} value={sort} onChange={onChangeSort} />
 
-      <Select label={t('BY')} options={orderOptions} value={order} onChange={onChangeOrder} />
+      <Select label={t('BY')} options={orderOptions} value={order} className={cls.order} onChange={onChangeOrder} />
     </div>
   );
 });
+
+/*   const changeSortHandler = useCallback(
+      (newSort: string) => {
+        onChangeSort(newSort as ArticleSortField);
+      },
+      [onChangeSort],
+    );
+  
+    const changeOrderHandler = useCallback(
+      (newOrder: string) => {
+        onChangeOrder(newOrder as SortOrder);
+      },
+      [onChangeOrder],
+    ); */

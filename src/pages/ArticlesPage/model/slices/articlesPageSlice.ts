@@ -59,15 +59,24 @@ export const articlesPageSlice = createSlice({
   },
   extraReducers: (builder) => {
     builder
-      .addCase(fetchArticlesList.pending, (state) => {
+      .addCase(fetchArticlesList.pending, (state, { meta }) => {
         state.error = undefined;
         state.isLoading = true;
+
+        if (meta.arg.replace) {
+          articlesAdapter.removeAll(state);
+        }
       })
-      .addCase(fetchArticlesList.fulfilled, (state, { payload }: PayloadAction<Article[]>) => {
+      .addCase(fetchArticlesList.fulfilled, (state, { meta, payload }) => {
         state.isLoading = false;
         state.error = undefined;
-        articlesAdapter.addMany(state, payload);
         state.hasMore = payload.length > 0;
+
+        if (meta.arg.replace) {
+          articlesAdapter.setAll(state, payload);
+        } else {
+          articlesAdapter.addMany(state, payload);
+        }
       })
       .addCase(fetchArticlesList.rejected, (state, action) => {
         state.isLoading = false;
