@@ -10,4 +10,6 @@ export { Text, TextAlign, TextTheme, TextSize } from './Text';
 export { Skeleton } from './Skeleton';
 export { Icon } from './Icon';
 export { Code } from './Code';
-export { Card } from './Card';
+export { Card, CardTheme } from './Card';
+export { Tab } from './Tab';
+export type { TabItem } from './Tab';

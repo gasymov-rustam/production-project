@@ -57,4 +57,7 @@ export {
   Icon,
   Code,
   Card,
+  CardTheme,
+  Tab,
 } from './ui';
+export type { TabItem } from './ui';
