@@ -1,9 +1,16 @@
-import { memo, useCallback } from 'react';
+import { memo, useCallback, useMemo } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
 
-import { ArticleSortField, ArticleSortSelector, ArticleView, ArticleViewSelector } from '../../../../entities/Article';
-import { Card, Input, Select, SortOrder, classNames, useAppDispatch } from '../../../../shared';
+import {
+  ArticleSortField,
+  ArticleSortSelector,
+  ArticleTypeTabs,
+  ArticleView,
+  ArticleViewSelector,
+} from '../../../../entities/Article';
+import { ArticleType } from '../../../../entities/Article/model/types/article';
+import { Card, Input, SortOrder, Tab, TabItem, classNames, useAppDispatch } from '../../../../shared';
 import { useDebounce } from '../../../../shared/lib';
 import {
   articlesPageActions,
@@ -11,6 +18,7 @@ import {
   getArticlesPageOrder,
   getArticlesPageSearch,
   getArticlesPageSort,
+  getArticlesPageType,
 } from '../../model';
 
 import cls from './ArticlesPageFilters.module.scss';
@@ -27,6 +35,7 @@ export const ArticlesPageFilters = memo((props: ArticlePageFiltersProps) => {
   const sort = useSelector(getArticlesPageSort);
   const order = useSelector(getArticlesPageOrder);
   const search = useSelector(getArticlesPageSearch);
+  const typeValue = useSelector(getArticlesPageType);
 
   const fetchData = useCallback(() => {
     dispatch(fetchArticlesList({ replace: true }));
@@ -62,9 +71,19 @@ export const ArticlesPageFilters = memo((props: ArticlePageFiltersProps) => {
   const onChangeSearch = useCallback(
     (search: string) => {
       dispatch(articlesPageActions.setSearch(search));
+      dispatch(articlesPageActions.setPage(1));
       debouncedFilter();
     },
     [debouncedFilter, dispatch],
+  );
+
+  const onChangeType = useCallback(
+    (tab: TabItem<ArticleType>) => {
+      dispatch(articlesPageActions.setType(tab.value));
+      dispatch(articlesPageActions.setPage(1));
+      fetchData();
+    },
+    [dispatch, fetchData],
   );
 
   return (
@@ -77,6 +96,8 @@ export const ArticlesPageFilters = memo((props: ArticlePageFiltersProps) => {
       <Card className={cls.search}>
         <Input placeholder={t('SEARCH')} value={search} onChange={onChangeSearch} />
       </Card>
+
+      <ArticleTypeTabs value={typeValue} className={cls.tabs} onChangeType={onChangeType} />
     </div>
   );
 });

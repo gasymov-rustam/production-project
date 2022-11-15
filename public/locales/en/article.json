@@ -15,5 +15,10 @@
   "DECREASE": "Decrease",
   "BY CREATED": "date of creating",
   "BY TITLE": "title",
-  "BY VIEWS": "views"
+  "BY VIEWS": "views",
+  "ALL": "All articles",
+  "IT": "It Articles",
+  "SCIENCE": "Science Articles",
+  "ECONOMICS": "Economics Articles",
+  "ARTICLES IS NOT DEFINED!": "Articles is not defined"
 }

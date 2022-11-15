@@ -15,5 +15,9 @@
   "DECREASE": "Убыванию",
   "BY CREATED": "дате создания",
   "BY TITLE": "названию",
-  "BY VIEWS": "просмотрам"
+  "BY VIEWS": "просмотрам",
+  "ALL": "All articles",
+  "IT": "It Articles",
+  "SCIENCE": "Science Articles",
+  "ECONOMICS": "Economics Articles"
 }

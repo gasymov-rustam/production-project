@@ -10,5 +10,6 @@ export {
   getArticlesPageOrder,
   getArticlesPageSort,
   getArticlesPageSearch,
+  getArticlesPageType,
 } from './selectors/articlesPageSelectors';
 export { fetchArticlesList, fetchNextArticlesPage } from './services';

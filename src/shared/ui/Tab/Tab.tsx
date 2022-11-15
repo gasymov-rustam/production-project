@@ -5,22 +5,22 @@ import { Card, CardTheme } from '../Card';
 
 import cls from './Tab.module.scss';
 
-export interface TabItem {
-  value: string;
+export interface TabItem<T extends string> {
+  value: T;
   content: string;
 }
 
-interface TabProps {
+interface TabProps<T extends string> {
   className?: string;
-  tabs: TabItem[];
+  tabs: TabItem<T>[];
   value: string;
-  onTabHandler: (tab: TabItem) => void;
+  onTabHandler: (tab: TabItem<T>) => void;
 }
 
-export const Tab = memo((props: TabProps) => {
+export const Tab = <T extends string>(props: TabProps<T>) => {
   const { className = '', tabs, value, onTabHandler } = props;
 
-  const onClickHandler = useCallback((tab: TabItem) => () => onTabHandler(tab), [onTabHandler]);
+  const onClickHandler = useCallback((tab: TabItem<T>) => () => onTabHandler(tab), [onTabHandler]);
 
   return (
     <div className={classNames({ cls: cls.Tab, additional: [className] })}>
@@ -36,4 +36,4 @@ export const Tab = memo((props: TabProps) => {
       ))}
     </div>
   );
-});
+};

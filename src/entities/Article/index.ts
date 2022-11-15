@@ -8,6 +8,7 @@ export {
   getArticleDetailsError,
   getArticleDetailsIsLoading,
   ArticleView,
+  ArticleType,
   ArticleSortField,
 } from './model';
-export { ArticleDetails, ArticleList, ArticleViewSelector, ArticleSortSelector } from './ui';
+export { ArticleDetails, ArticleTypeTabs, ArticleList, ArticleViewSelector, ArticleSortSelector } from './ui';
