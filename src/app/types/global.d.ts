@@ -29,3 +29,7 @@ type DeepPartial<T> = T extends object
 type ErrorWithMessage = Error & {
   message: string;
 };
+
+type OptionalRecord<K extends keyof any, T> = {
+  [P in K]?: T;
+};

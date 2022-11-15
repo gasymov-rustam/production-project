@@ -24,7 +24,16 @@ export {
   ThemeDecorator,
 } from './config';
 export * from './constants';
-export { classNames, DynamicModuleLoader, SuspenseLoader, useAppDispatch, useInitialEffect } from './lib';
+export {
+  classNames,
+  DynamicModuleLoader,
+  SuspenseLoader,
+  useAppDispatch,
+  useInitialEffect,
+  useThrottle,
+  useDebounce,
+  addQueryParams,
+} from './lib';
 export type { Mods, ReducersList } from './lib';
 export type { SortOrder } from './types';
 export {

@@ -4,6 +4,7 @@ import { useSelector } from 'react-redux';
 
 import { ArticleSortField, ArticleSortSelector, ArticleView, ArticleViewSelector } from '../../../../entities/Article';
 import { Card, Input, Select, SortOrder, classNames, useAppDispatch } from '../../../../shared';
+import { useDebounce } from '../../../../shared/lib';
 import {
   articlesPageActions,
   fetchArticlesList,
@@ -31,6 +32,8 @@ export const ArticlesPageFilters = memo((props: ArticlePageFiltersProps) => {
     dispatch(fetchArticlesList({ replace: true }));
   }, [dispatch]);
 
+  const debouncedFilter = useDebounce(fetchData, 500);
+
   const onChangeView = useCallback(
     (view: ArticleView) => {
       dispatch(articlesPageActions.setView(view));
@@ -42,26 +45,26 @@ export const ArticlesPageFilters = memo((props: ArticlePageFiltersProps) => {
     (newSort: ArticleSortField) => {
       dispatch(articlesPageActions.setSort(newSort));
       dispatch(articlesPageActions.setPage(1));
-      fetchData();
+      debouncedFilter();
     },
-    [dispatch, fetchData],
+    [debouncedFilter, dispatch],
   );
 
   const onChangeOrder = useCallback(
     (newOrder: SortOrder) => {
       dispatch(articlesPageActions.setOrder(newOrder));
       dispatch(articlesPageActions.setPage(1));
-      fetchData();
+      debouncedFilter();
     },
-    [dispatch, fetchData],
+    [debouncedFilter, dispatch],
   );
 
   const onChangeSearch = useCallback(
     (search: string) => {
       dispatch(articlesPageActions.setSearch(search));
-      fetchData();
+      debouncedFilter();
     },
-    [dispatch, fetchData],
+    [debouncedFilter, dispatch],
   );
 
   return (

@@ -1,5 +1,6 @@
 import { memo, useCallback } from 'react';
 import { useSelector } from 'react-redux';
+import { useSearchParams } from 'react-router-dom';
 
 import { ArticleList, ArticleView, ArticleViewSelector } from '../../../../entities/Article';
 import { DynamicModuleLoader, ReducersList, classNames, useAppDispatch, useInitialEffect } from '../../../../shared';
@@ -37,6 +38,7 @@ const ArticlesPage = (props: ArticlesPageProps) => {
   const articles = useSelector(getArticles.selectAll);
   const isLoading = useSelector(getArticlesPageIsLoading);
   const view = useSelector(getArticlesPageView);
+  const [searchParams] = useSearchParams();
   const error = useSelector(getArticlesPageError);
 
   const onLoadNextPart = useCallback(() => {
@@ -44,7 +46,7 @@ const ArticlesPage = (props: ArticlesPageProps) => {
   }, [dispatch]);
 
   useInitialEffect(() => {
-    dispatch(initArticlesPage());
+    dispatch(initArticlesPage(searchParams));
   });
 
   return (
