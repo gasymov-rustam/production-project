@@ -4,7 +4,7 @@ import React from 'react';
 import { ArticleDetailsPageHeader } from './ArticleDetailsPageHeader';
 
 export default {
-  title: 'shared/ArticleDetailsPageHeader',
+  title: 'pages/Article/ArticleDetailsPageHeader',
   component: ArticleDetailsPageHeader,
   argTypes: {
     backgroundColor: { control: 'color' },

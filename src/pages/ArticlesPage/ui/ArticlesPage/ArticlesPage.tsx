@@ -2,11 +2,10 @@ import { memo, useCallback } from 'react';
 import { useSelector } from 'react-redux';
 import { useSearchParams } from 'react-router-dom';
 
-import { ArticleList, ArticleView, ArticleViewSelector } from '../../../../entities/Article';
+import { ArticleList } from '../../../../entities/Article';
 import { DynamicModuleLoader, ReducersList, classNames, useAppDispatch, useInitialEffect } from '../../../../shared';
 import { PageWrapper } from '../../../../widgets';
 import {
-  articlesPageActions,
   articlesPageReducer,
   fetchNextArticlesPage,
   getArticles,

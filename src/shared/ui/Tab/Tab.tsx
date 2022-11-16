@@ -17,7 +17,7 @@ interface TabProps<T extends string> {
   onTabHandler: (tab: TabItem<T>) => void;
 }
 
-export const Tab = <T extends string>(props: TabProps<T>) => {
+const TabWrapped = <T extends string>(props: TabProps<T>) => {
   const { className = '', tabs, value, onTabHandler } = props;
 
   const onClickHandler = useCallback((tab: TabItem<T>) => () => onTabHandler(tab), [onTabHandler]);
@@ -37,3 +37,5 @@ export const Tab = <T extends string>(props: TabProps<T>) => {
     </div>
   );
 };
+
+export const Tab = memo(TabWrapped) as typeof TabWrapped;

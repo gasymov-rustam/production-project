@@ -1,4 +1,4 @@
-import { memo, useCallback, useMemo } from 'react';
+import { memo, useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
 
@@ -10,7 +10,7 @@ import {
   ArticleViewSelector,
 } from '../../../../entities/Article';
 import { ArticleType } from '../../../../entities/Article/model/types/article';
-import { Card, Input, SortOrder, Tab, TabItem, classNames, useAppDispatch } from '../../../../shared';
+import { Card, Input, SortOrder, TabItem, classNames, useAppDispatch } from '../../../../shared';
 import { useDebounce } from '../../../../shared/lib';
 import {
   articlesPageActions,

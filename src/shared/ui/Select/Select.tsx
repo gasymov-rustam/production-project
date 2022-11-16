@@ -1,4 +1,4 @@
-import { ChangeEvent, useMemo } from 'react';
+import { ChangeEvent, memo, useMemo } from 'react';
 
 import { Mods, classNames } from '../../lib';
 
@@ -18,7 +18,7 @@ interface SelectProps<T extends string> {
   readonly?: boolean;
 }
 
-export const Select = <T extends string>(props: SelectProps<T>) => {
+const SelectWrapped = <T extends string>(props: SelectProps<T>) => {
   const { className = '', label, options, onChange, value, readonly } = props;
 
   const onChangeHandler = (e: ChangeEvent<HTMLSelectElement>) => {
@@ -47,3 +47,5 @@ export const Select = <T extends string>(props: SelectProps<T>) => {
     </div>
   );
 };
+
+export const Select = memo(SelectWrapped) as typeof SelectWrapped;
