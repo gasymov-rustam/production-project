@@ -2,11 +2,11 @@ import { Reducer } from '@reduxjs/toolkit';
 import { FC, Fragment, createElement, useEffect } from 'react';
 import { useStore } from 'react-redux';
 
-import { ReduxStoreManager, StateSchemaKey } from '../../../../app';
+import { ReduxStoreManager, StateSchema, StateSchemaKey } from '../../../../app';
 import { useAppDispatch } from '../../hooks';
 
 export type ReducersList = {
-  [name in StateSchemaKey]?: Reducer;
+  [name in StateSchemaKey]?: Reducer<NonNullable<StateSchema[name]>>;
 };
 
 // type ReducersListEntry = [StateSchemaKey, Reducer];

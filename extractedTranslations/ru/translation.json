@@ -45,6 +45,7 @@
   "PROFILE": "PROFILE",
   "PROFILE PAGE": "PROFILE PAGE",
   "READ MORE": "READ MORE",
+  "RECOMMENDATIONS": "RECOMMENDATIONS",
   "RELOAD PAGE": "RELOAD PAGE",
   "SAVE": "SAVE",
   "SEARCH": "SEARCH",
@@ -79,5 +80,6 @@
   "Произошла ошибка при загрузке статьи": {
     "": ""
   },
+  "Рекомендуем": "Рекомендуем",
   "Укажите валюту": "Укажите валюту"
 }

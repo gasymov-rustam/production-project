@@ -1,11 +1,13 @@
 export { ArticleDetailsPage } from './ui';
 export {
+  articleDetailsPageReducer,
+  getArticleRecommendations,
   ArticleDetailsCommentsActions,
-  ArticleDetailsCommentsReducer,
   getArticleComments,
   getArticleCommentsIsLoading,
   getArticleCommentsError,
-  articleDetailsCommentsName,
+  getArticleRecommendationsIsLoading,
+  getArticleRecommendationsError,
   fetchCommentsByArticleId,
 } from './model';
-export type { ArticleDetailsCommentsSchema } from './model';
+export type { ArticleDetailsPageSchema } from './model';

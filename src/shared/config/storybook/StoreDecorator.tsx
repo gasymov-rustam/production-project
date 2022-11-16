@@ -6,7 +6,7 @@ import { profileReducer } from '../../../entities/Profile';
 import { loginReducer } from '../../../features';
 import { addCommentFormReducer } from '../../../features/AddCommentForm';
 import { scrollRestorationReducer } from '../../../features/ScrollRestoration';
-import { ArticleDetailsCommentsReducer } from '../../../pages/ArticleDetailsPage';
+import { articleDetailsPageReducer } from '../../../pages/ArticleDetailsPage/model/slices';
 import { articlesPageReducer } from '../../../pages/ArticlesPage';
 import { ReducersList } from '../../lib';
 
@@ -14,10 +14,10 @@ const defaultAsyncReducers: ReducersList = {
   loginForm: loginReducer,
   profile: profileReducer,
   articleDetails: articleDetailsReducer,
-  articleDetailsComments: ArticleDetailsCommentsReducer,
   addCommentForm: addCommentFormReducer,
   articlesPage: articlesPageReducer,
   scrollRestoration: scrollRestorationReducer,
+  articleDetailsPage: articleDetailsPageReducer,
 };
 
 export const StoreDecorator =

@@ -16,8 +16,10 @@
   "BY CREATED": "дате создания",
   "BY TITLE": "названию",
   "BY VIEWS": "просмотрам",
-  "ALL": "All articles",
-  "IT": "It Articles",
-  "SCIENCE": "Science Articles",
-  "ECONOMICS": "Economics Articles"
+  "ALL": "Все статьи",
+  "IT": "It статьи",
+  "SCIENCE": "Научные статьи",
+  "ECONOMICS": "Экономические статьи",
+  "ARTICLES IS NOT DEFINED!": "Статьи не найдены",
+  "RECOMMENDATIONS": "Рекомендации"
 }

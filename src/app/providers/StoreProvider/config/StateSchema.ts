@@ -6,7 +6,7 @@ import type { ArticleDetailsSchema, CounterSchema, ProfileSchema, UserSchema } f
 import type { LoginSchema } from '../../../../features';
 import { AddCommentFormSchema } from '../../../../features/AddCommentForm';
 import { ScrollRestorationSchema } from '../../../../features/ScrollRestoration';
-import { ArticleDetailsCommentsSchema } from '../../../../pages/ArticleDetailsPage';
+import { ArticleDetailsPageSchema } from '../../../../pages/ArticleDetailsPage';
 import { ArticlesPageSchema } from '../../../../pages/ArticlesPage';
 
 export interface StateSchema {
@@ -15,12 +15,12 @@ export interface StateSchema {
   scrollRestoration: ScrollRestorationSchema;
 
   /** Async Reducers */
-  profile?: ProfileSchema;
   loginForm?: LoginSchema;
-  articleDetailsComments?: ArticleDetailsCommentsSchema;
-  articlesPage?: ArticlesPageSchema;
+  profile?: ProfileSchema;
   articleDetails?: ArticleDetailsSchema;
   addCommentForm?: AddCommentFormSchema;
+  articlesPage?: ArticlesPageSchema;
+  articleDetailsPage?: ArticleDetailsPageSchema;
 }
 
 export type StateSchemaKey = keyof StateSchema;

@@ -1,10 +1,12 @@
-export type { ArticleDetailsCommentsSchema } from './types/ArticleDetailsCommentsSchema';
+export type { ArticleDetailsPageSchema } from './types';
 export {
   ArticleDetailsCommentsActions,
-  ArticleDetailsCommentsReducer,
-  articleDetailsCommentsName,
   getArticleComments,
-} from './slices/articleDetailsCommentsSlice';
+  articleDetailsPageReducer,
+  getArticleRecommendations,
+} from './slices';
 export { getArticleCommentsError, getArticleCommentsIsLoading } from './selectors/comments';
 export { fetchCommentsByArticleId } from './services/fetchCommentsByArticleId';
+export { fetchArticleRecommendations } from './services/fetchArticleRecommendations';
 export { addCommentForArticle } from './services/addCommentForArticle';
+export { getArticleRecommendationsIsLoading, getArticleRecommendationsError } from './selectors/recommendations';
