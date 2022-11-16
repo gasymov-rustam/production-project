@@ -84,7 +84,12 @@ const ArticleDetailsPage = (props: ArticleDetailsPageProps) => {
         <ArticleDetails id={id} />
 
         <Text size={TextSize.L} className={cls.commentTitle} title={t('RECOMMENDATIONS')} />
-        <ArticleList articles={recommendations} isLoading={recommendationsIsLoading} className={cls.recommendations} />
+        <ArticleList
+          articles={recommendations}
+          isLoading={recommendationsIsLoading}
+          className={cls.recommendations}
+          target="_blank"
+        />
 
         <Text title={t('COMMENTS')} className={cls.commentTitle} />
         <AddCommentForm onSendComment={onSendComment} />
