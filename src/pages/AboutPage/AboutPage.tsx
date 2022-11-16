@@ -1,12 +1,10 @@
 import { memo } from 'react';
 import { useTranslation } from 'react-i18next';
 
-import { PageWrapper } from '../../widgets';
-
 const AboutPage = memo(() => {
   const { t } = useTranslation('about');
 
-  return <PageWrapper>{t('ABOUT PAGE')}</PageWrapper>;
+  return <div>{t('ABOUT PAGE')}</div>;
 });
 
 export default AboutPage;
