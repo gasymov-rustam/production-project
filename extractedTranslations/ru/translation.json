@@ -13,6 +13,7 @@
   "AVATAR LINK": "AVATAR LINK",
   "Authorization": "Authorization",
   "BACK": "BACK",
+  "BACK TO LIST": "BACK TO LIST",
   "BY": "BY",
   "BY CREATED": "BY CREATED",
   "BY TITLE": "BY TITLE",
@@ -20,9 +21,11 @@
   "CANCEL": "CANCEL",
   "COMMENTS": "COMMENTS",
   "COMMENTS EMPTY": "COMMENTS EMPTY",
+  "CREATE NEW ARTICLE": "CREATE NEW ARTICLE",
   "DECREASE": "DECREASE",
   "DECREMENT": "DECREMENT",
   "EDIT": "EDIT",
+  "EDIT ARTICLE WITH ID = ": "EDIT ARTICLE WITH ID = ",
   "ENTER": "ENTER",
   "ENTER YOUR COMMENT": "ENTER YOUR COMMENT",
   "ENTER YOUR PASSWORD": "ENTER YOUR PASSWORD",
@@ -47,6 +50,7 @@
   "READ MORE": "READ MORE",
   "RECOMMENDATIONS": "RECOMMENDATIONS",
   "RELOAD PAGE": "RELOAD PAGE",
+  "Rustam App": "Rustam App",
   "SAVE": "SAVE",
   "SEARCH": "SEARCH",
   "SEND": "SEND",
@@ -59,6 +63,7 @@
   "SORT BY": "SORT BY",
   "TOGGLE": "TOGGLE",
   "TRY REFRESH PAGE": "TRY REFRESH PAGE",
+  "Ulbi TV App": "Ulbi TV App",
   "YOUR AGE": "YOUR AGE",
   "YOUR CITY": "YOUR CITY",
   "YOUR FIRST NAME": "YOUR FIRST NAME",
@@ -80,6 +85,9 @@
   "Произошла ошибка при загрузке статьи": {
     "": ""
   },
+  "Редактирование статьи с ID = ": "Редактирование статьи с ID = ",
   "Рекомендуем": "Рекомендуем",
+  "Создание новой статьи": "Создание новой статьи",
+  "Создать статью": "Создать статью",
   "Укажите валюту": "Укажите валюту"
 }

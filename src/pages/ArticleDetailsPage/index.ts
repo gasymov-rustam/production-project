@@ -9,5 +9,6 @@ export {
   getArticleRecommendationsIsLoading,
   getArticleRecommendationsError,
   fetchCommentsByArticleId,
+  getCanEditArticle,
 } from './model';
 export type { ArticleDetailsPageSchema } from './model';

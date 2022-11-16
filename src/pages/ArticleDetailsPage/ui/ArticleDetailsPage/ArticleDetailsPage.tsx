@@ -8,11 +8,8 @@ import { ArticleList } from '../../../../entities/Article';
 import { CommentList } from '../../../../entities/Comment';
 import { AddCommentForm } from '../../../../features/AddCommentForm';
 import {
-  Button,
-  ButtonTheme,
   DynamicModuleLoader,
   ReducersList,
-  RoutePath,
   Text,
   TextSize,
   classNames,
@@ -30,6 +27,7 @@ import {
   getArticleRecommendations,
   getArticleRecommendationsIsLoading,
 } from '../../model';
+import { ArticleDetailsPageHeader } from '../ArticleDetailsPageHeader';
 
 import cls from './ArticleDetailsPage.module.scss';
 
@@ -50,7 +48,6 @@ const ArticleDetailsPage = (props: ArticleDetailsPageProps) => {
   const recommendations = useSelector(getArticleRecommendations.selectAll);
   const commentsIsLoading = useSelector(getArticleCommentsIsLoading);
   const recommendationsIsLoading = useSelector(getArticleRecommendationsIsLoading);
-  const navigate = useNavigate();
 
   const onSendComment = useCallback(
     (text: string) => {
@@ -58,8 +55,6 @@ const ArticleDetailsPage = (props: ArticleDetailsPageProps) => {
     },
     [dispatch],
   );
-
-  const onBackToList = useCallback(() => navigate(RoutePath.articles), [navigate]);
 
   useInitialEffect(() => {
     dispatch(fetchCommentsByArticleId(id));
@@ -77,13 +72,12 @@ const ArticleDetailsPage = (props: ArticleDetailsPageProps) => {
   return (
     <DynamicModuleLoader reducers={reducers}>
       <PageWrapper className={classNames({ cls: cls.ArticlesPage, additional: [className] })}>
-        <Button theme={ButtonTheme.OUTLINE} onClick={onBackToList}>
-          {t('BACK')}
-        </Button>
+        <ArticleDetailsPageHeader />
 
         <ArticleDetails id={id} />
 
         <Text size={TextSize.L} className={cls.commentTitle} title={t('RECOMMENDATIONS')} />
+
         <ArticleList
           articles={recommendations}
           isLoading={recommendationsIsLoading}

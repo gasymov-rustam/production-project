@@ -4,7 +4,17 @@ import { useSelector } from 'react-redux';
 
 import { getUserAuthData, userActions } from '../../../entities';
 import { LoginModal } from '../../../features';
-import { Button, ButtonTheme, classNames, useAppDispatch } from '../../../shared';
+import {
+  AppLink,
+  AppLinkTheme,
+  Button,
+  ButtonTheme,
+  RoutePath,
+  Text,
+  TextTheme,
+  classNames,
+  useAppDispatch,
+} from '../../../shared';
 
 import cls from './Navbar.module.scss';
 
@@ -33,6 +43,12 @@ export const Navbar = memo(({ className = '' }: NavbarProps) => {
   if (userData) {
     return (
       <header className={classNames({ cls: cls.Navbar, additional: [className] })}>
+        <Text className={cls.appName} title={t('Rustam App')} theme={TextTheme.INVERTED} />
+
+        <AppLink to={RoutePath.article_create} theme={AppLinkTheme.SECONDARY} className={cls.createBtn}>
+          {t('CREATE NEW ARTICLE')}
+        </AppLink>
+
         <Button theme={ButtonTheme.CLEAR_INVERTED} className={cls.links} onClick={onLogOut}>
           {t('SIGN OUT')}
         </Button>

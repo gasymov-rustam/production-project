@@ -38,6 +38,7 @@ export const ArticleListItem = memo((props: ArticleListItemProps) => {
       <Icon Svg={EyeIcon} />
     </>
   );
+  console.log('1221121', target);
 
   if (view === ArticleView.BIG) {
     const textBlock = article.blocks.find((item) => item.type === ArticleBlockType.TEXT) as ArticleTextBlock;

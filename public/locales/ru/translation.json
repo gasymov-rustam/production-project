@@ -21,5 +21,9 @@
   "AUTHORIZATION": "Авторизация",
   "SET CURRENCY": "Укажите валюту",
   "SET COUNTRY": "Укажите страну",
-  "COMMENTS EMPTY": "Комментарии отсутствуют"
+  "COMMENTS EMPTY": "Комментарии отсутствуют",
+  "EDIT ARTICLE WITH ID = ": "Редактирование статьи с ID = ",
+  "CREATE NEW ARTICLE": "Создание новой статьи",
+  "EDIT": "Edit",
+  "BACK TO LIST": "Назад к списку"
 }

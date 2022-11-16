@@ -25,7 +25,7 @@ export const ArticleList = memo((props: ArticleListProps) => {
   const { t } = useTranslation();
 
   const renderList = (article: Article) => (
-    <ArticleListItem key={article.id} article={article} view={view} className={cls.card} target={target} />
+    <ArticleListItem key={article.id} article={article} target={String(target)} view={view} className={cls.card} />
   );
 
   if (!isLoading && !articles.length) {
