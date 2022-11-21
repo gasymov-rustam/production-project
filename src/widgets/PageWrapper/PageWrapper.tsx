@@ -13,6 +13,8 @@ interface PageWrapperProps {
   onScrollEnd?: () => void;
 }
 
+export const PAGE_ID = 'PAGE_ID';
+
 export const PageWrapper = (props: PageWrapperProps) => {
   const { className = '', children, onScrollEnd } = props;
   const wrapperRef = useRef() as MutableRefObject<HTMLDivElement>;
@@ -38,6 +40,7 @@ export const PageWrapper = (props: PageWrapperProps) => {
   return (
     <section
       ref={wrapperRef}
+      id={PAGE_ID}
       className={classNames({ cls: cls.PageWrapper, additional: [className] })}
       onScroll={onScroll}
     >
