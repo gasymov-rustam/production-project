@@ -19,7 +19,7 @@ module.exports = {
     ecmaVersion: 'latest',
     sourceType: 'module',
   },
-  plugins: ['react', '@typescript-eslint', 'prettier', 'react-hooks'],
+  plugins: ['react', '@typescript-eslint', 'prettier', 'react-hooks', 'path-checker-plugin'],
   rules: {
     indent: 'off',
     'react/jsx-indent': [2, 2],
@@ -63,6 +63,7 @@ module.exports = {
     'no-param-reassign': 'off',
     'no-undef': 'off',
     'react/no-array-index-key': 'off',
+    'path-checker-plugin/path-checker': 'error',
   },
   globals: {
     __IS_DEV__: true,
