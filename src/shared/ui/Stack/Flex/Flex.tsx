@@ -1,4 +1,4 @@
-import { ReactNode } from 'react';
+import { DetailedHTMLProps, HTMLAttributes, ReactNode } from 'react';
 
 import { Mods, classNames } from '../../../lib';
 
@@ -44,7 +44,8 @@ const gapClasses: Record<FlexGap, string> = {
   32: cls.gap32,
 };
 
-export interface FlexProps {
+type DiveProps = DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement>;
+export interface FlexProps extends DiveProps {
   className?: string;
   children: ReactNode;
   justify?: FlexJustify;
