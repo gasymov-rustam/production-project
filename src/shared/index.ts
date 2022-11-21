@@ -59,5 +59,7 @@ export {
   Card,
   CardTheme,
   Tab,
+  VerticalStack,
+  HorizontalStack,
 } from './ui';
 export type { TabItem } from './ui';

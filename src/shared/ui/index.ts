@@ -12,4 +12,5 @@ export { Icon } from './Icon';
 export { Code } from './Code';
 export { Card, CardTheme } from './Card';
 export { Tab } from './Tab';
+export { HorizontalStack, VerticalStack } from './Stack';
 export type { TabItem } from './Tab';

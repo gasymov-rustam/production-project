@@ -1,11 +1,9 @@
 import { memo } from 'react';
 import { useTranslation } from 'react-i18next';
 
-import { Text, classNames } from '../../../../shared';
+import { Text, VerticalStack, classNames } from '../../../../shared';
 import type { Comment } from '../../model';
 import { CommentCard } from '../CommentCard';
-
-import cls from './CommentList.module.scss';
 
 interface CommentListProps {
   className?: string;
@@ -19,23 +17,21 @@ export const CommentList = memo((props: CommentListProps) => {
 
   if (isLoading) {
     return (
-      <div className={classNames({ additional: [className] })}>
+      <VerticalStack gap="16" className={classNames({ additional: [className] })}>
         <CommentCard isLoading />
         <CommentCard isLoading />
         <CommentCard isLoading />
-      </div>
+      </VerticalStack>
     );
   }
 
   return (
-    <div className={classNames({ additional: [className] })}>
+    <VerticalStack gap="16" className={classNames({ additional: [className] })}>
       {comments?.length ? (
-        comments.map((comment) => (
-          <CommentCard key={comment.id} isLoading={isLoading} comment={comment} className={cls.comment} />
-        ))
+        comments.map((comment) => <CommentCard key={comment.id} isLoading={isLoading} comment={comment} />)
       ) : (
         <Text text={t('COMMENTS EMPTY')} />
       )}
-    </div>
+    </VerticalStack>
   );
 });

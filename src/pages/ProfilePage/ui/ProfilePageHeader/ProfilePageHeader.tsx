@@ -3,9 +3,7 @@ import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
 
 import { getProfileReadonly, getValidUser, profileActions, updateProfileData } from '../../../../entities/Profile';
-import { Button, ButtonTheme, Text, classNames, useAppDispatch } from '../../../../shared';
-
-import cls from './ProfilePageHeader.module.scss';
+import { Button, ButtonTheme, HorizontalStack, Text, classNames, useAppDispatch } from '../../../../shared';
 
 interface ProfilePageHeaderProps {
   className?: string;
@@ -33,28 +31,28 @@ export const ProfilePageHeader: FC<ProfilePageHeaderProps> = ({ className = '' }
   }, [dispatch]);
 
   return (
-    <div className={classNames({ cls: cls.ProfilePageHeader, additional: [className] })}>
+    <HorizontalStack justify="between" max className={classNames({ additional: [className] })}>
       <Text title={t('PROFILE')} />
 
       {isValidUser && (
-        <div className={cls.btnWrapper}>
+        <div>
           {readonly ? (
-            <Button className={cls.editBtn} theme={ButtonTheme.OUTLINE} onClick={onEdit}>
+            <Button theme={ButtonTheme.OUTLINE} onClick={onEdit}>
               {t('EDIT')}
             </Button>
           ) : (
-            <>
-              <Button className={cls.editBtn} theme={ButtonTheme.OUTLINE_RED} onClick={onCancelEdit}>
+            <HorizontalStack gap="8">
+              <Button theme={ButtonTheme.OUTLINE_RED} onClick={onCancelEdit}>
                 {t('CANCEL')}
               </Button>
 
-              <Button className={cls.saveBtn} theme={ButtonTheme.OUTLINE} onClick={onSaveEdit}>
+              <Button theme={ButtonTheme.OUTLINE} onClick={onSaveEdit}>
                 {t('SAVE')}
               </Button>
-            </>
+            </HorizontalStack>
           )}
         </div>
       )}
-    </div>
+    </HorizontalStack>
   );
 };

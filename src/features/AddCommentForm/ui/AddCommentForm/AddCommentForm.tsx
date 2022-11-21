@@ -6,6 +6,7 @@ import {
   Button,
   ButtonTheme,
   DynamicModuleLoader,
+  HorizontalStack,
   Input,
   ReducersList,
   classNames,
@@ -45,7 +46,11 @@ const AddCommentForm = memo((props: AddCommentFormProps) => {
 
   return (
     <DynamicModuleLoader reducers={reducers}>
-      <div className={classNames({ cls: cls.AddCommentForm, additional: [className] })}>
+      <HorizontalStack
+        justify="between"
+        max
+        className={classNames({ cls: cls.AddCommentForm, additional: [className] })}
+      >
         <Input
           type="text"
           className={cls.input}
@@ -57,7 +62,7 @@ const AddCommentForm = memo((props: AddCommentFormProps) => {
         <Button theme={ButtonTheme.OUTLINE} onClick={onSendHandler}>
           {t('SEND')}
         </Button>
-      </div>
+      </HorizontalStack>
     </DynamicModuleLoader>
   );
 });

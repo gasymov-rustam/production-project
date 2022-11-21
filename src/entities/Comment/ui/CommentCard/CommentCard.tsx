@@ -1,6 +1,16 @@
 import { memo } from 'react';
 
-import { AppLink, Avatar, RoutePath, Skeleton, Text, TextAlign, TextSize, classNames } from '../../../../shared';
+import {
+  AppLink,
+  Avatar,
+  RoutePath,
+  Skeleton,
+  Text,
+  TextAlign,
+  TextSize,
+  VerticalStack,
+  classNames,
+} from '../../../../shared';
 import type { Comment } from '../../model';
 
 import cls from './CommentCard.module.scss';
@@ -16,13 +26,14 @@ export const CommentCard = memo((props: CommentCardProps) => {
 
   if (isLoading) {
     return (
-      <div className={classNames({ additional: [className, cls.loading] })}>
+      <VerticalStack gap="8" className={classNames({ additional: [className, cls.loading] })}>
         <div className={cls.header}>
           <Skeleton width={30} height={30} border="50%" />
           <Skeleton height={16} width={100} className={cls.username} />
         </div>
+
         <Skeleton className={cls.text} width="100%" height={50} />
-      </div>
+      </VerticalStack>
     );
   }
 
@@ -31,7 +42,7 @@ export const CommentCard = memo((props: CommentCardProps) => {
   }
 
   return (
-    <div className={classNames({ cls: cls.CommentCard, additional: [className] })}>
+    <VerticalStack gap="8" className={classNames({ cls: cls.CommentCard, additional: [className] })}>
       <AppLink to={`${RoutePath.profile}${comment.user.id}`} className={cls.header}>
         {comment?.user.avatar && <Avatar size={30} src={comment.user.avatar} alt={comment.user.userName} />}
 
@@ -39,6 +50,6 @@ export const CommentCard = memo((props: CommentCardProps) => {
       </AppLink>
 
       <Text align={TextAlign.LEFT} text={comment.text} className={cls.text} />
-    </div>
+    </VerticalStack>
   );
 });

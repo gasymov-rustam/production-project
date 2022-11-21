@@ -2,6 +2,7 @@ import { memo, useCallback } from 'react';
 
 import { classNames } from '../../lib';
 import { Card, CardTheme } from '../Card';
+import { HorizontalStack } from '../Stack';
 
 import cls from './Tab.module.scss';
 
@@ -23,7 +24,7 @@ const TabWrapped = <T extends string>(props: TabProps<T>) => {
   const onClickHandler = useCallback((tab: TabItem<T>) => () => onTabHandler(tab), [onTabHandler]);
 
   return (
-    <div className={classNames({ cls: cls.Tab, additional: [className] })}>
+    <HorizontalStack gap="16" className={classNames({ cls: cls.Tab, additional: [className] })}>
       {tabs?.map((tab) => (
         <Card
           key={tab.value}
@@ -34,7 +35,7 @@ const TabWrapped = <T extends string>(props: TabProps<T>) => {
           {tab.content}
         </Card>
       ))}
-    </div>
+    </HorizontalStack>
   );
 };
 

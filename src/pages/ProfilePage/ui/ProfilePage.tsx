@@ -21,6 +21,7 @@ import {
   ReducersList,
   Text,
   TextTheme,
+  VerticalStack,
   classNames,
   useAppDispatch,
   useInitialEffect,
@@ -124,25 +125,27 @@ const ProfilePage = memo(({ className = '' }: ProfilePageProps) => {
   return (
     <DynamicModuleLoader reducers={reducers} removeAfterUnmount>
       <PageWrapper className={classNames({ additional: [className] })}>
-        <ProfilePageHeader />
+        <VerticalStack gap="16" max>
+          <ProfilePageHeader />
 
-        {!!validateErrors?.length &&
-          validateErrors.map((err) => <Text key={err} theme={TextTheme.ERROR} text={validateErrorTranslates[err]} />)}
+          {!!validateErrors?.length &&
+            validateErrors.map((err) => <Text key={err} theme={TextTheme.ERROR} text={validateErrorTranslates[err]} />)}
 
-        <ProfileCard
-          data={formData}
-          isLoading={isLoading}
-          error={error}
-          readonly={readonly}
-          onChangeFirstName={onChangeFirstName}
-          onChangeLastName={onChangeLastName}
-          onChangeAge={onChangeAge}
-          onChangeCity={onChangeCity}
-          onChangeUserName={onChangeUserName}
-          onChangeAvatar={onChangeAvatar}
-          onChangeCurrency={onChangeCurrency}
-          onChangeCountry={onChangeCountry}
-        />
+          <ProfileCard
+            data={formData}
+            isLoading={isLoading}
+            error={error}
+            readonly={readonly}
+            onChangeFirstName={onChangeFirstName}
+            onChangeLastName={onChangeLastName}
+            onChangeAge={onChangeAge}
+            onChangeCity={onChangeCity}
+            onChangeUserName={onChangeUserName}
+            onChangeAvatar={onChangeAvatar}
+            onChangeCurrency={onChangeCurrency}
+            onChangeCountry={onChangeCountry}
+          />
+        </VerticalStack>
       </PageWrapper>
     </DynamicModuleLoader>
   );

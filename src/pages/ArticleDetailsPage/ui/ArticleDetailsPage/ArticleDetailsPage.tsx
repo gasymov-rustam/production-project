@@ -12,6 +12,7 @@ import {
   ReducersList,
   Text,
   TextSize,
+  VerticalStack,
   classNames,
   useAppDispatch,
   useInitialEffect,
@@ -72,23 +73,25 @@ const ArticleDetailsPage = (props: ArticleDetailsPageProps) => {
   return (
     <DynamicModuleLoader reducers={reducers}>
       <PageWrapper className={classNames({ cls: cls.ArticlesPage, additional: [className] })}>
-        <ArticleDetailsPageHeader />
+        <VerticalStack gap="16" max>
+          <ArticleDetailsPageHeader />
 
-        <ArticleDetails id={id} />
+          <ArticleDetails id={id} />
 
-        <Text size={TextSize.L} className={cls.commentTitle} title={t('RECOMMENDATIONS')} />
+          <Text size={TextSize.L} className={cls.commentTitle} title={t('RECOMMENDATIONS')} />
 
-        <ArticleList
-          articles={recommendations}
-          isLoading={recommendationsIsLoading}
-          className={cls.recommendations}
-          target="_blank"
-        />
+          <ArticleList
+            articles={recommendations}
+            isLoading={recommendationsIsLoading}
+            className={cls.recommendations}
+            target="_blank"
+          />
 
-        <Text title={t('COMMENTS')} className={cls.commentTitle} />
-        <AddCommentForm onSendComment={onSendComment} />
+          <Text title={t('COMMENTS')} className={cls.commentTitle} />
+          <AddCommentForm onSendComment={onSendComment} />
 
-        <CommentList isLoading={commentsIsLoading} comments={comments} />
+          <CommentList isLoading={commentsIsLoading} comments={comments} />
+        </VerticalStack>
       </PageWrapper>
     </DynamicModuleLoader>
   );

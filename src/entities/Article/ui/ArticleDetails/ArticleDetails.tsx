@@ -7,12 +7,14 @@ import {
   CalendarIcon,
   DynamicModuleLoader,
   EyeIcon,
+  HorizontalStack,
   Icon,
   ReducersList,
   Skeleton,
   Text,
   TextAlign,
   TextSize,
+  VerticalStack,
   classNames,
   useAppDispatch,
   useInitialEffect,
@@ -85,28 +87,30 @@ export const ArticleDetails = memo((props: ArticleDetailsProps) => {
   } else
     content = (
       <>
-        <div className={cls.avatarWrapper}>
+        <HorizontalStack justify="center" className={cls.avatarWrapper}>
           <Avatar size={200} src={String(article?.img)} className={cls.avatar} alt={String(article?.title)} />
-        </div>
+        </HorizontalStack>
 
-        <Text
-          size={TextSize.L}
-          align={TextAlign.LEFT}
-          title={article?.title}
-          text={article?.subtitle}
-          className={cls.title}
-        />
+        <VerticalStack gap="4" max>
+          <Text
+            size={TextSize.L}
+            align={TextAlign.LEFT}
+            title={article?.title}
+            text={article?.subtitle}
+            className={cls.title}
+          />
 
-        <div className={cls.articleInfo}>
-          <Icon Svg={EyeIcon} className={cls.icon} />
-          <Text align={TextAlign.LEFT} text={String(article?.views)} />
-        </div>
+          <HorizontalStack gap="8" className={cls.articleInfo}>
+            <Icon Svg={EyeIcon} className={cls.icon} />
+            <Text align={TextAlign.LEFT} text={String(article?.views)} />
+          </HorizontalStack>
 
-        <div className={cls.articleInfo}>
-          <Icon Svg={CalendarIcon} className={cls.icon} />
+          <HorizontalStack gap="8" className={cls.articleInfo}>
+            <Icon Svg={CalendarIcon} className={cls.icon} />
 
-          <Text align={TextAlign.LEFT} text={String(article?.createdAt)} />
-        </div>
+            <Text align={TextAlign.LEFT} text={String(article?.createdAt)} />
+          </HorizontalStack>
+        </VerticalStack>
 
         {article?.blocks.map(renderBlock)}
       </>
@@ -114,7 +118,9 @@ export const ArticleDetails = memo((props: ArticleDetailsProps) => {
 
   return (
     <DynamicModuleLoader reducers={initialReducers}>
-      <div className={classNames({ cls: cls.ArticleDetails, additional: [className] })}>{content}</div>
+      <VerticalStack gap="16" className={classNames({ cls: cls.ArticleDetails, additional: [className] })}>
+        {content}
+      </VerticalStack>
     </DynamicModuleLoader>
   );
 });
