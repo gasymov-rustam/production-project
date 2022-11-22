@@ -14,5 +14,6 @@ export { Card, CardTheme } from './Card';
 export { Tab } from './Tab';
 export { HorizontalStack, VerticalStack } from './Stack';
 export { ListBox } from './ListBox';
+export { DropDownMenu } from './DropDownMenu';
 export type { ListBoxItem } from './ListBox';
 export type { TabItem } from './Tab';

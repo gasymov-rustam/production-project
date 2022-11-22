@@ -1,7 +1,23 @@
 .ListBox {
   position: relative;
 
-  .optionsTop {
+  .optionsBottomLeft {
+    top: 100%;
+    right: 0;
+  }
+
+  .optionsBottomRight {
+    top: 100%;
+    left: 0;
+  }
+
+  .optionsTopRight {
+    bottom: 100%;
+    left: 0;
+  }
+
+  .optionsTopLeft {
+    right: 0;
     bottom: 100%;
   }
 
@@ -20,10 +36,6 @@
 
   & > button {
     border-radius: 8px;
-  }
-  &:hover * {
-    cursor: default;
-    opacity: 0.1;
   }
 }
 

@@ -2,6 +2,7 @@ import { Listbox as HListBox } from '@headlessui/react';
 import { ReactNode, memo } from 'react';
 
 import { classNames } from '../../lib';
+import { DropdownDirection } from '../../types';
 import { Button } from '../Button';
 import { HorizontalStack } from '../Stack';
 
@@ -12,8 +13,6 @@ export interface ListBoxItem {
   content: ReactNode;
   disabled?: boolean;
 }
-
-type DropdownDirection = 'top' | 'bottom';
 
 interface ListBoxProps {
   className?: string;
@@ -27,12 +26,23 @@ interface ListBoxProps {
 }
 
 const mapDirectionClass: Record<DropdownDirection, string> = {
-  bottom: cls.optionsBottom,
-  top: cls.optionsTop,
+  'bottom left': cls.optionsBottomLeft,
+  'bottom right': cls.optionsBottomRight,
+  'top right': cls.optionsTopRight,
+  'top left': cls.optionsTopLeft,
 };
 
 export const ListBox = memo((props: ListBoxProps) => {
-  const { className = '', items, value, defaultValue, label, readonly = false, direction = 'bottom', onChange } = props;
+  const {
+    className = '',
+    items,
+    value,
+    defaultValue,
+    label,
+    readonly = false,
+    direction = 'bottom right',
+    onChange,
+  } = props;
 
   const optionsClasses = [mapDirectionClass[direction]];
 

@@ -7,8 +7,10 @@ import { LoginModal } from '../../../features';
 import {
   AppLink,
   AppLinkTheme,
+  Avatar,
   Button,
   ButtonTheme,
+  DropDownMenu,
   RoutePath,
   Text,
   TextTheme,
@@ -49,11 +51,25 @@ export const Navbar = memo(({ className = '' }: NavbarProps) => {
           {t('CREATE NEW ARTICLE')}
         </AppLink>
 
-        <Button theme={ButtonTheme.CLEAR_INVERTED} className={cls.links} onClick={onLogOut}>
-          {t('SIGN OUT')}
-        </Button>
+        <DropDownMenu
+          direction="bottom left"
+          className={cls.dropdown}
+          items={[
+            {
+              content: t('PROFILE'),
+              href: RoutePath.profile + userData.id,
+            },
+            {
+              content: t('SIGN OUT'),
+              onClick: onLogOut,
+            },
+          ]}
+          trigger={<Avatar size={30} src={userData?.avatar ?? ''} alt="Error" />}
+        />
 
-        <LoginModal isOpen={isAuthModal} onClose={onCloseModal} />
+        {/* <Button theme={ButtonTheme.CLEAR_INVERTED} className={cls.links} onClick={onLogOut}>
+          {t('SIGN OUT')}
+        </Button> */}
       </header>
     );
   }

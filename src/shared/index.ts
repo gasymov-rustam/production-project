@@ -35,13 +35,14 @@ export {
   addQueryParams,
 } from './lib';
 export type { Mods, ReducersList } from './lib';
-export type { SortOrder } from './types';
+export type { SortOrder, DropdownDirection } from './types';
 export {
   AppLink,
   AppLinkTheme,
   Avatar,
   Button,
   ButtonSize,
+  DropDownMenu,
   ButtonTheme,
   Input,
   Loader,
