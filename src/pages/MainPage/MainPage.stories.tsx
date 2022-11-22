@@ -1,7 +1,7 @@
 import { ComponentMeta, ComponentStory } from '@storybook/react';
 
 import { Theme } from '../../app';
-import { ThemeDecorator } from '../../shared';
+import { StoreDecorator, ThemeDecorator } from '../../shared';
 
 import MainPage from './MainPage';
 
@@ -17,7 +17,8 @@ const Template: ComponentStory<typeof MainPage> = () => <MainPage />;
 
 export const Normal = Template.bind({});
 Normal.args = {};
+Normal.decorators = [ThemeDecorator(Theme.LIGHT), StoreDecorator({ scrollRestoration: { scroll: {} } })];
 
 export const Dark = Template.bind({});
 Dark.args = {};
-Dark.decorators = [ThemeDecorator(Theme.DARK)];
+Dark.decorators = [ThemeDecorator(Theme.DARK), StoreDecorator({ scrollRestoration: { scroll: {} } })];

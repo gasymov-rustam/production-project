@@ -13,4 +13,6 @@ export { Code } from './Code';
 export { Card, CardTheme } from './Card';
 export { Tab } from './Tab';
 export { HorizontalStack, VerticalStack } from './Stack';
+export { ListBox } from './ListBox';
+export type { ListBoxItem } from './ListBox';
 export type { TabItem } from './Tab';

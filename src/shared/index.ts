@@ -61,5 +61,6 @@ export {
   Tab,
   VerticalStack,
   HorizontalStack,
+  ListBox,
 } from './ui';
-export type { TabItem } from './ui';
+export type { TabItem, ListBoxItem } from './ui';
