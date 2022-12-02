@@ -2,7 +2,7 @@ export { Counter, countersActions, counterSlice, countersReducer, getCounter, ge
 export type { CounterSchema } from './Counter';
 export { Country, CountrySelect } from './Country';
 export { Currency, CurrencySelect } from './Currency';
-export type { Profile, ProfileSchema } from './Profile';
+export type { Profile } from './Profile';
 export { getUserAuthData, getUserInited, userActions, userReducer } from './User';
 export type { User, UserSchema } from './User';
 export type { Article, ArticleDetailsSchema } from './Article';

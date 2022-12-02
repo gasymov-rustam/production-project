@@ -22,6 +22,7 @@ export {
   StoreDecorator,
   StyleDecorator,
   ThemeDecorator,
+  SuspenseDecorator,
 } from './config';
 export * from './constants';
 export {

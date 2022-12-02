@@ -2,18 +2,11 @@ import { memo, useCallback } from 'react';
 import { useSelector } from 'react-redux';
 import { useSearchParams } from 'react-router-dom';
 
-import { ArticleList } from '../../../../entities/Article';
 import { DynamicModuleLoader, ReducersList, classNames, useAppDispatch, useInitialEffect } from '../../../../shared';
 import { PageWrapper } from '../../../../widgets';
-import {
-  articlesPageReducer,
-  fetchNextArticlesPage,
-  getArticles,
-  getArticlesPageError,
-  getArticlesPageIsLoading,
-  getArticlesPageView,
-} from '../../model';
+import { articlesPageReducer, fetchNextArticlesPage, getArticlesPageView } from '../../model';
 import { initArticlesPage } from '../../model/services';
+import { ArticleInfiniteList } from '../ArticleInfiniteList';
 import { ArticlesPageFilters } from '../ArticlesPageFilters';
 
 import cls from './ArticlesPage.module.scss';
@@ -34,11 +27,8 @@ export const createArticleArray = <T,>(length: number, article: OmitMatch<T>): O
 const ArticlesPage = (props: ArticlesPageProps) => {
   const { className = '' } = props;
   const dispatch = useAppDispatch();
-  const articles = useSelector(getArticles.selectAll);
-  const isLoading = useSelector(getArticlesPageIsLoading);
   const view = useSelector(getArticlesPageView);
   const [searchParams] = useSearchParams();
-  const error = useSelector(getArticlesPageError);
 
   const onLoadNextPart = useCallback(() => {
     dispatch(fetchNextArticlesPage());
@@ -56,7 +46,7 @@ const ArticlesPage = (props: ArticlesPageProps) => {
       >
         <ArticlesPageFilters view={view} />
 
-        <ArticleList articles={articles} isLoading={isLoading} view={view} className={cls.list} />
+        <ArticleInfiniteList className={cls.list} />
       </PageWrapper>
     </DynamicModuleLoader>
   );

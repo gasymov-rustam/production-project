@@ -1,13 +1,1 @@
-export {
-  getProfileData,
-  getProfileError,
-  getProfileForm,
-  getProfileIsLoading,
-  getProfileReadonly,
-  getProfileValidateErrors,
-  getValidUser,
-} from './selectors';
-export { fetchProfileData, updateProfileData, validateProfileData } from './services';
-export { profileActions, profileReducer } from './slice';
-export { ValidateProfileError } from './types/profile';
-export type { Profile, ProfileSchema } from './types/profile';
+export type { Profile } from './types/profile';

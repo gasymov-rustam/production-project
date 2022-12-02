@@ -2,9 +2,9 @@ import { Story } from '@storybook/react';
 
 import { StateSchema, StoreProvider } from '../../../app';
 import { articleDetailsReducer } from '../../../entities/Article';
-import { profileReducer } from '../../../entities/Profile';
 import { loginReducer } from '../../../features';
 import { addCommentFormReducer } from '../../../features/AddCommentForm';
+import { profileReducer } from '../../../features/EditableProfileCard';
 import { scrollRestorationReducer } from '../../../features/ScrollRestoration';
 import { articleDetailsPageReducer } from '../../../pages/ArticleDetailsPage/model/slices';
 import { ReducersList } from '../../lib';
