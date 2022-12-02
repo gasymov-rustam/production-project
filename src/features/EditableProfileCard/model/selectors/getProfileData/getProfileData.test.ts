@@ -6,7 +6,7 @@ import { getProfileData } from './getProfileData';
 describe('getProfileData.test', () => {
   test('should return error', () => {
     const data = {
-      username: 'admin',
+      userName: 'admin',
       age: 22,
       country: Country.Ukraine,
       lastname: 'Hasymov',

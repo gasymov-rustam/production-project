@@ -22,7 +22,7 @@ Normal.decorators = [
   StoreDecorator({
     profile: {
       form: {
-        username: 'admin',
+        userName: 'admin',
         age: 22,
         country: Country.Ukraine,
         lastname: 'Hasymov',
@@ -42,7 +42,7 @@ Dark.decorators = [
   StoreDecorator({
     profile: {
       form: {
-        username: 'admin',
+        userName: 'admin',
         age: 22,
         country: Country.Ukraine,
         lastname: 'Hasymov',

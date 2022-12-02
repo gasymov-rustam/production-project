@@ -4,7 +4,7 @@ import { TestAsyncThunk } from '../../../../../shared/lib/tests';
 import { fetchProfileData } from './fetchProfileData';
 
 const data = {
-  username: 'admin',
+  userName: 'admin',
   age: 22,
   country: Country.Ukraine,
   lastname: 'Hasymov',

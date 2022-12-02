@@ -5,7 +5,7 @@ import { ProfileSchema, ValidateProfileError } from '../types/editableProfileCar
 import { profileActions, profileReducer } from './profileSlice';
 
 const data = {
-  username: 'admin',
+  userName: 'admin',
   age: 22,
   country: Country.Ukraine,
   lastname: 'Hasymov',
@@ -24,7 +24,7 @@ describe('profileSlice.test', () => {
   });
 
   test('test cancel edit', () => {
-    const state: DeepPartial<ProfileSchema> = { data, form: { username: '' } };
+    const state: DeepPartial<ProfileSchema> = { data, form: { userName: '' } };
 
     expect(profileReducer(state as ProfileSchema, profileActions.cancelEdit())).toEqual({
       readonly: true,
@@ -35,17 +35,17 @@ describe('profileSlice.test', () => {
   });
 
   test('test update profile', () => {
-    const state: DeepPartial<ProfileSchema> = { form: { username: '123' } };
+    const state: DeepPartial<ProfileSchema> = { form: { userName: '123' } };
 
     expect(
       profileReducer(
         state as ProfileSchema,
         profileActions.updateProfile({
-          username: '123456',
+          userName: '123456',
         }),
       ),
     ).toEqual({
-      form: { username: '123456' },
+      form: { userName: '123456' },
     });
   });
 

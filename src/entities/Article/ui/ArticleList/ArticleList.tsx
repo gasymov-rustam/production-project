@@ -15,6 +15,7 @@ interface ArticleListProps {
   isLoading?: boolean;
   view?: ArticleView;
   target?: HTMLAttributeAnchorTarget;
+  virtualized?: boolean;
 }
 
 const getSkeletons = (view: ArticleView) =>
@@ -23,7 +24,7 @@ const getSkeletons = (view: ArticleView) =>
     .map((item, index) => <ArticleListItemSkeleton className={cls.card} key={index} view={view} />);
 
 export const ArticleList = memo((props: ArticleListProps) => {
-  const { className = '', articles, isLoading, view = ArticleView.SMALL, target } = props;
+  const { className = '', articles, isLoading, view = ArticleView.SMALL, target, virtualized = true } = props;
   const { t } = useTranslation();
   const isBig = view === ArticleView.BIG;
   const itemsPerRow = isBig ? 1 : 3;
@@ -53,9 +54,13 @@ export const ArticleList = memo((props: ArticleListProps) => {
     [articles, itemsPerRow, target, view],
   );
 
-  // const renderList = (article: Article) => (
-  //   <ArticleListItem key={article.id} article={article} target={String(target)} view={view} className={cls.card} />
-  // );
+  const renderList = useCallback(
+    (articles: Article[]) =>
+      articles?.map((article) => (
+        <ArticleListItem key={article.id} article={article} target={String(target)} view={view} className={cls.card} />
+      )),
+    [target, view],
+  );
 
   if (!isLoading && !articles.length) {
     return (
@@ -69,17 +74,22 @@ export const ArticleList = memo((props: ArticleListProps) => {
     <WindowScroller scrollElement={document.getElementById(PAGE_ID) as Element}>
       {({ height, width, registerChild, onChildScroll, isScrolling, scrollTop }) => (
         <div ref={registerChild} className={classNames({ cls: cls.ArticleList, additional: [className, cls[view]] })}>
-          <List
-            height={height ?? 700}
-            rowCount={rowCount}
-            rowHeight={isBig ? 700 : 330}
-            rowRenderer={rowRender}
-            width={width ? width - 80 : 700}
-            autoHeight
-            onScroll={onChildScroll}
-            isScrolling={isScrolling}
-            scrollTop={scrollTop}
-          />
+          {virtualized ? (
+            <List
+              height={height ?? 700}
+              rowCount={rowCount}
+              rowHeight={isBig ? 700 : 330}
+              rowRenderer={rowRender}
+              width={width ? width - 80 : 700}
+              autoHeight
+              onScroll={onChildScroll}
+              isScrolling={isScrolling}
+              scrollTop={scrollTop}
+            />
+          ) : (
+            renderList(articles)
+          )}
+
           {isLoading && getSkeletons(view)}
         </div>
       )}

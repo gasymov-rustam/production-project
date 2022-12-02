@@ -29,7 +29,7 @@ const loginSlice = createSlice({
       .addCase(loginByUserName.fulfilled, (state) => {
         state.isLoading = false;
         state.error = undefined;
-        // state.userName = payload.username;
+        // state.userName = payload.userName;
       })
       .addCase(loginByUserName.rejected, (state, { payload }) => {
         state.isLoading = false;

@@ -29,7 +29,7 @@ export const CommentCard = memo((props: CommentCardProps) => {
       <VerticalStack gap="8" className={classNames({ additional: [className, cls.loading] })}>
         <div className={cls.header}>
           <Skeleton width={30} height={30} border="50%" />
-          <Skeleton height={16} width={100} className={cls.username} />
+          <Skeleton height={16} width={100} className={cls.userName} />
         </div>
 
         <Skeleton className={cls.text} width="100%" height={50} />
@@ -46,7 +46,7 @@ export const CommentCard = memo((props: CommentCardProps) => {
       <AppLink to={`${RoutePath.profile}${comment.user.id}`} className={cls.header}>
         {comment?.user.avatar && <Avatar size={30} src={comment.user.avatar} alt={comment.user.userName} />}
 
-        <Text align={TextAlign.LEFT} title={comment.user.userName} className={cls.username} size={TextSize.S} />
+        <Text align={TextAlign.LEFT} title={comment.user.userName} className={cls.userName} size={TextSize.S} />
       </AppLink>
 
       <Text align={TextAlign.LEFT} text={comment.text} className={cls.text} />

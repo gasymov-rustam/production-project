@@ -6,7 +6,7 @@ import { getProfileForm } from './getProfileForm';
 describe('getProfileForm.test', () => {
   test('should return error', () => {
     const data = {
-      username: 'admin',
+      userName: 'admin',
       age: 22,
       country: Country.Ukraine,
       lastname: 'Hasymov',
