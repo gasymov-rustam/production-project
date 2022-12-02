@@ -1,10 +1,10 @@
-import { memo, useCallback } from 'react';
+import { memo, Suspense, useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useDispatch, useSelector } from 'react-redux';
 
 import { CommentList } from '../../../../entities/Comment';
 import { AddCommentForm } from '../../../../features/AddCommentForm';
-import { Text, TextSize, VerticalStack, classNames, useInitialEffect } from '../../../../shared';
+import { Text, TextSize, VerticalStack, classNames, useInitialEffect, Loader } from '../../../../shared';
 import {
   addCommentForArticle,
   fetchCommentsByArticleId,
@@ -38,7 +38,11 @@ export const ArticleDetailsComments = memo((props: ArticleDetailsCommentsProps) 
   return (
     <VerticalStack gap="16" max className={classNames({ additional: [className] })}>
       <Text size={TextSize.L} title={t('COMMENTS')} />
-      <AddCommentForm onSendComment={onSendComment} />
+
+      <Suspense fallback={<Loader />}>
+        <AddCommentForm onSendComment={onSendComment} />
+      </Suspense>
+
       <CommentList isLoading={commentsIsLoading} comments={comments} />
     </VerticalStack>
   );
