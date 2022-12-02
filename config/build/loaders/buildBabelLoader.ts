@@ -2,7 +2,7 @@ import { BuildOptions } from '../types';
 
 export const buildBabelLoader = ({ isDev }: BuildOptions) => ({
   test: /\.(js|jsx|tsx)$/,
-  exclude: /node-modules/,
+  exclude: /node_modules/,
   use: {
     loader: 'babel-loader',
     options: {
@@ -10,10 +10,13 @@ export const buildBabelLoader = ({ isDev }: BuildOptions) => ({
       plugins: [
         [
           'i18next-extract',
-          { nsSeparator: '~', locales: ['en', 'ru'], keyAsDefaultValue: true },
-          isDev && require.resolve('react-refresh/babel'),
-        ].filter(Boolean),
-      ],
+          {
+            locales: ['ru', 'en'],
+            keyAsDefaultValue: true,
+          },
+        ],
+        isDev && require.resolve('react-refresh/babel'),
+      ].filter(Boolean),
     },
   },
 });

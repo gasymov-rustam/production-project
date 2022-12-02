@@ -1,4 +1,4 @@
-import { FC, MouseEvent, MutableRefObject, useCallback, useEffect, useRef, useState } from 'react';
+import { FC, MouseEvent, MutableRefObject, ReactNode, useCallback, useEffect, useRef, useState } from 'react';
 
 import { classNames } from '../../lib';
 import type { Mods } from '../../lib';
@@ -11,11 +11,12 @@ interface ModalProps {
   isOpen?: boolean;
   onClose?: () => void;
   lazy?: boolean;
+  children: ReactNode;
 }
 
 const ANIMATION_DELAY = 300;
 
-export const Modal: FC<ModalProps> = ({ className = '', children, isOpen, onClose, lazy }) => {
+export const Modal = ({ className = '', children, isOpen, onClose, lazy }: ModalProps) => {
   const [isClosing, setIsClosing] = useState(false);
   const [isMounted, setIsMounted] = useState(false);
   const timerRef = useRef() as MutableRefObject<ReturnType<typeof setTimeout>>;

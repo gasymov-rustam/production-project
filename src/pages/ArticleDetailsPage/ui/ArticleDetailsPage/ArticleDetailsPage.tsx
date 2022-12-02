@@ -1,5 +1,4 @@
 import { memo } from 'react';
-import { useTranslation } from 'react-i18next';
 import { useParams } from 'react-router-dom';
 
 import { ArticleDetails } from '../../../../entities';
@@ -23,15 +22,6 @@ const reducers: ReducersList = {
 const ArticleDetailsPage = (props: ArticleDetailsPageProps) => {
   const { className = '' } = props;
   const { id } = useParams<{ id: string }>();
-  const { t } = useTranslation('article');
-
-  if (!id) {
-    return (
-      <PageWrapper className={classNames({ cls: cls.ArticlesPage, additional: [className] })}>
-        {t('ARTICLE DETAILS NOT FOUND')}
-      </PageWrapper>
-    );
-  }
 
   return (
     <DynamicModuleLoader reducers={reducers}>
