@@ -1,6 +1,7 @@
 import { Country, Currency } from '../../../../entities';
+import { ValidateProfileError } from '../consts';
 import { updateProfileData } from '../services';
-import { ProfileSchema, ValidateProfileError } from '../types/editableProfileCardSchema';
+import { ProfileSchema } from '../types/editableProfileCardSchema';
 
 import { profileActions, profileReducer } from './profileSlice';
 

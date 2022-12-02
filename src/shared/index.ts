@@ -15,7 +15,6 @@ export {
 } from './assets';
 export {
   AppRoutes,
-  AppRouterProps,
   routeConfig,
   RoutePath,
   RouterDecorator,
@@ -35,6 +34,7 @@ export {
   useDebounce,
   addQueryParams,
 } from './lib';
+export type { AppRouterProps } from './config';
 export type { Mods, ReducersList } from './lib';
 export type { SortOrder, DropdownDirection } from './types';
 export {
@@ -50,7 +50,6 @@ export {
   Modal,
   Portal,
   Select,
-  SelectOption,
   Text,
   TextAlign,
   TextTheme,
@@ -65,4 +64,4 @@ export {
   HorizontalStack,
   ListBox,
 } from './ui';
-export type { TabItem, ListBoxItem } from './ui';
+export type { TabItem, ListBoxItem, SelectOption } from './ui';

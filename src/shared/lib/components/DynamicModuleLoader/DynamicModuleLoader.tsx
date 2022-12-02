@@ -1,5 +1,5 @@
 import { Reducer } from '@reduxjs/toolkit';
-import { FC, Fragment, ReactNode, createElement, useEffect } from 'react';
+import { Fragment, ReactNode, createElement, useEffect } from 'react';
 import { useStore } from 'react-redux';
 
 import { ReduxStoreManager, StateSchema, StateSchemaKey } from '../../../../app';

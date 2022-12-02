@@ -1,5 +1,5 @@
 export type { ProfileSchema } from './types/editableProfileCardSchema';
-export { ValidateProfileError } from './types/editableProfileCardSchema';
+export { ValidateProfileError } from './consts';
 export {
   getProfileData,
   getProfileError,

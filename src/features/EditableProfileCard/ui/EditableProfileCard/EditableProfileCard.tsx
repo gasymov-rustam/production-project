@@ -25,7 +25,7 @@ import {
   profileActions,
   profileReducer,
 } from '../../model';
-import { EditableProfileCardHeader } from '../EditableProfileCardHeader/EditableProfileCardHeader';
+import { EditableProfileCardHeader } from '../EditableProfileCardHeader';
 
 interface EditableProfileCardProps {
   className?: string;

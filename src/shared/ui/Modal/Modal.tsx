@@ -1,4 +1,4 @@
-import { FC, MouseEvent, MutableRefObject, ReactNode, useCallback, useEffect, useRef, useState } from 'react';
+import { MouseEvent, MutableRefObject, ReactNode, useCallback, useEffect, useRef, useState } from 'react';
 
 import { classNames } from '../../lib';
 import type { Mods } from '../../lib';

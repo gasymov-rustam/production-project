@@ -1,0 +1,1 @@
+export { initArticlesPage } from './initArticlesPage';

@@ -1,5 +1,5 @@
 import { StateSchema } from '../../../../../app';
-import { ValidateProfileError } from '../../types/editableProfileCardSchema';
+import { ValidateProfileError } from '../../consts';
 
 import { getProfileValidateErrors } from './getProfileValidateErrors';
 

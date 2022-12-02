@@ -2,7 +2,7 @@ import { ComponentMeta, ComponentStory } from '@storybook/react';
 
 import { Article } from '../../../../entities';
 import { ArticleType } from '../../../../entities/Article';
-import { ArticleBlockType } from '../../../../entities/Article/model/types/article';
+import { ArticleBlockType } from '../../../../entities/Article/model/consts';
 import { StoreDecorator } from '../../../../shared';
 
 import { ArticleDetailsComments } from './ArticleDetailsComments';

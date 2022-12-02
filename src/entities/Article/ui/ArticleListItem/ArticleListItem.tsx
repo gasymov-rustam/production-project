@@ -15,7 +15,8 @@ import {
   classNames,
 } from '../../../../shared';
 import { Article, ArticleView } from '../../model';
-import { ArticleBlockType, ArticleTextBlock } from '../../model/types/article';
+import { ArticleBlockType } from '../../model/consts';
+import { ArticleTextBlock } from '../../model/types/article';
 import { ArticleTextBlockComponent } from '../ArticleTextBlockComponent';
 
 import cls from './ArticleListItem.module.scss';
