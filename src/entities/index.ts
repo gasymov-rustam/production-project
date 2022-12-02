@@ -3,7 +3,16 @@ export type { CounterSchema } from './Counter';
 export { Country, CountrySelect } from './Country';
 export { Currency, CurrencySelect } from './Currency';
 export type { Profile } from './Profile';
-export { getUserAuthData, getUserInited, userActions, userReducer } from './User';
+export {
+  getUserAuthData,
+  getUserInited,
+  userActions,
+  userReducer,
+  UserRole,
+  getUserRoles,
+  isUserAdmin,
+  isUserManager,
+} from './User';
 export type { User, UserSchema } from './User';
 export type { Article, ArticleDetailsSchema } from './Article';
 export {

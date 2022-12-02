@@ -5,3 +5,5 @@ export { ProfilePage } from './ProfilePage';
 export { ArticlesPage } from './ArticlesPage';
 export { ArticleDetailsPage } from './ArticleDetailsPage';
 export { ArticleEditPage } from './ArticleEditPage';
+export { AdminPanelPage } from './AdminPanelPage';
+export { ForbiddenPage } from './ForbiddenPage';

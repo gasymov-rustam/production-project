@@ -41,7 +41,6 @@ export const DropDownMenu = (props: DropdownProps) => {
         {items.map((item) => {
           const content = ({ active }: { active: boolean }) => (
             <button
-              key={v4()}
               type="button"
               disabled={item.disabled}
               onClick={item.onClick}

@@ -1,20 +1,34 @@
-import { Fragment, ReactNode, createElement } from 'react';
+import { Fragment, ReactNode, createElement, useMemo } from 'react';
 import { useSelector } from 'react-redux';
 import { Navigate, useLocation } from 'react-router-dom';
 
-import { getUserAuthData } from '../../../../entities';
+import { UserRole, getUserAuthData, getUserRoles } from '../../../../entities';
 import { RoutePath } from '../../../../shared';
 
 interface RequireAuthProps {
   children?: ReactNode;
+  roles?: UserRole[];
 }
 
-export const RequireAuth = ({ children }: RequireAuthProps) => {
+export const RequireAuth = ({ children, roles }: RequireAuthProps) => {
   const location = useLocation();
   const auth = useSelector(getUserAuthData);
+  const userRoles = useSelector(getUserRoles);
+
+  const hasRequiredRoles = useMemo(() => {
+    if (!roles) {
+      return true;
+    }
+
+    return roles.some((requiredRole) => userRoles?.includes(requiredRole), [roles, userRoles]);
+  }, [roles, userRoles]);
 
   if (!auth) {
     return <Navigate to={RoutePath.main} state={{ from: location }} replace />;
+  }
+
+  if (!hasRequiredRoles) {
+    return <Navigate to={RoutePath.forbidden} state={{ from: location }} replace />;
   }
 
   return createElement(Fragment, null, children);
