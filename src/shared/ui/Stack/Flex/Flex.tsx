@@ -68,6 +68,7 @@ export const Flex = (props: FlexProps) => {
     wrap = 'wrap',
     max,
     maxHeight,
+    ...otherProps
   } = props;
 
   const additional = [
@@ -84,5 +85,9 @@ export const Flex = (props: FlexProps) => {
     [cls.maxHeight]: maxHeight,
   };
 
-  return <div className={classNames({ cls: cls.Flex, mods, additional })}>{children}</div>;
+  return (
+    <div className={classNames({ cls: cls.Flex, mods, additional })} {...otherProps}>
+      {children}
+    </div>
+  );
 };

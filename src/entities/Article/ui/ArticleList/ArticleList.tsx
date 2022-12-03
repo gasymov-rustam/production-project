@@ -1,6 +1,6 @@
 import { HTMLAttributeAnchorTarget, memo, useCallback, useMemo } from 'react';
 import { useTranslation } from 'react-i18next';
-import { List, ListRowProps, WindowScroller } from 'react-virtualized';
+import { Virtuoso, VirtuosoGrid } from 'react-virtuoso';
 
 import { Text, TextSize, classNames } from '../../../../shared';
 import { PAGE_ID } from '../../../../widgets/PageWrapper/PageWrapper';
@@ -26,41 +26,44 @@ const getSkeletons = (view: ArticleView) =>
 export const ArticleList = memo((props: ArticleListProps) => {
   const { className = '', articles, isLoading, view = ArticleView.SMALL, target, virtualized = true } = props;
   const { t } = useTranslation();
-  const isBig = view === ArticleView.BIG;
-  const itemsPerRow = isBig ? 1 : 3;
-  const rowCount = useMemo(
-    () => (isBig ? articles.length : Math.ceil(articles.length / itemsPerRow)),
-    [articles.length, isBig, itemsPerRow],
-  );
 
-  const rowRender = useCallback(
-    ({ index, key, style }: ListRowProps) => {
-      const items = [];
-      const fromIndex = index * itemsPerRow;
-      const toIndex = Math.min(fromIndex + itemsPerRow, articles.length);
-
-      for (let i = fromIndex; i < toIndex; i += 1) {
-        items.push(
-          <ArticleListItem article={articles[i]} view={view} target={target} key={`str${i}`} className={cls.card} />,
-        );
-      }
-
-      return (
-        <div key={key} style={style} className={cls.row}>
-          {items}
-        </div>
-      );
-    },
-    [articles, itemsPerRow, target, view],
-  );
-
-  const renderList = useCallback(
-    (articles: Article[]) =>
-      articles?.map((article) => (
-        <ArticleListItem key={article.id} article={article} target={String(target)} view={view} className={cls.card} />
-      )),
+  const renderVirtualList = useCallback(
+    (data: Article) => (
+      <ArticleListItem key={data.id} article={data} target={String(target)} view={view} className={cls.card} />
+    ),
     [target, view],
   );
+
+  const renderUsualList = useCallback(
+    (articles: Article[]) => (
+      <div className={cls[view]}>
+        {articles?.map((article) => (
+          <ArticleListItem
+            key={article.id}
+            article={article}
+            target={String(target)}
+            view={view}
+            className={cls.card}
+          />
+        ))}
+      </div>
+    ),
+    [target, view],
+  );
+
+  const list = useMemo(() => {
+    const props = {
+      data: articles,
+      customScrollParent: document.getElementById(PAGE_ID) as HTMLElement,
+      itemContent: (_: number, data: Article) => renderVirtualList(data),
+    };
+
+    return view === ArticleView.SMALL ? (
+      <VirtuosoGrid listClassName={classNames({ additional: [className, cls[view]] })} {...props} />
+    ) : (
+      <Virtuoso className={classNames({ additional: [className, cls[view]] })} {...props} />
+    );
+  }, [articles, className, renderVirtualList, view]);
 
   if (!isLoading && !articles.length) {
     return (
@@ -71,31 +74,12 @@ export const ArticleList = memo((props: ArticleListProps) => {
   }
 
   return (
-    // @ts-ignore
-    <WindowScroller scrollElement={document.getElementById(PAGE_ID) as Element}>
-      {({ height, width, registerChild, onChildScroll, isScrolling, scrollTop }) => (
-        // @ts-ignore
-        <div ref={registerChild} className={classNames({ cls: cls.ArticleList, additional: [className, cls[view]] })}>
-          {virtualized ? (
-            // @ts-ignore
-            <List
-              height={height ?? 700}
-              rowCount={rowCount}
-              rowHeight={isBig ? 700 : 330}
-              rowRenderer={rowRender}
-              width={width ? width - 80 : 700}
-              autoHeight
-              onScroll={onChildScroll}
-              isScrolling={isScrolling}
-              scrollTop={scrollTop}
-            />
-          ) : (
-            renderList(articles)
-          )}
+    <>
+      {virtualized ? list : renderUsualList(articles)}
 
-          {isLoading && getSkeletons(view)}
-        </div>
-      )}
-    </WindowScroller>
+      <div className={classNames({ cls: cls.loading, additional: [className, cls[view]] })}>
+        {isLoading && getSkeletons(view)}
+      </div>
+    </>
   );
 });
