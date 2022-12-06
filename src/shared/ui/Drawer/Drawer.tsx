@@ -1,7 +1,7 @@
 import { ReactNode, memo, useCallback, useEffect } from 'react';
 
 import { useTheme } from '../../../app';
-import { Mods, classNames, useAnimationLibs, useModal } from '../../lib';
+import { classNames, useAnimationLibs } from '../../lib';
 import { Overlay } from '../Overlay';
 import { Portal } from '../Portal';
 

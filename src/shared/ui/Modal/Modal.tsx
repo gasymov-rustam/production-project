@@ -1,4 +1,4 @@
-import { MutableRefObject, ReactNode, useCallback, useEffect, useRef, useState } from 'react';
+import { ReactNode } from 'react';
 
 import { useTheme } from '../../../app';
 import { classNames, useModal } from '../../lib';
