@@ -1,7 +1,8 @@
-import { MouseEvent, MutableRefObject, ReactNode, useCallback, useEffect, useRef, useState } from 'react';
+import { MutableRefObject, ReactNode, useCallback, useEffect, useRef, useState } from 'react';
 
 import { classNames } from '../../lib';
 import type { Mods } from '../../lib';
+import { Overlay } from '../Overlay';
 import { Portal } from '../Portal';
 
 import cls from './Modal.module.scss';
@@ -45,10 +46,6 @@ export const Modal = ({ className = '', children, isOpen, onClose, lazy }: Modal
     [closeHandler],
   );
 
-  const onContentClick = (e: MouseEvent) => {
-    e.stopPropagation();
-  };
-
   useEffect(() => {
     if (isOpen) {
       setIsMounted(true);
@@ -72,18 +69,10 @@ export const Modal = ({ className = '', children, isOpen, onClose, lazy }: Modal
 
   return (
     <Portal>
-      <div
-        className={classNames({
-          cls: cls.Modal,
-          mods,
-          additional: [className],
-        })}
-      >
-        <div className={cls.overlay} onClick={closeHandler}>
-          <div className={cls.content} onClick={onContentClick}>
-            {children}
-          </div>
-        </div>
+      <div className={classNames({ cls: cls.Modal, mods, additional: [className] })}>
+        <Overlay onClick={closeHandler} />
+
+        <div className={cls.content}>{children}</div>
       </div>
     </Portal>
   );

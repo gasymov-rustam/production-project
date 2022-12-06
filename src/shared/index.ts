@@ -63,6 +63,7 @@ export {
   VerticalStack,
   HorizontalStack,
   ListBox,
+  Drawer,
   Dropdown,
 } from './ui';
 export type { TabItem, ListBoxItem, SelectOption } from './ui';

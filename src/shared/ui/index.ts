@@ -12,6 +12,7 @@ export { Icon } from './Icon';
 export { Code } from './Code';
 export { Card, CardTheme } from './Card';
 export { Tab } from './Tab';
+export { Drawer } from './Drawer';
 export { HorizontalStack, VerticalStack } from './Stack';
 export { ListBox, Dropdown, Popover } from './Popups';
 export type { ListBoxItem } from './Popups';

@@ -1,5 +1,5 @@
 :root {
-  --font-family-main: consolas, "Times New Roman", serif;
+  --font-family-main: consolas, 'Times New Roman', serif;
 
   // s font size
   --font-size-s: 12px;
@@ -28,6 +28,7 @@
 
   // z - index
   --modal-z-index: 10;
+  --arrow-z-index: 9;
 
   // colors
   --overlay-color: rgba(0 0 0 / 60%);
