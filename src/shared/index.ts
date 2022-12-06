@@ -33,6 +33,7 @@ export {
   useInitialEffect,
   useThrottle,
   useDebounce,
+  useModal,
   addQueryParams,
 } from './lib';
 export type { AppRouterProps } from './config';
