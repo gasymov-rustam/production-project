@@ -10,7 +10,10 @@ import {
   Avatar,
   Button,
   ButtonTheme,
-  DropDownMenu,
+  Dropdown,
+  HorizontalStack,
+  Icon,
+  NotificationIcon,
   RoutePath,
   Text,
   TextTheme,
@@ -54,29 +57,35 @@ export const Navbar = memo(({ className = '' }: NavbarProps) => {
           {t('CREATE NEW ARTICLE')}
         </AppLink>
 
-        <DropDownMenu
-          direction="bottom left"
-          className={cls.dropdown}
-          items={[
-            ...(isAdminPanelAvailable
-              ? [
-                  {
-                    content: t('ADMIN'),
-                    href: RoutePath.admin_panel,
-                  },
-                ]
-              : []),
-            {
-              content: t('PROFILE'),
-              href: RoutePath.profile + userData.id,
-            },
-            {
-              content: t('SIGN OUT'),
-              onClick: onLogOut,
-            },
-          ]}
-          trigger={<Avatar size={30} src={userData?.avatar ?? ''} alt="Error" />}
-        />
+        <HorizontalStack gap="16" max>
+          <Button theme={ButtonTheme.CLEAR} className={cls.actions}>
+            <Icon Svg={NotificationIcon} inverted />
+          </Button>
+
+          <Dropdown
+            direction="bottom left"
+            className={cls.dropdown}
+            items={[
+              ...(isAdminPanelAvailable
+                ? [
+                    {
+                      content: t('ADMIN'),
+                      href: RoutePath.admin_panel,
+                    },
+                  ]
+                : []),
+              {
+                content: t('PROFILE'),
+                href: RoutePath.profile + userData.id,
+              },
+              {
+                content: t('SIGN OUT'),
+                onClick: onLogOut,
+              },
+            ]}
+            trigger={<Avatar size={30} src={userData?.avatar ?? ''} alt="Error" />}
+          />
+        </HorizontalStack>
 
         {/* <Button theme={ButtonTheme.CLEAR_INVERTED} className={cls.links} onClick={onLogOut}>
           {t('SIGN OUT')}

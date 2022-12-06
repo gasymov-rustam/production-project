@@ -1,18 +1,18 @@
 import { ComponentMeta, ComponentStory } from '@storybook/react';
 
-import { Button } from '../Button/Button';
+import { Button } from '../../../Button/Button';
 
-import { DropDownMenu } from './DropDownMenu';
+import { Dropdown } from './Dropdown';
 
 export default {
   title: 'shared/Dropdown',
-  component: DropDownMenu,
+  component: Dropdown,
   argTypes: {
     backgroundColor: { control: 'color' },
   },
-} as ComponentMeta<typeof DropDownMenu>;
+} as ComponentMeta<typeof Dropdown>;
 
-const Template: ComponentStory<typeof DropDownMenu> = (args) => <DropDownMenu {...args} />;
+const Template: ComponentStory<typeof Dropdown> = (args) => <Dropdown {...args} />;
 
 export const Normal = Template.bind({});
 Normal.args = {

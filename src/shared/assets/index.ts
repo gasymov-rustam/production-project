@@ -11,5 +11,6 @@ export {
   EyeIcon,
   ListIcon,
   TiledIcon,
+  NotificationIcon,
 } from './icons';
 export { avatarImg } from './tests';

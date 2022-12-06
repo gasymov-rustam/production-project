@@ -28,8 +28,8 @@ Normal.args = {
   ],
 };
 
-export const TopLeft = Template.bind({});
-TopLeft.args = {
+export const topLeft = Template.bind({});
+topLeft.args = {
   direction: 'top left',
   value: '123',
   items: [
@@ -38,8 +38,8 @@ TopLeft.args = {
   ],
 };
 
-export const TopRight = Template.bind({});
-TopRight.args = {
+export const topRight = Template.bind({});
+topRight.args = {
   direction: 'top right',
   value: '123',
   items: [
@@ -48,8 +48,8 @@ TopRight.args = {
   ],
 };
 
-export const BottomLeft = Template.bind({});
-BottomLeft.args = {
+export const bottomLeft = Template.bind({});
+bottomLeft.args = {
   direction: 'bottom left',
   value: '123',
   items: [
@@ -58,8 +58,8 @@ BottomLeft.args = {
   ],
 };
 
-export const BottomRight = Template.bind({});
-BottomRight.args = {
+export const bottomRight = Template.bind({});
+bottomRight.args = {
   direction: 'bottom right',
   value: '123',
   items: [

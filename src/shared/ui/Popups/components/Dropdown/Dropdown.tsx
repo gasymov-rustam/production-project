@@ -1,12 +1,13 @@
 import { Menu } from '@headlessui/react';
 import { Fragment, ReactNode } from 'react';
-import { v4 } from 'uuid';
 
-import { classNames } from '../../lib';
-import { DropdownDirection } from '../../types';
-import { AppLink } from '../AppLink/AppLink';
+import { classNames } from '../../../../lib';
+import { DropdownDirection } from '../../../../types';
+import { AppLink } from '../../../AppLink/AppLink';
+import { mapDirectionClass } from '../../styles/consts';
+import popupCls from '../../styles/popup.module.scss';
 
-import cls from './DropDownMenu.module.scss';
+import cls from './Dropdown.module.scss';
 
 export interface DropdownItem {
   disabled?: boolean;
@@ -22,21 +23,14 @@ interface DropdownProps {
   trigger: ReactNode;
 }
 
-const mapDirectionClass: Record<DropdownDirection, string> = {
-  'bottom left': cls.optionsBottomLeft,
-  'bottom right': cls.optionsBottomRight,
-  'top right': cls.optionsTopRight,
-  'top left': cls.optionsTopLeft,
-};
-
-export const DropDownMenu = (props: DropdownProps) => {
+export const Dropdown = (props: DropdownProps) => {
   const { className = '', trigger, items, direction = 'bottom right' } = props;
 
   const menuClasses = [mapDirectionClass[direction]];
 
   return (
-    <Menu as="div" className={classNames({ cls: cls.Dropdown, additional: [className] })}>
-      <Menu.Button className={cls.btn}>{trigger}</Menu.Button>
+    <Menu as="div" className={classNames({ cls: cls.Dropdown, additional: [className, popupCls.popup] })}>
+      <Menu.Button className={popupCls.trigger}>{trigger}</Menu.Button>
       <Menu.Items className={classNames({ cls: cls.menu, additional: menuClasses })}>
         {items.map((item) => {
           const content = ({ active }: { active: boolean }) => (
@@ -44,7 +38,7 @@ export const DropDownMenu = (props: DropdownProps) => {
               type="button"
               disabled={item.disabled}
               onClick={item.onClick}
-              className={classNames({ cls: cls.item, mods: { [cls.active]: active } })}
+              className={classNames({ cls: cls.item, mods: { [popupCls.active]: active } })}
             >
               {item.content}
             </button>
@@ -52,14 +46,14 @@ export const DropDownMenu = (props: DropdownProps) => {
 
           if (item.href) {
             return (
-              <Menu.Item key={v4()} as={AppLink} to={item.href} disabled={item.disabled}>
+              <Menu.Item as={AppLink} to={item.href} disabled={item.disabled}>
                 {content}
               </Menu.Item>
             );
           }
 
           return (
-            <Menu.Item key={v4()} as={Fragment} disabled={item.disabled}>
+            <Menu.Item as={Fragment} disabled={item.disabled}>
               {content}
             </Menu.Item>
           );

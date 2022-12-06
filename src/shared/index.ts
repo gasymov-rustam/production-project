@@ -7,6 +7,7 @@ export {
   LightIcon,
   MainIcon,
   ProfileIcon,
+  NotificationIcon,
   ArticleIcon,
   CalendarIcon,
   CopyIcon,
@@ -43,7 +44,6 @@ export {
   Avatar,
   Button,
   ButtonSize,
-  DropDownMenu,
   ButtonTheme,
   Input,
   Loader,
@@ -63,5 +63,6 @@ export {
   VerticalStack,
   HorizontalStack,
   ListBox,
+  Dropdown,
 } from './ui';
 export type { TabItem, ListBoxItem, SelectOption } from './ui';
