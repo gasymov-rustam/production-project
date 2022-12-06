@@ -50,7 +50,20 @@ module.exports = {
       'error',
       {
         markupOnly: true,
-        ignoreAttribute: ['as', 'alt', 'role', 'data-testid', 'to', 'target', 'justify', 'align', 'direction', 'gap'],
+        ignoreAttribute: [
+          'as',
+          'alt',
+          'role',
+          'data-testid',
+          'to',
+          'target',
+          'justify',
+          'align',
+          'direction',
+          'gap',
+          'border',
+          'wrap',
+        ],
       },
     ],
     'max-len': [

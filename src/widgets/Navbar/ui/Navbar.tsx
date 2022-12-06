@@ -2,23 +2,20 @@ import { memo, useCallback, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
 
-import { getUserAuthData, isUserAdmin, isUserManager, userActions } from '../../../entities';
+import { getUserAuthData } from '../../../entities';
 import { LoginModal } from '../../../features';
+import { AvatarDropdown } from '../../../features/AvatarDropdown';
+import { NotificationButton } from '../../../features/NotificationButton';
 import {
   AppLink,
   AppLinkTheme,
-  Avatar,
   Button,
   ButtonTheme,
-  Dropdown,
   HorizontalStack,
-  Icon,
-  NotificationIcon,
   RoutePath,
   Text,
   TextTheme,
   classNames,
-  useAppDispatch,
 } from '../../../shared';
 
 import cls from './Navbar.module.scss';
@@ -31,10 +28,6 @@ export const Navbar = memo(({ className = '' }: NavbarProps) => {
   const { t } = useTranslation();
   const [isAuthModal, setIsAuthModal] = useState(false);
   const userData = useSelector(getUserAuthData);
-  const isAdmin = useSelector(isUserAdmin);
-  const isManager = useSelector(isUserManager);
-  const dispatch = useAppDispatch();
-  const isAdminPanelAvailable = isAdmin || isManager;
 
   const onCloseModal = useCallback(() => {
     setIsAuthModal(false);
@@ -43,10 +36,6 @@ export const Navbar = memo(({ className = '' }: NavbarProps) => {
   const onShowModal = useCallback(() => {
     setIsAuthModal(true);
   }, []);
-
-  const onLogOut = useCallback(() => {
-    dispatch(userActions.logOut());
-  }, [dispatch]);
 
   if (userData) {
     return (
@@ -57,34 +46,10 @@ export const Navbar = memo(({ className = '' }: NavbarProps) => {
           {t('CREATE NEW ARTICLE')}
         </AppLink>
 
-        <HorizontalStack gap="16" max>
-          <Button theme={ButtonTheme.CLEAR} className={cls.actions}>
-            <Icon Svg={NotificationIcon} inverted />
-          </Button>
+        <HorizontalStack gap="16" className={cls.actions}>
+          <NotificationButton />
 
-          <Dropdown
-            direction="bottom left"
-            className={cls.dropdown}
-            items={[
-              ...(isAdminPanelAvailable
-                ? [
-                    {
-                      content: t('ADMIN'),
-                      href: RoutePath.admin_panel,
-                    },
-                  ]
-                : []),
-              {
-                content: t('PROFILE'),
-                href: RoutePath.profile + userData.id,
-              },
-              {
-                content: t('SIGN OUT'),
-                onClick: onLogOut,
-              },
-            ]}
-            trigger={<Avatar size={30} src={userData?.avatar ?? ''} alt="Error" />}
-          />
+          <AvatarDropdown />
         </HorizontalStack>
 
         {/* <Button theme={ButtonTheme.CLEAR_INVERTED} className={cls.links} onClick={onLogOut}>
