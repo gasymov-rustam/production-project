@@ -8,7 +8,7 @@ export {
   useDebounce,
   useModal,
 } from './hooks';
-export { SuspenseLoader, DynamicModuleLoader } from './components';
+export { SuspenseLoader, DynamicModuleLoader, AnimationProvider, useAnimationLibs } from './components';
 export type { ReducersList } from './components';
 export type { Mods } from './classNames';
 export { addQueryParams } from './url';
