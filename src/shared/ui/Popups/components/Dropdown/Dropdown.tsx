@@ -1,6 +1,5 @@
 import { Menu } from '@headlessui/react';
 import { Fragment, ReactNode } from 'react';
-import { v4 } from 'uuid';
 
 import { classNames } from '../../../../lib';
 import { DropdownDirection } from '../../../../types';
@@ -33,7 +32,7 @@ export const Dropdown = (props: DropdownProps) => {
     <Menu as="div" className={classNames({ cls: cls.Dropdown, additional: [className, popupCls.popup] })}>
       <Menu.Button className={popupCls.trigger}>{trigger}</Menu.Button>
       <Menu.Items className={classNames({ cls: cls.menu, additional: menuClasses })}>
-        {items.map((item) => {
+        {items.map((item, idx) => {
           const content = ({ active }: { active: boolean }) => (
             <button
               type="button"
@@ -47,14 +46,14 @@ export const Dropdown = (props: DropdownProps) => {
 
           if (item.href) {
             return (
-              <Menu.Item key={v4()} as={AppLink} to={item.href} disabled={item.disabled}>
+              <Menu.Item key={`dropdown-${idx}`} as={AppLink} to={item.href} disabled={item.disabled}>
                 {content}
               </Menu.Item>
             );
           }
 
           return (
-            <Menu.Item key={v4()} as={Fragment} disabled={item.disabled}>
+            <Menu.Item key={`dropdown-${idx}`} as={Fragment} disabled={item.disabled}>
               {content}
             </Menu.Item>
           );

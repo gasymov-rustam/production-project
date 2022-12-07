@@ -13,6 +13,7 @@ export {
   CopyIcon,
   DoneIcon,
   EyeIcon,
+  StartIcon,
 } from './assets';
 export {
   AppRoutes,
@@ -66,5 +67,6 @@ export {
   ListBox,
   Drawer,
   Dropdown,
+  StarRating,
 } from './ui';
 export type { TabItem, ListBoxItem, SelectOption } from './ui';

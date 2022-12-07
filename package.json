@@ -9,7 +9,7 @@
     "start:vitejs": "vite",
     "server": "node ./json-server/index.js",
     "start:dev": "concurrently \"npm start\" \"npm run server\" \"npm run sb\"",
-    "start:vite": "concurrently \"npm run start:vitejs\" \"npm run server\" \"npm run sb\"",
+    "start:vite": "concurrently \"npm run start:vitejs\" \"npm run server\"",
     "lint:ts": "eslint \"**/*.{ts,tsx}\"",
     "lint:ts:fix": "eslint \"**/*.{ts,tsx}\" --fix",
     "lint:scss": "npx stylelint \"**/*.scss\"",

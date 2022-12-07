@@ -8,6 +8,7 @@ import ListIcon from './list-24-24.svg';
 import MainIcon from './main-20-20.svg';
 import NotificationIcon from './notification-20-20.svg';
 import ProfileIcon from './profile-20-20.svg';
+import StartIcon from './star.svg';
 import DarkIcon from './theme-dark.svg';
 import LightIcon from './theme-light.svg';
 import TiledIcon from './tiled-24-24.svg';
@@ -26,4 +27,5 @@ export {
   ListIcon,
   TiledIcon,
   NotificationIcon,
+  StartIcon,
 };
