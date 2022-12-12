@@ -1,7 +1,7 @@
 import { memo, useState } from 'react';
 
 import { StartIcon } from '../../assets';
-import { Mods, classNames } from '../../lib';
+import { classNames } from '../../lib';
 import { Icon } from '../Icon';
 
 import cls from './StarRating.module.scss';
