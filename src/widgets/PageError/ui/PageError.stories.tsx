@@ -6,7 +6,7 @@ import { ThemeDecorator } from '../../../shared';
 import { PageError } from './PageError';
 
 export default {
-  title: 'widget/ErrorPage',
+  title: 'widgets/ErrorPage',
   component: PageError,
   argTypes: {
     backgroundColor: { control: 'color' },

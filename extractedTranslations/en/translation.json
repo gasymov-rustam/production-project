@@ -22,6 +22,7 @@
   "BY TITLE": "",
   "BY VIEWS": "",
   "CANCEL": "CANCEL",
+  "CLOSE": "",
   "COMMENTS": "",
   "COMMENTS EMPTY": "",
   "CREATE NEW ARTICLE": "",
@@ -39,6 +40,7 @@
   "Increment": "Increment",
   "LANG": "",
   "LINK AVATAR": "LINK AVATAR",
+  "Leave your feedback on the article, it will help improve the quality": "",
   "Lorem ipsum dolor sit amet, consectetur adipisicing elit": {
     " Aliquid \n          commodi consequatur eligendi impedit incidunt necessitatibus \n          possimus quis saepe sunt totam": {
       "": ""
@@ -51,6 +53,7 @@
   "PROFILE": "PROFILE",
   "PROFILE IS NOT DEFINED": "",
   "PROFILE PAGE": "PROFILE PAGE",
+  "RATE ARTICLE": "",
   "READ MORE": "",
   "RECOMMENDATIONS": "",
   "RELOAD PAGE": "RELOAD PAGE",
@@ -65,6 +68,7 @@
   "SIGN IN": "SIGN IN",
   "SIGN OUT": "",
   "SORT BY": "",
+  "THANKS FOR THE ASSESSMENT": "",
   "TOGGLE": "",
   "TRY REFRESH PAGE": "TRY REFRESH PAGE",
   "Ulbi TV App": "",
@@ -73,6 +77,7 @@
   "YOUR CITY": "YOUR CITY",
   "YOUR FIRST NAME": "YOUR FIRST NAME",
   "YOUR LAST NAME": "YOUR LAST NAME",
+  "YOUR OPINION": "",
   "YOUR USER NAME": "YOUR USER NAME",
   "Ваш возраст": "Ваш возраст",
   "Ваша фамилия": "Ваша фамилия",

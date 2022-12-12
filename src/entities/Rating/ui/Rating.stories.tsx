@@ -3,7 +3,7 @@ import { ComponentMeta, ComponentStory } from '@storybook/react';
 import { Rating } from './Rating';
 
 export default {
-  title: 'shared/Rating',
+  title: 'entities/Rating/Rating',
   component: Rating,
   argTypes: {
     backgroundColor: { control: 'color' },

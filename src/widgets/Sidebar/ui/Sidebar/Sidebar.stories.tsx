@@ -6,7 +6,7 @@ import { StoreDecorator, ThemeDecorator } from '../../../../shared';
 import { Sidebar } from './Sidebar';
 
 export default {
-  title: 'widget/Sidebar',
+  title: 'widgets/Sidebar',
   component: Sidebar,
   argTypes: {
     backgroundColor: { control: 'color' },
