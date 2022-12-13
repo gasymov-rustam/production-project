@@ -3,7 +3,7 @@ import { useTranslation } from 'react-i18next';
 import { Virtuoso, VirtuosoGrid } from 'react-virtuoso';
 
 import { Text, TextSize, classNames } from '../../../../shared';
-import { PAGE_ID } from '../../../../widgets/PageWrapper/PageWrapper';
+import { PAGE_ID } from '../../../../widgets/PageWrapper';
 import { Article, ArticleView } from '../../model';
 import { ArticleListItem, ArticleListItemSkeleton } from '../ArticleListItem';
 

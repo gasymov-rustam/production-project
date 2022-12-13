@@ -2,8 +2,8 @@ import { MutableRefObject, ReactNode, UIEvent, useRef } from 'react';
 import { useSelector } from 'react-redux';
 import { useLocation } from 'react-router-dom';
 
-import { getScrollRestorationByPath, scrollRestorationActions } from '../../features/ScrollRestoration';
-import { classNames, useAppDispatch, useInfiniteScroll, useInitialEffect, useThrottle } from '../../shared/lib';
+import { getScrollRestorationByPath, scrollRestorationActions } from '../../../features/ScrollRestoration';
+import { classNames, useAppDispatch, useInfiniteScroll, useInitialEffect, useThrottle } from '../../../shared/lib';
 
 import cls from './PageWrapper.module.scss';
 
