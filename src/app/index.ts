@@ -1,13 +1,4 @@
-export {
-  ThemeProvider,
-  useTheme,
-  Theme,
-  AppRouter,
-  ErrorBoundary,
-  TestBug,
-  StoreProvider,
-  createReduxStore,
-} from './providers';
+export { ThemeProvider, AppRouter, ErrorBoundary, TestBug, StoreProvider, createReduxStore } from './providers';
 
 export { App } from './App';
 

@@ -1,8 +1,7 @@
 import { ComponentMeta, ComponentStory } from '@storybook/react';
 
-import { Theme } from '../../../app';
 import { Country, Currency } from '../../../entities';
-import { StoreDecorator, ThemeDecorator, avatarImg } from '../../../shared';
+import { StoreDecorator, Theme, ThemeDecorator, avatarImg } from '../../../shared';
 
 import ProfilePage from './ProfilePage';
 

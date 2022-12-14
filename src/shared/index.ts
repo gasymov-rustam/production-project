@@ -16,7 +16,7 @@ export {
   StartIcon,
 } from './assets';
 export { RouterDecorator, StoreDecorator, StyleDecorator, ThemeDecorator, SuspenseDecorator } from './config';
-export { ARTICLES_VIEW_LOCAL_STORAGE_KEY, AppRoutes, RoutePath, USER_LOCAL_STORAGE_KEY } from './constants';
+export { ARTICLES_VIEW_LOCAL_STORAGE_KEY, AppRoutes, RoutePath, USER_LOCAL_STORAGE_KEY, Theme } from './constants';
 export {
   classNames,
   DynamicModuleLoader,
@@ -26,7 +26,9 @@ export {
   useThrottle,
   useDebounce,
   useModal,
+  useTheme,
   addQueryParams,
+  ThemeContext,
 } from './lib';
 export type { Mods, ReducersList } from './lib';
 export type { SortOrder, DropdownDirection, AppRouterProps } from './types';

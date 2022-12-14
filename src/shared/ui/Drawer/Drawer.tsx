@@ -1,7 +1,6 @@
 import { ReactNode, useCallback, useEffect } from 'react';
 
-import { useTheme } from '../../../app';
-import { AnimationProvider, classNames, useAnimationLibs } from '../../lib';
+import { AnimationProvider, classNames, useAnimationLibs, useTheme } from '../../lib';
 import { Overlay } from '../Overlay';
 import { Portal } from '../Portal';
 

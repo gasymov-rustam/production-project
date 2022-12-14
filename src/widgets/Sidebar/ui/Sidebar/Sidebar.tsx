@@ -1,9 +1,9 @@
 import { memo, useMemo, useState } from 'react';
 import { useSelector } from 'react-redux';
 
+import { LangSwitcher } from '../../../../features/LangSwitcher';
+import { ThemeSwitcher } from '../../../../features/ThemeSwitcher';
 import { Button, ButtonSize, ButtonTheme, HorizontalStack, VerticalStack, classNames } from '../../../../shared';
-import { LangSwitcher } from '../../../LangSwitcher';
-import { ThemeSwitcher } from '../../../ThemeSwitcher';
 import { getSidebarItems } from '../../model';
 import { SidebarItem } from '../SidebarItem';
 
