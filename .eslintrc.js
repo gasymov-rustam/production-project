@@ -22,8 +22,17 @@ module.exports = {
     ecmaVersion: 'latest',
     sourceType: 'module',
   },
-  plugins: ['react', '@typescript-eslint', 'prettier', 'react-hooks', 'eslint-plugin-import', 'path-checker-plugin'],
+  plugins: [
+    'react',
+    '@typescript-eslint',
+    'prettier',
+    'react-hooks',
+    'eslint-plugin-import',
+    'path-checker-plugin',
+    'unused-imports',
+  ],
   rules: {
+    'unused-imports/no-unused-imports': 'error',
     'import/no-cycle': ['error'],
     indent: 'off',
     'react/jsx-indent': [2, 2],
