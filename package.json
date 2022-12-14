@@ -25,6 +25,7 @@
     "sb:build": "build-storybook -c ./config/storybook",
     "generate:slice": "node ./scripts/createSlice/index.js",
     "update:scripts": "ts-node ./scripts/updateImports",
+    "refactor:public-api": "ts-node ./scripts/refactoring/createPublicApiForSharedUi",
     "prepare": "husky install"
   },
   "keywords": [],
