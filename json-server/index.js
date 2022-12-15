@@ -25,7 +25,6 @@ server.post('/login', (req, res) => {
     const { users = [] } = db;
 
     const userFromBd = users.find((user) => user.userName === userName && user.password === password);
-
     if (userFromBd) {
       return res.json(userFromBd);
     }

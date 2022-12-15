@@ -12,11 +12,11 @@ import {
   Button,
   ButtonTheme,
   HorizontalStack,
-  RoutePath,
   Text,
   TextTheme,
   classNames,
 } from '../../../shared';
+import { routeCreator } from '../../../shared/constants';
 
 import cls from './Navbar.module.scss';
 
@@ -42,7 +42,7 @@ export const Navbar = memo(({ className = '' }: NavbarProps) => {
       <header className={classNames({ cls: cls.Navbar, additional: [className] })}>
         <Text className={cls.appName} title={t('Rustam App')} theme={TextTheme.INVERTED} />
 
-        <AppLink to={RoutePath.article_create} theme={AppLinkTheme.SECONDARY} className={cls.createBtn}>
+        <AppLink to={routeCreator.getRouteArticleCreate()} theme={AppLinkTheme.SECONDARY} className={cls.createBtn}>
           {t('CREATE NEW ARTICLE')}
         </AppLink>
 

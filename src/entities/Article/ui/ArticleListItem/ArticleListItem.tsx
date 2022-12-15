@@ -9,11 +9,11 @@ import {
   Card,
   EyeIcon,
   Icon,
-  RoutePath,
   Text,
   TextAlign,
   classNames,
 } from '../../../../shared';
+import { routeCreator } from '../../../../shared/constants';
 import { Article, ArticleView } from '../../model';
 import { ArticleBlockType } from '../../model/consts';
 import { ArticleTextBlock } from '../../model/types/article';
@@ -61,7 +61,7 @@ export const ArticleListItem = memo((props: ArticleListItemProps) => {
           {textBlock && <ArticleTextBlockComponent block={textBlock} className={cls.textBlock} />}
 
           <div className={cls.footer}>
-            <AppLink to={RoutePath.article_details + article.id} target={target}>
+            <AppLink to={routeCreator.getRouteArticleDetails(article.id)} target={target}>
               <Button theme={ButtonTheme.OUTLINE}>{t('READ MORE')}...</Button>
 
               {views}
@@ -74,7 +74,7 @@ export const ArticleListItem = memo((props: ArticleListItemProps) => {
 
   return (
     <AppLink
-      to={RoutePath.article_details + article.id}
+      to={routeCreator.getRouteArticleDetails(article.id)}
       target={target}
       className={classNames({ cls: cls.ArticleListItem, additional: [className, cls[view]] })}
     >

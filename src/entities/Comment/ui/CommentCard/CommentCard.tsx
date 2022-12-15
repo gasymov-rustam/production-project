@@ -1,16 +1,7 @@
 import { memo } from 'react';
 
-import {
-  AppLink,
-  Avatar,
-  RoutePath,
-  Skeleton,
-  Text,
-  TextAlign,
-  TextSize,
-  VerticalStack,
-  classNames,
-} from '../../../../shared';
+import { AppLink, Avatar, Skeleton, Text, TextAlign, TextSize, VerticalStack, classNames } from '../../../../shared';
+import { routeCreator } from '../../../../shared/constants';
 import type { Comment } from '../../model';
 
 import cls from './CommentCard.module.scss';
@@ -43,7 +34,7 @@ export const CommentCard = memo((props: CommentCardProps) => {
 
   return (
     <VerticalStack gap="16" max className={classNames({ cls: cls.CommentCard, additional: [className] })}>
-      <AppLink to={`${RoutePath.profile}${comment.user.id}`} className={cls.header}>
+      <AppLink to={routeCreator.getRouteProfile(comment.user.id)} className={cls.header}>
         {comment?.user.avatar && <Avatar size={30} src={comment.user.avatar} alt={comment.user.userName} />}
 
         <Text align={TextAlign.LEFT} title={comment.user.userName} className={cls.userName} size={TextSize.S} />
