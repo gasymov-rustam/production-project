@@ -1,7 +1,7 @@
 import { ComponentMeta, ComponentStory } from '@storybook/react';
 
-import { Theme } from '../../../app';
 import { ThemeDecorator } from '../../../shared';
+import { Theme } from '../../../shared/constants';
 
 import { PageError } from './PageError';
 

@@ -10,8 +10,8 @@ import {
   NotFoundPage,
   ProfilePage,
 } from '../../../../pages';
-import { AppRoutes, RoutePath } from '../../../../shared';
 import type { AppRouterProps } from '../../../../shared';
+import { AppRoutes, RoutePath } from '../../../../shared/constants';
 
 export const routeConfig: Record<AppRoutes, AppRouterProps> = {
   [AppRoutes.MAIN]: {
