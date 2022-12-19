@@ -19,7 +19,7 @@ const ProfilePage = memo(({ className = '' }: ProfilePageProps) => {
   }
 
   return (
-    <PageWrapper className={classNames({ additional: [className] })}>
+    <PageWrapper data-testid="ProfilePage" className={classNames({ additional: [className] })}>
       <VerticalStack gap="16" max>
         <EditableProfileCard id={id} />
       </VerticalStack>

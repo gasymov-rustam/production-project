@@ -32,7 +32,8 @@ export {
   ThemeContext,
 } from './lib';
 export type { Mods, ReducersList } from './lib';
-export type { SortOrder, DropdownDirection, AppRouterProps } from './types';
+export type { SortOrder, DropdownDirection, AppRouterProps } from './types/sort';
+export type { TestProps } from './types/tests';
 export {
   AppImage,
   AppLink,

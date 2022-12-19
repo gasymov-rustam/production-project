@@ -5,5 +5,5 @@ import { PageWrapper } from '../../../widgets';
 export const ForbiddenPage = () => {
   const { t } = useTranslation('');
 
-  return <PageWrapper>{t('YOU DON`T HAVE PERMISSIONS')}</PageWrapper>;
+  return <PageWrapper data-testid="ForbiddenPage">{t('YOU DON`T HAVE PERMISSIONS')}</PageWrapper>;
 };

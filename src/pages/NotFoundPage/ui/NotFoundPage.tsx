@@ -12,5 +12,9 @@ interface NotFoundPageProps {
 export const NotFoundPage = memo(({ className = '' }: NotFoundPageProps) => {
   const { t } = useTranslation();
 
-  return <div className={classNames({ cls: cls.NotfoundPage, additional: [className] })}>{t('NOT_FOUND_PAGE')}</div>;
+  return (
+    <div data-testid="NotFoundPage" className={classNames({ cls: cls.NotfoundPage, additional: [className] })}>
+      {t('NOT_FOUND_PAGE')}
+    </div>
+  );
 });

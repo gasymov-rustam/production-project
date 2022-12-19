@@ -3,11 +3,12 @@ import { useSelector } from 'react-redux';
 import { useLocation } from 'react-router-dom';
 
 import { getScrollRestorationByPath, scrollRestorationActions } from '../../../features/ScrollRestoration';
+import { TestProps } from '../../../shared';
 import { classNames, useAppDispatch, useInfiniteScroll, useInitialEffect, useThrottle } from '../../../shared/lib';
 
 import cls from './PageWrapper.module.scss';
 
-interface PageWrapperProps {
+interface PageWrapperProps extends TestProps {
   className?: string;
   children?: ReactNode;
   onScrollEnd?: () => void;
@@ -16,7 +17,7 @@ interface PageWrapperProps {
 export const PAGE_ID = 'PAGE_ID';
 
 export const PageWrapper = (props: PageWrapperProps) => {
-  const { className = '', children, onScrollEnd } = props;
+  const { className = '', children, onScrollEnd, 'data-testid': dataTestId } = props;
   const wrapperRef = useRef() as MutableRefObject<HTMLDivElement>;
   const triggerRef = useRef() as MutableRefObject<HTMLDivElement>;
   const { pathname } = useLocation();
@@ -42,6 +43,7 @@ export const PageWrapper = (props: PageWrapperProps) => {
       ref={wrapperRef}
       id={PAGE_ID}
       className={classNames({ cls: cls.PageWrapper, additional: [className] })}
+      data-testid={dataTestId ?? 'Page'}
       onScroll={onScroll}
     >
       {children}

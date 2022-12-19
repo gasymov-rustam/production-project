@@ -2,7 +2,7 @@ import { Listbox as HListBox } from '@headlessui/react';
 import { Fragment, ReactNode } from 'react';
 
 import { classNames } from '../../../../lib';
-import { DropdownDirection } from '../../../../types';
+import { DropdownDirection } from '../../../../types/sort';
 import { Button } from '../../../Button/Button';
 import { HorizontalStack } from '../../../Stack';
 import { mapDirectionClass } from '../../styles/consts';
