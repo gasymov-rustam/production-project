@@ -1,1 +1,1 @@
-export { getLoginUserName } from './getLoginUserName';
+export { getLoginUserName } from './getLoginUsername';
