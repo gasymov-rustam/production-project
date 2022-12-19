@@ -1,6 +1,6 @@
 import { StateSchema } from '../../../../../app';
 
-import { getLoginUserName } from './getLoginUserName';
+import { getLoginUserName } from './getLoginUsername';
 
 describe('getLoginUserName.test', () => {
   test('should return value', () => {
