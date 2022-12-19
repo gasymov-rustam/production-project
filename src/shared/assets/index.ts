@@ -13,5 +13,6 @@ export {
   TiledIcon,
   NotificationIcon,
   StartIcon,
+  UserIcon,
 } from './icons';
 export { avatarImg } from './tests';

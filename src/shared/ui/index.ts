@@ -16,6 +16,7 @@ export { Drawer } from './Drawer';
 export { HorizontalStack, VerticalStack } from './Stack';
 export { ListBox, Dropdown, Popover } from './Popups';
 export { StarRating } from './StarRating';
+export { AppImage } from './AppImage';
 export type { ListBoxItem } from './Popups';
 export type { TabItem } from './Tab';
 export type { SelectOption } from './Select';

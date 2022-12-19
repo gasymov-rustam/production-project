@@ -2,6 +2,7 @@ import { HTMLAttributeAnchorTarget, memo } from 'react';
 import { useTranslation } from 'react-i18next';
 
 import {
+  AppImage,
   AppLink,
   Avatar,
   Button,
@@ -9,6 +10,7 @@ import {
   Card,
   EyeIcon,
   Icon,
+  Skeleton,
   Text,
   TextAlign,
   classNames,
@@ -56,7 +58,14 @@ export const ArticleListItem = memo((props: ArticleListItemProps) => {
 
           {types}
 
-          <img src={article.img} alt={article.title} decoding="async" loading="lazy" className={cls.img} />
+          <AppImage
+            fallback={<Skeleton width="100%" height={250} />}
+            src={article.img}
+            alt={article.title}
+            decoding="async"
+            loading="lazy"
+            className={cls.img}
+          />
 
           {textBlock && <ArticleTextBlockComponent block={textBlock} className={cls.textBlock} />}
 
@@ -80,7 +89,8 @@ export const ArticleListItem = memo((props: ArticleListItemProps) => {
     >
       <Card>
         <div className={cls.imageWrapper}>
-          <img
+          <AppImage
+            fallback={<Skeleton width={200} height={200} />}
             src={article?.img}
             alt={article?.title}
             width={200}

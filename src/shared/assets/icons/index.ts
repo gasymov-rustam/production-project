@@ -12,6 +12,7 @@ import StartIcon from './star.svg';
 import DarkIcon from './theme-dark.svg';
 import LightIcon from './theme-light.svg';
 import TiledIcon from './tiled-24-24.svg';
+import UserIcon from './user-filled.svg';
 
 export {
   DarkIcon,
@@ -28,4 +29,5 @@ export {
   TiledIcon,
   NotificationIcon,
   StartIcon,
+  UserIcon,
 };

@@ -60,6 +60,8 @@ module.exports = {
       {
         markupOnly: true,
         ignoreAttribute: [
+          'decoding',
+          'loading',
           'as',
           'alt',
           'role',

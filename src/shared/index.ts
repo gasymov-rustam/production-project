@@ -14,6 +14,7 @@ export {
   DoneIcon,
   EyeIcon,
   StartIcon,
+  UserIcon,
 } from './assets';
 export { RouterDecorator, StoreDecorator, StyleDecorator, ThemeDecorator, SuspenseDecorator } from './config';
 export { ARTICLES_VIEW_LOCAL_STORAGE_KEY, AppRoutes, USER_LOCAL_STORAGE_KEY, Theme } from './constants';
@@ -33,6 +34,7 @@ export {
 export type { Mods, ReducersList } from './lib';
 export type { SortOrder, DropdownDirection, AppRouterProps } from './types';
 export {
+  AppImage,
   AppLink,
   AppLinkTheme,
   Avatar,
